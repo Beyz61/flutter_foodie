@@ -1,16 +1,15 @@
 
 import 'package:flutter/material.dart';
-//import 'package:foodie_screen/config/colors.dart';
-import 'package:foodie_screen/feautures/feed/models/food_item.dart';
+import 'package:foodie_screen/feautures/feed/models/recipe.dart';
 
 class FoodContainerWidget extends StatelessWidget {
   final Function()? onTap;
-  final FoodItem foodRecipe;
+  final Recipe foodRecipe;
 
   const FoodContainerWidget({
     super.key,
     required this.onTap,
-    required this.foodRecipe, required FoodItem foodItem,
+    required this.foodRecipe, 
   });
 
   @override
@@ -55,7 +54,7 @@ class FoodContainerWidget extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text( // Title Text
-                              foodRecipe.imageTitle,
+                              foodRecipe.recipeName,
                               style: const TextStyle(
                                 color: Color.fromARGB(255, 255, 252, 247),
                                 fontWeight: FontWeight.w500,
@@ -82,7 +81,7 @@ class FoodContainerWidget extends StatelessWidget {
                             ),
                            const SizedBox(width: 4),                            
                             Text( // Zeit
-                              foodRecipe.imageSubTime,
+                              foodRecipe.preparationTime,
                               style: const TextStyle(
                                 color: Color.fromARGB(255, 255, 252, 247),
                                 fontWeight: FontWeight.w500,
@@ -93,7 +92,7 @@ class FoodContainerWidget extends StatelessWidget {
                             ),
                             const  Spacer(),  // abstand 
                             Text( // Preis
-                              foodRecipe.imagePrice,
+                              "${foodRecipe.portionAmount} / ${foodRecipe.price.toStringAsFixed(2)}€",
                               style: const TextStyle(
                                 color: Color.fromARGB(255, 255, 252, 247),
                                 fontWeight: FontWeight.w500,
