@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foodie_screen/config/colors.dart';
 import 'package:foodie_screen/data/repository/database_repository.dart';
-import 'package:foodie_screen/feautures/feed/models/food_data.dart';
-import 'package:foodie_screen/feautures/feed/models/food_item.dart';
+import 'package:foodie_screen/feautures/feed/models/recipe.dart';
 import 'package:foodie_screen/feautures/feed/screens/recipe_screen.dart';
 import 'package:foodie_screen/feautures/profile/widgets/food_container_widget.dart';
 import 'package:foodie_screen/shared/widgets/search_button.dart';
@@ -48,24 +47,24 @@ class _FeedScreenState extends State<FeedScreen> {
                         ),
                       );
                     }
-                      final recipes = snapshot.data as List<FoodItem>; // wenn die Daten fertig geladen sind dann speichern.
+                      final recipes = snapshot.data as List<Recipe>; // wenn die Daten fertig geladen sind dann speichern.
                       return ListView.builder(  // alle rezepte werden in einer Liste angezeigt
                         padding: EdgeInsets.zero,
                         scrollDirection: Axis.vertical,
                         itemCount: recipes.length,
                         itemBuilder: (context, index) {
-                          final foodItem = recipes[index];
+                          final recipe = recipes[index];
                           return FoodContainerWidget(
                             onTap: () {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => RecipeScreen(foodItem: foodItem.imageTitle),
+                                  builder: (context) => RecipeScreen(recipe: recipe),
                                 ),
                               );
                             },
-                            foodRecipe: foodRecipe[index],
-                            foodItem: foodItem,
+                            foodRecipe: recipes[index],
+                         
                           );
                         },
                       );

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:foodie_screen/feautures/feed/models/recipe.dart';
 import 'package:foodie_screen/feautures/feed/widgets/preparation_container_widget.dart';
 
 class PreparationScreen extends StatelessWidget {
-  const PreparationScreen({super.key});
+  final Recipe recipe;
+  const PreparationScreen({super.key, required this.recipe});
 
   @override
   Widget build(BuildContext context) {
@@ -14,11 +16,11 @@ class PreparationScreen extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        child: const SingleChildScrollView(
+        child:  SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(height: 50),
-              Padding(
+              const SizedBox(height: 50),
+              const Padding(
                 padding: EdgeInsets.symmetric(vertical: 20.0),
                 child: Text(
                   "Zubereitung:",
@@ -42,35 +44,28 @@ class PreparationScreen extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
               ),
-              PreparationContainer(
-                title: "Step 2 / Zwiebel & Gewürze anbraten:",
-                description: "• Butter in einer Pfanne erhitzen.\n"
-                             "• Zwiebel, Knoblauch und Ingwer hinzufügen.\n"
-                             "• Paprikapulver und Chili dazugeben.",
+              ListView.separated(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                separatorBuilder: (context,index) => const SizedBox(height: 0,),
+                itemCount: recipe.preparations.length,
+                itemBuilder: (context, index) {
+                  final preparation = recipe.preparations[index];
+                     return  PreparationContainer(
+                title: preparation.title,
+                description: recipe.buildPreparationTexts(preparation),
+              );
+                },
               ),
-              PreparationContainer(
-                title: "Step 3 / Hähnchen braten:",
-                description: "• Marinierte Hühnerstücke in die Pfanne geben.\n"
-                             "• Bis sie goldbraun sind.",
-              ),
-              PreparationContainer(
-                title: "Step 4 / Sauce zubereiten:",
-                description: "• Tomatenpassata hinzufügen.\n"
-                             "• Gut vermischen und nach Belieben mit Sahne \nverfeinern.\n"
-                             "• Mit Salz und Pfeffer abschmecken.",
-              ),
-              PreparationContainer(
-                title: "Step 5 / Anrichten:",
-                description: "• Mit frischem Koriander garnieren.\n"
-                             "• Am besten mit Reis oder Naan-Brot servieren.",
-              ),
-              SizedBox(height: 20),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16.0),
+             
+              const SizedBox(height: 20),
+              if(recipe.tipp != null)
+               Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                       "Tipps: ",
                       style: TextStyle(
                         color: Colors.red,
@@ -84,8 +79,8 @@ class PreparationScreen extends StatelessWidget {
                     ),
                     Expanded(
                       child: Text(
-                        "Für eine scharfe Variante mehr Chili verwenden.",
-                        style: TextStyle(
+                        recipe.tipp!,
+                        style: const TextStyle(
                           color: Colors.white,
                           fontSize: 16,
                           fontWeight: FontWeight.w400,
@@ -97,8 +92,8 @@ class PreparationScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 10),
-              Text(
+              const SizedBox(height: 10),
+              const Text(
                 " Guten\nAppetit!",
                 style: TextStyle(
                   fontSize: 70,
@@ -115,7 +110,7 @@ class PreparationScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 50),
+              const SizedBox(height: 50),
             ],
           ),
         ),

@@ -1,24 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:foodie_screen/feautures/feed/models/recipe.dart';
 
 class PortionCounter extends StatefulWidget {
+  final Recipe recipe;
+  final Function() callback;
+  const PortionCounter({super.key, required this.recipe, required this.callback});
+
+
   @override
   _PortionCounterState createState() => _PortionCounterState();
 }
 
 class _PortionCounterState extends State<PortionCounter> {
-  int _portionCount = 2; 
+  late int _portionCount;
+
+  @override
+  void initState() {
+    _portionCount = widget.recipe.portion;
+    super.initState();
+  }
 
   void _increment() {
     setState(() {
       _portionCount++;
+      widget.recipe.portion++;
     });
+    widget.callback();
   }
 
   void _decrement() {
     if (_portionCount > 1) {
       setState(() {
         _portionCount--;
+        widget.recipe.portion--;
       });
+       widget.callback();
     }
   }
 

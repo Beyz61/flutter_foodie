@@ -1,10 +1,13 @@
 
 import 'dart:ui';
-import 'package:flutter/material.dart';
 
-class RecipeContainer extends StatelessWidget {
-  const RecipeContainer({
-    super.key,
+import 'package:flutter/material.dart';
+import 'package:foodie_screen/feautures/feed/models/recipe.dart';
+
+class IngredientsContainer extends StatelessWidget {
+  final Recipe recipe;
+  const IngredientsContainer({
+    super.key, required this.recipe,
   });
 
   @override
@@ -14,7 +17,7 @@ class RecipeContainer extends StatelessWidget {
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8), // Verschwommenheit
         child: Container(
-          height: 425, // Höhe Container
+      
           width: 500,
           decoration: BoxDecoration(
             border: Border.all(color: Colors.white, width: 0.1), // Weiße Umrandung
@@ -26,12 +29,12 @@ class RecipeContainer extends StatelessWidget {
           ),
           child: Container(
             color: Colors.transparent.withOpacity(0.5), // Transparenz
-            child: const Padding(
-              padding: EdgeInsets.all(16),
+            child:  Padding(
+              padding: const EdgeInsets.all(16),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     "Zutaten:",
                     style: TextStyle(
                       color: Color.fromARGB(255, 255, 252, 249),
@@ -49,24 +52,13 @@ class RecipeContainer extends StatelessWidget {
                       ],
                     ),    
                     ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Row(
                   children: [
                    Text(
-                     "        400 g\n"
-                     "        200 g\n"
-                     "         2 EL\n"
-                     " 1x ca. 100 g\n"
-                     "   2 ca. 10 g\n"
-                     "  1x ca. 10 g\n"
-                     "        200 g\n"
-                     "         1 TL\n"
-                     "         1 TL\n"
-                     "         1 TL\n"
-                     "         1/5 \n"
-                     "         2 EL\n",
+                   recipe.getIngredientsUnitText(),
                      textAlign: TextAlign.end,
-                     style: TextStyle(
+                     style: const TextStyle(
                        color: Color.fromARGB(255, 255, 252, 249),
                        fontWeight: FontWeight.w600,
                                  fontSize: 17,
@@ -74,34 +66,24 @@ class RecipeContainer extends StatelessWidget {
                                  fontFamily: "SFProDisplay",
                      ),
                    ),
-                  SizedBox( height: 340,
+                  const SizedBox( height: 340,
                     child: VerticalDivider( thickness: 1, width: 17,
                     color: Color.fromARGB(255, 255, 252, 249)),
                   ), // noch nicht fertig!!!
                  // SizedBox(height:10),
-                  Text(
-                    "Hünerbrustfilet \n"
-                    "Naturjoghurt\n"
-                    "Butter\n"
-                    "Zwiebel\n"
-                    "Knoblauchzehe\n"
-                    "Ingwer\n"
-                    "Tomatenpassata\n"
-                    "Garam Masala\n"
-                    "Paprikapulver\n"
-                    "Kreuzkümmel\n"
-                    "Pfeffer (nach Geschmack)\n"
-                    "Sahne (optional)\n"
-                    "Koriander (zum Garnieren)",
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 255, 252, 249),
-                      fontWeight: FontWeight.w500,
-                                fontSize: 16.5,
-                                fontStyle: FontStyle.italic,
-                                fontFamily: "SFProDisplay",
-                                
-                    ),
-                  ),
+                   Flexible(
+                     child: Text(
+                                       recipe.getIngredientsValues(),
+                      style: const TextStyle(
+                        color: Color.fromARGB(255, 255, 252, 249),
+                        fontWeight: FontWeight.w500,
+                                  fontSize: 16.5,
+                                  fontStyle: FontStyle.italic,
+                                  fontFamily: "SFProDisplay",
+                                  
+                      ),
+                                       ),
+                   ),
                 ],
               ),
              ],
