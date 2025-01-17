@@ -1,6 +1,6 @@
 
 import 'package:foodie_screen/feautures/discover/widgets/spot_widget.dart';
-import 'package:foodie_screen/feautures/feed/models/food_item.dart';
+import 'package:foodie_screen/feautures/feed/models/recipe.dart';
 
 abstract class DatabaseRepository {
   // Einen User zur App hinzufügen (registrieren)
@@ -19,7 +19,7 @@ abstract class DatabaseRepository {
  Future<void> addFavCollection(String collectionName, List<String> recipes);
 
   // Alle Rezepte abrufen
-   Future<List<FoodItem>> getAllRecipes();
+   Future<List<Recipe>> getAllRecipes();
 
   // Rezept löschen
   Future<void> removeRecipe(String recipe);

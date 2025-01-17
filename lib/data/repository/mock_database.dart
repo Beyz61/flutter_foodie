@@ -1,7 +1,7 @@
 
 import 'package:foodie_screen/feautures/discover/widgets/spot_widget.dart';
 import 'package:foodie_screen/feautures/feed/models/food_data.dart';
-import 'package:foodie_screen/feautures/feed/models/food_item.dart';
+import 'package:foodie_screen/feautures/feed/models/recipe.dart';
 
 import 'database_repository.dart';
 
@@ -70,9 +70,9 @@ class MockDatabase implements DatabaseRepository {
 
   // Alle Rezepte abrufen
   @override
-  Future<List<FoodItem>> getAllRecipes() async {
+  Future<List<Recipe>> getAllRecipes() async {
     await Future.delayed(const Duration(seconds: 3)); 
-    return foodRecipe;
+    return  recipes;
   }
 
 
@@ -87,7 +87,7 @@ class MockDatabase implements DatabaseRepository {
 @override
   Future<void> removeRecipe(String recipe) async {
     await Future.delayed(const Duration(seconds: 3)); 
-    foodRecipe.remove(foodRecipe);
+    recipes.remove(recipe);
   }
 
   // Beliebte Rezepte abrufen
