@@ -41,7 +41,7 @@ class UserScreen extends StatelessWidget {
               const SizedBox(height: 20),
               const TextField(
                 decoration: InputDecoration(
-                  labelText: "Benutzername",
+                  labelText: "E-Mail",
                   labelStyle: TextStyle(color: Color.fromARGB(255, 78, 50, 13)),
                   enabledBorder: UnderlineInputBorder(
                     borderSide: BorderSide(color: Color.fromARGB(255, 78, 50, 13)),
@@ -50,21 +50,22 @@ class UserScreen extends StatelessWidget {
                     borderSide: BorderSide(color: Color.fromARGB(255, 78, 50, 13)),
                   ),
                 ),
+              style: TextStyle(color: Color.fromARGB(255, 78, 50, 13)),
+
               ),
-              const SizedBox(height: 20),
-              const TextField(
-                decoration: InputDecoration(
-                  labelText: "Neuer Benutzername",
-                  labelStyle: TextStyle(color: Color.fromARGB(255, 78, 50, 13)),
-                  enabledBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Color.fromARGB(255, 78, 50, 13)),
-                  ),
-                  focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Color.fromARGB(255, 78, 50, 13)),
-                  ),
-                ),
-                style: TextStyle(color: Colors.white),
-              ),
+              // const SizedBox(height: 20),
+              // const TextField(
+              //   decoration: InputDecoration(
+              //     labelText: "Neuer Benutzername",
+              //     labelStyle: TextStyle(color: Color.fromARGB(255, 78, 50, 13)),
+              //     enabledBorder: UnderlineInputBorder(
+              //       borderSide: BorderSide(color: Color.fromARGB(255, 78, 50, 13)),
+              //     ),
+              //     focusedBorder: UnderlineInputBorder(
+              //       borderSide: BorderSide(color: Color.fromARGB(255, 78, 50, 13)),
+              //     ),
+              //   ),
+              //   style: TextStyle(color: Color.fromARGB(255, 78, 50, 13)),              ),
               const SizedBox(height: 20),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(backgroundColor: backroundColor1),

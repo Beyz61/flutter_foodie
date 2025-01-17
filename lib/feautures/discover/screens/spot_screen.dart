@@ -37,28 +37,22 @@ class SpotScreen extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 10),
-              const Align(
-                alignment: Alignment.topLeft,
-                child: Padding(
-                  padding: EdgeInsets.only(left: 20),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Top Kategorien",
-                       style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 24,
-                      fontWeight: FontWeight.w600,
-                      fontStyle: FontStyle.italic,
-                      fontFamily: "SFProDisplay",
-                        ),
-                      ),
-                      SizedBox(width: 150), 
-                      Icon(Icons.tune, size: 26, color: Colors.white),                       
-                    ],
+              const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Text(
+                    "Top Kategorien",
+                   style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                  fontWeight: FontWeight.w600,
+                  fontStyle: FontStyle.italic,
+                  fontFamily: "SFProDisplay",
+                    ),
                   ),
-                ),
+                  SizedBox(width: 150), 
+                  // Icon(Icons.tune, size: 26, color: Colors.white),                       
+                ],
               ),
                      const SizedBox(height: 10),
                       const Divider(
