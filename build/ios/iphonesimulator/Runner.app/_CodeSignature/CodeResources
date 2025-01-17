@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		LWlM4V8agsY2z7FQMj4Ts075AO0=
+		IyEbHnhSyfrR95lUgrCDOkNcY4s=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,15 +54,15 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		1dFiWc6JKG4vG24E1FhusiNeYoE=
+		iG9gTirn3DPoQwYp5enkfdN76gc=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<data>
-		Q2MbjkKbUQKfzlvLzImZ7Hu5NiY=
+		QPjAPzkd+Klipl1Cd8RcK6W2sdE=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
-		HDbcTKQztTt10JMwtEx5deeTjGY=
+		rfCaY/dGulhD62f2g3Q3hN8vGDY=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
 		<data>
@@ -216,9 +216,9 @@
 		<data>
 		XbXazeeDyMMuWgi34iod3ZeD1cM=
 		</data>
-		<key>Frameworks/App.framework/flutter_assets/assets/images/souffl%C3%A9.png</key>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/souflfe%CC%81.png</key>
 		<data>
-		VbxtN4/vZ/zWonutGk+Wq/mRGDA=
+		KmLwd25KUHzGZvRwW6vuEnfbSHw=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/images/steak.png</key>
 		<data>
@@ -254,7 +254,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		Zz0+QJst7ySbdaak7B4UXdDxAIw=
+		4KZd76NsotqoBLDC3fWB+IK61rQ=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/social_login_buttons/lib/assets/2.0x/apple-black-logo.png</key>
 		<data>
@@ -1323,7 +1323,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			4uOhkyl7pamIycc/2jBL0+Ze0WrtN9+sC29OCAEtTJo=
+			AQ7jA2UtJJbYojm0NvXkt4fdJwVzfp4Kp+N3d1shORg=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -1337,21 +1337,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			FjiYS8kkKyZwQa1Gc3Lan7abYaST+VsrMaFlOWZX5c4=
+			0CftxYLYubEOnHcvknk7YP/uYDN0SA1gR4GNsOzGAcs=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			cCJOA6SUKzOHbji4d7G4Qvh7hI0+pBvoxIS6uP42l0g=
+			n8jXtgR+SB9YrIJ/xebg2Rz1MFy33lBI/MQqUO3nfOY=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			rxtn2WaqI9ic+PbYqDWvsekNhW80XEt/MNdWnJcwnXA=
+			RK0FzchEN64/1QfljyRLL9krsAndfcwlq1by37XHOoQ=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
@@ -1620,11 +1620,11 @@
 			iBqoEjGldD4RYhIYR4uvm05LE6cBml8ZFOxOu7OGt/o=
 			</data>
 		</dict>
-		<key>Frameworks/App.framework/flutter_assets/assets/images/souffl%C3%A9.png</key>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/souflfe%CC%81.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ojAm/YMjEXPOzTvdc+Vg6GOSvOIp06WlezyVljiFUB0=
+			xKZnGErO33VKpD4rAjcoDSboin1Qg6AwpRZYMNk5/48=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/images/steak.png</key>
@@ -1687,7 +1687,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7DDRYM+tfrohOG3bos83Nlq89X7bTGyji1ZSlviJFrg=
+			la4awZyxpTMZCSzE3L6VsmGHEvh5KTp3TRBYiYtPtK0=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/social_login_buttons/lib/assets/2.0x/apple-black-logo.png</key>
