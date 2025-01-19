@@ -10,13 +10,13 @@ class PreparationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/images/butterchicken.png"),
+            image: AssetImage(recipe.imagePath),
             fit: BoxFit.cover,
           ),
         ),
-        child:  SingleChildScrollView(
+        child: SingleChildScrollView(
           child: Column(
             children: [
               const SizedBox(height: 50),

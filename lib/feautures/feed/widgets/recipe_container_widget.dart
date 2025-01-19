@@ -1,4 +1,3 @@
-
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
@@ -22,8 +21,8 @@ class IngredientsContainer extends StatelessWidget {
           decoration: BoxDecoration(
             border: Border.all(color: Colors.white, width: 0.1), // Weiße Umrandung
             borderRadius: BorderRadius.circular(16), // Runder Rahmen    
-            image: const DecorationImage(
-              image: AssetImage("assets/images/butterchicken.png"),
+            image: DecorationImage(
+              image: AssetImage(recipe.imagePath),
               fit: BoxFit.cover,
             ),
           ),
