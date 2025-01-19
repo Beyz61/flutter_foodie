@@ -3,7 +3,7 @@ import 'package:foodie_screen/config/colors.dart';
 import 'package:foodie_screen/data/repository/database_repository.dart';
 import 'package:foodie_screen/feautures/feed/models/recipe.dart';
 import 'package:foodie_screen/feautures/feed/screens/recipe_screen.dart';
-import 'package:foodie_screen/feautures/profile/widgets/food_container_widget.dart';
+import 'package:foodie_screen/feautures/feed/widgets/food_container_widget.dart';
 import 'package:foodie_screen/shared/widgets/search_button.dart';
 import 'package:provider/provider.dart';
 
