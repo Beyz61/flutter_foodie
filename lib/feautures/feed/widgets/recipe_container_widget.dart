@@ -16,7 +16,6 @@ class IngredientsContainer extends StatelessWidget {
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8), // Verschwommenheit
         child: Container(
-      
           width: 500,
           decoration: BoxDecoration(
             border: Border.all(color: Colors.white, width: 0.1), // Weiße Umrandung

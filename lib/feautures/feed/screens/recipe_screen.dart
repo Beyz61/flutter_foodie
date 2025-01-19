@@ -21,12 +21,8 @@ class _RecipeScreenState extends State<RecipeScreen> {
     return Scaffold(
       body: Container(
         height: screenSize.height,
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(widget.recipe.imagePath),
-            fit: BoxFit.cover,
-          ),
-          gradient: const LinearGradient(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
             colors: [ 
               backroundColor2,
               backroundColor1
