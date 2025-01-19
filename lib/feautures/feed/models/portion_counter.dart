@@ -34,7 +34,6 @@ class _PortionCounterState extends State<PortionCounter> {
         _portionCount--;
         widget.recipe.portion--;
       });
-       widget.callback();
     }
   }
 
@@ -45,7 +44,21 @@ class _PortionCounterState extends State<PortionCounter> {
       padding: const EdgeInsets.all(5),
       decoration: BoxDecoration(
         color: Colors.black.withOpacity(0.5), 
-        borderRadius: BorderRadius.circular(10), 
+        borderRadius: BorderRadius.circular(10),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.3),
+            offset: const Offset(4, 4),
+            blurRadius: 8,
+            spreadRadius: 1,
+          ),
+          BoxShadow(
+            color: Colors.white.withOpacity(0.1),
+            offset: const Offset(-4, -4),
+            blurRadius: 8,
+            spreadRadius: 1,
+          ),
+        ],
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -53,14 +66,32 @@ class _PortionCounterState extends State<PortionCounter> {
           IconButton(
             icon: const Icon(
               Icons.remove,
-              size: 34,
-              color: Color.fromARGB(221, 40, 36, 36),
+              size: 35,
+              color: Color.fromARGB(221, 0, 0, 0),
+              shadows: [
+                Shadow(
+                  offset: Offset(0, 1),
+                  blurRadius: 2,
+                  color: Color.fromARGB(106, 236, 233, 233),
+                ),
+              ],
             ),
             onPressed: _decrement,
+            iconSize: 34,
+            padding: EdgeInsets.zero,
+            constraints: const BoxConstraints(),
+            splashRadius: 24,
+            color: Colors.white,
           ),
           Text(
             "$_portionCount", 
-            style: const TextStyle(fontSize: 34, color: Colors.white), 
+            style: const TextStyle(fontSize: 34, color: Colors.white, shadows: [
+              Shadow(
+                offset: Offset(2, 2),
+                blurRadius: 3,
+                color: Colors.black,
+              ),
+            ]), 
           ),
           IconButton(
             icon: const Icon(
@@ -71,7 +102,6 @@ class _PortionCounterState extends State<PortionCounter> {
             onPressed: _increment,
           ),
           const SizedBox(height: 10),
-
         ],
       ),
     );

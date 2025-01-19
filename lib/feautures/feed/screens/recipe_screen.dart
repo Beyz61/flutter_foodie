@@ -41,25 +41,42 @@ class _RecipeScreenState extends State<RecipeScreen> {
                   widget.recipe.recipeName, 
                   textAlign: TextAlign.center,
                   style: const TextStyle(         
-                        fontSize: 40,
-                        fontWeight: FontWeight.w700,
-                        fontStyle: FontStyle.italic,
-                        fontFamily: "SFProDisplay",
-                        color: Color.fromARGB(255, 255, 252, 249),
-                        shadows:[
-                            Shadow(
-                            blurRadius: 1,
-                            color: Color.fromARGB(255, 255, 252, 249),
-                            offset: Offset(0, 1)
-                            ),
-                        ],
-                       ), 
-                      ),   
+                    fontSize: 32,
+                    fontWeight: FontWeight.w600,
+                    fontStyle: FontStyle.italic, // Kursiv
+                    color: Colors.white,
+                    decoration: TextDecoration.underline, // Unterstrich
+                    decorationColor: Colors.white, // Unterstrich Farbe
+                    shadows:[
+                      Shadow(
+                        blurRadius: 0.5,
+                        color: Color.fromARGB(255, 175, 163, 163),
+                        offset: Offset(0,1)
+                        
+                      ),
+                    ],
+                  ), 
+                ),   
                 const SizedBox(height: 20),
                  IngredientsContainer(recipe: widget.recipe,),
                 const SizedBox(height: 30),
-                const Divider( thickness: 0.7, 
-                      color: Color.fromARGB(255, 0, 0, 0)),
+                const Divider(
+                  thickness: 0.7,
+                  color: Color.fromARGB(255, 251, 248, 248),
+                  height: 1,
+                ),
+                Container(
+                  height: 1,
+                  decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.5),
+                        offset: const Offset(0, 1),
+                        blurRadius: 2,
+                      ),
+                    ],
+                  ),
+                ),
                 const Text( " Portion", style: TextStyle(  fontSize: 36,
                         fontWeight: FontWeight.w600,
                         fontStyle: FontStyle.italic,
@@ -78,26 +95,31 @@ class _RecipeScreenState extends State<RecipeScreen> {
                  
                })),
                 const SizedBox(height: 20),
-                      GestureDetector(
-                  onTap: () {
+                ElevatedButton(
+                  onPressed: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) =>  PreparationScreen(recipe: widget.recipe
-                        ),
+                        builder: (context) => PreparationScreen(recipe: widget.recipe),
                       ),
                     );
                   },
-                    child: const Center(
-                      child: Text( " Zu der Zubereitung", style: TextStyle( 
-                        fontSize: 20,
-                        fontWeight: FontWeight.w600,
-                        fontStyle: FontStyle.italic,
-                        fontFamily: "SFProDisplay",
-                        color: Color.fromARGB(2255, 255, 252, 249),
-                        decoration: TextDecoration.underline, 
-                        decorationColor:Color.fromARGB(255, 227, 206, 188),
-                     ),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color.fromARGB(10, 25, 25, 24), // Hintergrundfarbe des Buttons
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                  child: const Text(
+                    "Zu der Zubereitung",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600,
+                      fontStyle: FontStyle.italic,
+                      fontFamily: "SFProDisplay",
+                      color: Color.fromARGB(2255, 255, 252, 249),
+                      decoration: TextDecoration.underline,
+                      decorationColor: Color.fromARGB(255, 227, 206, 188),
                     ),
                   ),
                 ),
