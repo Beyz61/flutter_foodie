@@ -25,13 +25,14 @@ class _FavoritScreenState extends State<FavoritScreen> {
   Future<void> _loadFavCollections() async {
     List<FavCollection> loadedCollections = await SharedPreferencesHelper.loadFavCollections();
     setState(() {
-      favCollectionsList.addAll(loadedCollections);
+      favCollectionsList = loadedCollections;
     });
+    print("collections:${loadedCollections.length}");
   }
 
   void _addNewCollection() {
     setState(() {});
-    // SharedPreferencesHelper.saveFavCollections(favCollectionsList);
+    SharedPreferencesHelper.saveFavCollections(favCollectionsList);
   }
 
   @override

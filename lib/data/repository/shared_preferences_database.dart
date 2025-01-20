@@ -25,9 +25,10 @@ class SharedPreferencesHelper {
     }).toList();
     await prefs.setStringList(_favCollectionsKey, encodedCollections);
   }
+
   static Future<void> removeFavCollection() async {
     await Future.delayed(const Duration(seconds: 3)); 
-    log("das ist ein test");
+    log("Supii");
   }
 
   static Future<List<FavCollection>> loadFavCollections() async {
