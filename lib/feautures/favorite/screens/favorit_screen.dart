@@ -5,6 +5,7 @@ import 'package:foodie_screen/feautures/favorite/models/fav_collection_item.dart
 import 'package:foodie_screen/feautures/favorite/models/new_collection_dialog.dart';
 import 'package:foodie_screen/feautures/favorite/widgets/fav_container_widget.dart';
 import 'package:foodie_screen/feautures/favorite/widgets/fav_containers_list.dart';
+import 'package:foodie_screen/feautures/favorite/widgets/recipe_list_dialog.dart';
 import 'package:foodie_screen/shared/widgets/fav_button.dart';
 import 'package:foodie_screen/shared/widgets/search_button.dart';
 
@@ -93,7 +94,9 @@ class _FavoritScreenState extends State<FavoritScreen> {
                           itemBuilder: (context, index) {
                             final favContainer = favCollectionsList[index];
                             return DisplayFavContainer(
-                              onTap: () {},
+                              onTap: () {
+                                showRecipeListDialog(context, favContainer);
+                              },
                               picture1: favContainer.image1,
                               picture2: favContainer.image2,
                               picture3: favContainer.image3,

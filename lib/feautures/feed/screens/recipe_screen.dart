@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodie_screen/config/colors.dart';
+import 'package:foodie_screen/feautures/feed/models/fav_dialog.dart';
 import 'package:foodie_screen/feautures/feed/models/portion_counter.dart';
 import 'package:foodie_screen/feautures/feed/models/recipe.dart';
 import 'package:foodie_screen/feautures/feed/screens/preperation_screen.dart';
@@ -15,6 +16,12 @@ class RecipeScreen extends StatefulWidget {
 }
 
 class _RecipeScreenState extends State<RecipeScreen> {
+  void _addToFavorites() {
+    FavDialog.showAddToCollectionDialog(context, widget.recipe.recipeName, () {
+      setState(() {});
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.sizeOf(context);
@@ -58,7 +65,11 @@ class _RecipeScreenState extends State<RecipeScreen> {
                   ), 
                 ),   
                 const SizedBox(height: 20),
-                 IngredientsContainer(recipe: widget.recipe,),
+                IconButton(
+                  icon: const Icon(Icons.favorite_border, color: Colors.white),
+                  onPressed: _addToFavorites,
+                ),
+                IngredientsContainer(recipe: widget.recipe,),
                 const SizedBox(height: 30),
                 const Divider(
                   thickness: 0.7,
