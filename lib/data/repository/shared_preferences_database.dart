@@ -26,9 +26,18 @@ class SharedPreferencesHelper {
     await prefs.setStringList(_favCollectionsKey, encodedCollections);
   }
 
-  static Future<void> removeFavCollection() async {
-    await Future.delayed(const Duration(seconds: 3)); 
+  static Future<void> removeAllFavCollections() async {
+    await Future.delayed(const Duration(seconds: 1)); 
     log("Supii");
+  }
+
+  static Future<void> removeFavCollection(int index) async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    List<String>? encodedCollections = prefs.getStringList(_favCollectionsKey);
+    if (encodedCollections != null) {
+      encodedCollections.removeAt(index);
+      await prefs.setStringList(_favCollectionsKey, encodedCollections);
+    }
   }
 
   static Future<List<FavCollection>> loadFavCollections() async {
