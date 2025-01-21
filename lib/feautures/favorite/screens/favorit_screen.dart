@@ -36,6 +36,13 @@ class _FavoritScreenState extends State<FavoritScreen> {
     SharedPreferencesHelper.saveFavCollections(favCollectionsList);
   }
 
+  void _deleteCollection(int index) {
+    setState(() {
+      favCollectionsList.removeAt(index);
+    });
+    SharedPreferencesHelper.saveFavCollections(favCollectionsList);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -102,6 +109,9 @@ class _FavoritScreenState extends State<FavoritScreen> {
                               picture3: favContainer.image3,
                               picture4: favContainer.image4,
                               text: favContainer.collectionName,
+                              onDelete: () {
+                                _deleteCollection(index);
+                              },
                             );
                           },
                         ),
