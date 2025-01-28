@@ -1,4 +1,4 @@
-import 'package:foodie_screen/shared/widgets/app_user.dart';
+import 'package:foodie_screen/data/repository/app_user.dart';
 
 abstract class AuthRepository {
   Future<void> signInWithGoogle();
@@ -7,7 +7,6 @@ abstract class AuthRepository {
   Future<void> signOut();
   Future<AppUser?> signInWithEmailAndPassword(String email, String password);
   Stream<AppUser?> get authStateChanges;
-
   AppUser? get currentUser;
-
+  Future<void> updateEmail(String email);
 }

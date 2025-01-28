@@ -1,9 +1,8 @@
-
 import 'dart:core';
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:foodie_screen/data/repository/app_user.dart';
 import 'package:foodie_screen/data/repository/auth_repository.dart';
-import 'package:foodie_screen/shared/widgets/app_user.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 
@@ -96,5 +95,13 @@ final GoogleSignIn googleSignIn = GoogleSignIn();
         );
       }
     });
+  }
+
+  @override
+  Future<void> updateEmail(String email) async {
+    final user = firebaseAuth.currentUser;
+    if (user != null) {
+      await user.updateEmail(email);
+    }
   }
 }

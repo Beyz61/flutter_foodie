@@ -3,7 +3,6 @@ import 'package:foodie_screen/config/colors.dart';
 import 'package:foodie_screen/data/repository/auth_repository.dart';
 import 'package:foodie_screen/feautures/authentification/screens/main_screen.dart';
 import 'package:foodie_screen/feautures/authentification/widgets/sign_out_button.dart';
-import 'package:foodie_screen/feautures/profile/screens/food_choices.dart';
 import 'package:foodie_screen/feautures/profile/screens/user_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -18,7 +17,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
   bool isClickOn = true;
 
   @override
-   Widget build(BuildContext context) {
+  Widget build(BuildContext context) {
+    final authRepository = context.read<AuthRepository>();
+    final user = authRepository.currentUser;
+
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -39,67 +41,68 @@ class _SettingsScreenState extends State<SettingsScreen> {
               child: Column(
                 children: [
                   const Text(
-                  "Foodie ",
-                  style: TextStyle(
-                    fontSize: 60,
-                    fontWeight: FontWeight.w700,
-                    fontStyle: FontStyle.italic,
-                    fontFamily: "SFProDisplay",
-                    color: Color.fromARGB(255, 80, 57, 50),
-                    shadows: [
-                      Shadow(
-                        blurRadius: 5,
-                        color: Colors.black,
-                        offset: Offset(1, 2),
-                      ),
-                    ],
+                    "Foodie ",
+                    style: TextStyle(
+                      fontSize: 70,
+                      fontWeight: FontWeight.w700,
+                      fontStyle: FontStyle.italic,
+                      fontFamily: "SFProDisplay",
+                      color: Color.fromARGB(255, 80, 57, 50),
+                      shadows: [
+                        Shadow(
+                          blurRadius: 5,
+                          color: Colors.black,
+                          offset: Offset(1, 2),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
                   const SizedBox(height: 10),
                   Image.asset(
-                    "assets/images/iconfoodie1.png", 
-                    height: 250,
-                    width: 500,
+                    "assets/images/iconfoodie1.png",
+                    height: 300,
+                    width: 550,
                     fit: BoxFit.contain,
                   ),
                 ],
               ),
             ),
             ListTile(
-              leading: const Icon(Icons.notifications, color: Colors.white), 
+              leading: const Icon(Icons.notifications, color: Colors.white),
               title: const Text(
                 "Benachrichtigungen",
-                  style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.w600,
-              fontStyle: FontStyle.italic,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w600,
+                  fontStyle: FontStyle.italic,
+                ),
               ),
-                  ),
-              trailing: Switch( // Switch ist ein zum an und aus machen
+              trailing: Switch(
                 value: isClickOn,
                 onChanged: (value) {
                   setState(() {
                     isClickOn = value;
                   });
                 },
-                activeColor: isClickOn 
-                ? const Color.fromARGB(255, 46, 37, 23) 
-                : Colors.grey,
+                activeColor: isClickOn
+                    ? const Color.fromARGB(255, 46, 37, 23)
+                    : Colors.grey,
               ),
             ),
-            const Divider(color: Color.fromARGB(255, 255, 255, 255),
-            indent: 52,
-            endIndent: 30,
+            const Divider(
+              color: Color.fromARGB(255, 255, 255, 255),
+              indent: 52,
+              endIndent: 30,
             ),
             ListTile(
-              leading: const Icon(Icons.person, color: Colors.white),
-              title: const Text(
-                "Benutzer", 
-              style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.w600,
-              fontStyle: FontStyle.italic,
-              ),
+              leading: const Icon(Icons.email, color: Colors.white),
+              title: Text(
+                user?.email ?? "Keine E-Mail",
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w600,
+                  fontStyle: FontStyle.italic,
+                ),
               ),
               trailing: const Icon(Icons.arrow_forward_ios, color: Colors.white),
               onTap: () {
@@ -110,82 +113,33 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 );
               },
             ),
-            const Divider(color: Color.fromARGB(255, 255, 255, 255),
-            indent: 52,
-            endIndent: 30,
-            ),
+            // const Divider(color: Color.fromARGB(255, 255, 255, 255),
+            // indent: 52,
+            // endIndent: 30,
+            // ),
             // ListTile(
-            //   leading: const Icon(Icons.email, color: Colors.white),
+            //   leading: const Icon(Icons.fastfood_sharp, color: Colors.white),
             //   title: const Text(
-            //     "E-Mail Adresse ändern",
+            //     "Essgewohnheiten", 
             //   style: TextStyle(
             //   color: Colors.white,
             //   fontWeight: FontWeight.w600,
             //   fontStyle: FontStyle.italic,
-            //   ), 
-            //       ),
-            //   trailing: const Icon(
-            //     Icons.arrow_forward_ios, 
-            //     color: Colors.white
-            //     ),
-            //   onTap: () {
-            //     Navigator.push(
-            //       context,
-            //       MaterialPageRoute(
-            //           builder: (context) => const ChangeEmailScreen()),
-            //     );
-            //   },
-            // ),
-            // const Divider(color: Color.fromARGB(255, 255, 255, 255),
-            // indent: 52,
-            // endIndent: 30,
-            // ),
-            ListTile(
-              leading: const Icon(Icons.fastfood_sharp, color: Colors.white),
-              title: const Text(
-                "Essgewohnheiten", 
-              style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.w600,
-              fontStyle: FontStyle.italic,
-              ),                
-              ),
-              trailing: const Icon(Icons.arrow_forward_ios, color: Colors.white),
-              onTap: () {Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const FoodChoices()),
-                );
-              },
-            ),
-            // const Divider(color: Color.fromARGB(255, 255, 255, 255),
-            // indent: 52,
-            // endIndent: 30,
-            // ),
-            // ListTile(
-            //   leading: const Icon(Icons.password_rounded, color: Colors.white),
-            //   title: const Text(
-            //     "Passwort ändern",
-            //     style: TextStyle(
-            //   color: Colors.white,
-            //   fontWeight: FontWeight.w600,
-            //   fontStyle: FontStyle.italic,
+            //   ),                
             //   ),
-            //      ),
             //   trailing: const Icon(Icons.arrow_forward_ios, color: Colors.white),
             //   onTap: () {Navigator.push(
             //       context,
             //       MaterialPageRoute(
-            //           builder: (context) => const ChangePassword()), // das muss ich noch ändern in password 
+            //           builder: (context) => const FoodChoices()),
             //     );
             //   },
             // ),
-            
             const Divider(color: Color.fromARGB(255, 255, 255, 255),
             indent: 52,
             endIndent: 30,
             ),
-             const SizedBox(height: 40),
+             const SizedBox(height: 50),
               SignOutButton(
               text: "Abmelden",
               onPressed: () async {
