@@ -1,4 +1,3 @@
-
 import 'package:foodie_screen/feautures/discover/widgets/spot_widget.dart';
 import 'package:foodie_screen/feautures/feed/models/food_data.dart';
 import 'package:foodie_screen/feautures/feed/models/recipe.dart';
@@ -10,10 +9,10 @@ class MockDatabase implements DatabaseRepository {
   final List<String> categories = ["Low Carb", "Veggie", "schnell", "Season"];
   final List<Map<String, List<String>>> favoriteCollections = [];
   final List<SpotWidget> popularRecipes = [
-  SpotWidget(text: "Dumplings",picture: "assets/images/dumplings.png"),
-  SpotWidget(text: "Baklava", picture: "assets/images/baklava.png"),
-  SpotWidget(text: "Pizza Caprese", picture: "assets/images/pizza.png"),
-  SpotWidget(text: "Sushi", picture: "assets/images/sushi.png"),];
+  const SpotWidget(text: "Dumplings",picture: "assets/images/dumplings.png"),
+  const SpotWidget(text: "Baklava", picture: "assets/images/baklava.png"),
+  const SpotWidget(text: "Pizza Caprese", picture: "assets/images/pizza.png"),
+  const SpotWidget(text: "Sushi", picture: "assets/images/sushi.png"),];
 
    List<String> users = ["beyz", "6161"];
 
@@ -85,9 +84,9 @@ class MockDatabase implements DatabaseRepository {
 
   // Rezept löschen
 @override
-  Future<void> removeRecipe(String recipe) async {
+  Future<void> removeRecipe(String recipeName) async {
     await Future.delayed(const Duration(seconds: 3)); 
-    recipes.remove(recipe);
+    recipes.removeWhere((recipe) => recipe.recipeName == recipeName);
   }
 
   // Beliebte Rezepte abrufen

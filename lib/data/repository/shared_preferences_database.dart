@@ -65,10 +65,10 @@ class SharedPreferencesDatabase implements DatabaseRepository {
  final List<String> categories = ["Low Carb", "Veggie", "schnell", "Season"];
   final List<Map<String, List<String>>> favoriteCollections = [];
   final List<SpotWidget> popularRecipes = [
-  SpotWidget(text: "Dumplings",picture: "assets/images/dumplings.png"),
-  SpotWidget(text: "Baklava", picture: "assets/images/baklava.png"),
-  SpotWidget(text: "Pizza Caprese", picture: "assets/images/pizza.png"),
-  SpotWidget(text: "Sushi", picture: "assets/images/sushi.png"),];
+  const SpotWidget(text: "Dumplings",picture: "assets/images/dumplings.png"),
+  const SpotWidget(text: "Baklava", picture: "assets/images/baklava.png"),
+  const SpotWidget(text: "Pizza Caprese", picture: "assets/images/pizza.png"),
+  const SpotWidget(text: "Sushi", picture: "assets/images/sushi.png"),];
 
   
 List<String> getStringList(String key) {
