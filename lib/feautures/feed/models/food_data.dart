@@ -119,6 +119,7 @@ List<Recipe> recipes = [
        portionAmount: "2 Pers.",
        price: 16.98,
       recipeName: "Pancakes mit Apfelsirup",
+      category: "veggie",
       ingredients: [
         Ingredients(amount: 200, unit: "g", text: "Mehl"),
         Ingredients(amount: 1, unit: "TL", text: "Backpulver"),
@@ -165,6 +166,7 @@ List<Recipe> recipes = [
       preparationTime: "40 Min",
       portionAmount: "2 Pers.",
       price: 11,
+      category: "veggie",
       ingredients: [
         Ingredients(amount: 250, unit: "g", text: "Kichererbsen (getrocknet)"),
         Ingredients(amount: 1, unit: "", text: "Zwiebel"),
@@ -200,6 +202,7 @@ List<Recipe> recipes = [
       preparationTime: "30 Min",
       portionAmount: "2 Pers.",
       price: 12.5,
+      category: "veggie",
           imagePath: "assets/images/pizza.png",
       ingredients: [
         Ingredients(amount: 1, unit: "", text: "Pizzateig"),
@@ -228,7 +231,8 @@ List<Recipe> recipes = [
         preparationTime: "30 Min",
       portionAmount: "2 Pers.",
       price: 12.5,
-         imagePath: "assets/images/taco.png",
+      category: "veggie",
+      imagePath: "assets/images/taco.png",
       ingredients: [
         Ingredients(amount: 8, unit: "", text: "kleine Tortillas"),
         Ingredients(amount: 200, unit: "g", text: "schwarze Bohnen (aus der Dose)"),
@@ -256,6 +260,7 @@ List<Recipe> recipes = [
         imagePath: "assets/images/steak.png",
           preparationTime: "30 Min",
       portionAmount: "2 Pers.",
+      category:"low carb",
       price: 12.5,
       ingredients: [
         Ingredients(amount: 2, unit: "", text: "Rindersteaks (je ca. 200 g)"),
@@ -279,11 +284,13 @@ List<Recipe> recipes = [
       tipp: "Für extra Geschmack kann man die Steaks mit Knoblauchbutter servieren.",
     ),
     Recipe(
+
       recipeName: "Hamburger",
           imagePath: "assets/images/burger.png",
             preparationTime: "30 Min",
       portionAmount: "2 Pers.",
       price: 12.5,
+      category: "fast food",
       ingredients: [
         Ingredients(amount: 2, unit: "", text: "Burgerbrötchen"),
         Ingredients(amount: 2, unit: "", text: "Rinderpattys"),

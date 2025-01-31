@@ -6,14 +6,25 @@ class Recipe {
   final String portionAmount;
   final double price;
   final String imagePath;
+  final String category;
   int portion; // Speichern die Anzahl der Rezepte
   final String? tipp;
 
-  Recipe({required this.recipeName, required this.ingredients, required this.preparations, required this.preparationTime, required this.portionAmount, required this.price, required this.imagePath, required this.portion, required this.tipp});
+  Recipe({
+    required this.recipeName,
+    required this.ingredients,
+    required this.preparations,
+    required this.preparationTime,
+    required this.portionAmount,
+    required this.price,
+    required this.imagePath,
+    required this.category,
+    required this.portion,
+    required this.tipp,
+  });
 
-
- // Gibt uns folgende Struktur aus:
-/*
+  // Gibt uns folgende Struktur aus:
+  /*
     "        400 g\n"
                      "        200 g\n"
                      "         2 EL\n"
@@ -26,28 +37,26 @@ class Recipe {
                      "         1 TL\n"
                      "         1/5 \n"
                      "         2 EL\n",
-*/
-  String getIngredientsUnitText(){
+  */
+  String getIngredientsUnitText() {
     List<String> ingredientsUnitText = [];
-    for(Ingredients ingredient in ingredients){
+    for (Ingredients ingredient in ingredients) {
       ingredientsUnitText.add("        ${ingredient.amount * portion} ${ingredient.unit}");
     }
     return ingredientsUnitText.join("\n");
   }
 
-  String getIngredientsValues(){
+  String getIngredientsValues() {
     return ingredients.map((ingredient) => ingredient.text).join("\n");
   }
 
-String buildPreparationTexts(Preparation preparation){
+  String buildPreparationTexts(Preparation preparation) {
     List<String> text = [];
-    for(String preparationText in preparation.preparationTexts){
+    for (String preparationText in preparation.preparationTexts) {
       text.add("• $preparationText");
     }
     return text.join("\n");
   }
- 
- 
 }
 
 class Ingredients {

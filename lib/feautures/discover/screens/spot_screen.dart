@@ -1,17 +1,23 @@
-import 'dart:math';
-
-import 'package:flutter/material.dart';
+import "package:flutter/material.dart";
 import 'package:foodie_screen/config/colors.dart';
 import 'package:foodie_screen/data/repository/database_repository.dart';
 import 'package:foodie_screen/feautures/discover/widgets/category_widget.dart';
 import 'package:foodie_screen/feautures/discover/widgets/spot_widget.dart';
 import 'package:foodie_screen/feautures/feed/models/food_data.dart';
+import 'package:foodie_screen/feautures/feed/models/recipe.dart';
 import 'package:foodie_screen/feautures/feed/screens/recipe_screen.dart';
 import 'package:foodie_screen/shared/widgets/search_button.dart';
 import 'package:provider/provider.dart';
 
-class SpotScreen extends StatelessWidget {
+class SpotScreen extends StatefulWidget {
   const SpotScreen({super.key});
+
+  @override
+  _SpotScreenState createState() => _SpotScreenState();
+}
+
+class _SpotScreenState extends State<SpotScreen> {
+  String? selectedCategory;
 
   @override
   Widget build(BuildContext context) {
@@ -19,10 +25,7 @@ class SpotScreen extends StatelessWidget {
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [
-              backroundColor2,
-              backroundColor1,
-            ],
+            colors: [backroundColor2, backroundColor1],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -65,7 +68,14 @@ class SpotScreen extends StatelessWidget {
                 color: Color.fromARGB(255, 255, 252, 247),
               ),
               const SizedBox(height: 10),
-              const CategoryWidget(),
+              CategoryWidget(
+                onCategorySelected: (category) {
+                  setState(() {
+                    selectedCategory = category;
+                  });
+                },
+                selectedCategory: selectedCategory,
+              ),
               const SizedBox(height: 10),
               const Divider(
                 thickness: 0.6,
@@ -75,9 +85,9 @@ class SpotScreen extends StatelessWidget {
                 color: Color.fromARGB(255, 255, 252, 247),
               ),
               const SizedBox(height: 10),
-              const Text(
-                "Aktuell beliebte Rezepte",
-                style: TextStyle(
+              Text(
+                selectedCategory ?? "Aktuell beliebte Rezepte",
+                style: const TextStyle(
                   color: Colors.white,
                   fontSize: 24,
                   fontWeight: FontWeight.w600,
@@ -87,19 +97,29 @@ class SpotScreen extends StatelessWidget {
               ),
               const SizedBox(height: 30),
               Expanded(
-                child: FutureBuilder(
-                  future: context.read<DatabaseRepository>().getPopularRecipes(),
+                child: FutureBuilder<List<Recipe>>(
+                  future: selectedCategory == null
+                      ? context.read<DatabaseRepository>().getAllRecipes()
+                      : Future.value(recipes.where((
+                        recipe) => recipe.category.toLowerCase(
+
+                        ) 
+                        == selectedCategory!.toLowerCase()).toList()),
                   builder: (context, snapshot) {
                     if (snapshot.connectionState == ConnectionState.waiting) {
                       return const Center(
                         child: CircularProgressIndicator(),
                       );
+                    } else if (snapshot.hasError) {
+                      return Center(
+                        child: Text("Error: ${snapshot.error}"),
+                      );
+                    } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+                      return const Center(
+                        child: Text("Keine Rezepte gefunden"),
+                      );
                     } else {
-                      final random = Random();
-                      final allRecipes = [...recipes];
-                      allRecipes.shuffle(random);
-                      final selectedRecipes = allRecipes.take(4).toList();
-
+                      final recipeList = snapshot.data!;
                       return Column(
                         children: [
                           Row(
@@ -110,13 +130,13 @@ class SpotScreen extends StatelessWidget {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => RecipeScreen(recipe: selectedRecipes[0]),
+                                      builder: (context) => RecipeScreen(recipe: recipeList[0]),
                                     ),
                                   );
                                 },
                                 child: SpotWidget(
-                                  text: selectedRecipes[0].recipeName,
-                                  picture: selectedRecipes[0].imagePath,
+                                  text: recipeList[0].recipeName,
+                                  picture: recipeList[0].imagePath,
                                 ),
                               ),
                               const SizedBox(width: 10),
@@ -125,13 +145,13 @@ class SpotScreen extends StatelessWidget {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => RecipeScreen(recipe: selectedRecipes[1]),
+                                      builder: (context) => RecipeScreen(recipe: recipeList[1]),
                                     ),
                                   );
                                 },
                                 child: SpotWidget(
-                                  text: selectedRecipes[1].recipeName,
-                                  picture: selectedRecipes[1].imagePath,
+                                  text: recipeList[1].recipeName,
+                                  picture: recipeList[1].imagePath,
                                 ),
                               ),
                             ],
@@ -145,13 +165,13 @@ class SpotScreen extends StatelessWidget {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => RecipeScreen(recipe: selectedRecipes[2]),
+                                      builder: (context) => RecipeScreen(recipe: recipeList[2]),
                                     ),
                                   );
                                 },
                                 child: SpotWidget(
-                                  text: selectedRecipes[2].recipeName,
-                                  picture: selectedRecipes[2].imagePath,
+                                  text: recipeList[2].recipeName,
+                                  picture: recipeList[2].imagePath,
                                 ),
                               ),
                               const SizedBox(width: 10),
@@ -160,13 +180,14 @@ class SpotScreen extends StatelessWidget {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => RecipeScreen(recipe: selectedRecipes[3]),
+                                      builder: (context) => RecipeScreen(
+                                        recipe: recipeList[3]),
                                     ),
                                   );
                                 },
                                 child: SpotWidget(
-                                  text: selectedRecipes[3].recipeName,
-                                  picture: selectedRecipes[3].imagePath,
+                                  text: recipeList[3].recipeName,
+                                  picture: recipeList[3].imagePath,
                                 ),
                               ),
                             ],
