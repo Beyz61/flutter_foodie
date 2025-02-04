@@ -5,9 +5,11 @@ class SearchButton extends StatelessWidget {
   const SearchButton({
     super.key,
     required this.text,
+    required this.onChanged,
   });
 
   final String text;
+  final ValueChanged<String> onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -29,10 +31,11 @@ class SearchButton extends StatelessWidget {
           obscureText: false,
           textAlign: TextAlign.left,
           style: const TextStyle(
-            fontSize: 12,
-            fontWeight: FontWeight.w600,
+            fontSize: 14,
+            fontWeight: FontWeight.w500,
             fontFamily: "SFProDisplay",
             fontStyle: FontStyle.italic,
+            color: Colors.black54, 
           ),
           decoration: InputDecoration(
             hintText: text,
@@ -41,6 +44,7 @@ class SearchButton extends StatelessWidget {
               fontWeight: FontWeight.w500,
               fontFamily: "SFProDisplay",
               fontStyle: FontStyle.italic,
+              color: Colors.black54, 
             ),
             filled: true,
             fillColor: Colors.transparent,
@@ -66,6 +70,7 @@ class SearchButton extends StatelessWidget {
               ),
             ),
           ),
+          onChanged: onChanged,
         ),
       ),
     );

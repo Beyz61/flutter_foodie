@@ -7,7 +7,6 @@ import 'package:foodie_screen/feautures/favorite/widgets/fav_container_widget.da
 import 'package:foodie_screen/feautures/favorite/widgets/fav_containers_list.dart';
 import 'package:foodie_screen/feautures/favorite/widgets/recipe_list_dialog.dart';
 import 'package:foodie_screen/shared/widgets/fav_button.dart';
-import 'package:foodie_screen/shared/widgets/search_button.dart';
 
 class FavoritScreen extends StatefulWidget {
   const FavoritScreen({super.key});
@@ -61,7 +60,12 @@ class _FavoritScreenState extends State<FavoritScreen> {
           padding: const EdgeInsets.only(top: 80),
           child: Column(
             children: [
-              const SearchButton(text: "Was möchtest du heute kochen?"),
+              // SearchButton(
+              //   text: "Was möchtest du heute kochen?",
+              //   onChanged: (value) {
+                
+              //   },
+              // ),
               const SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

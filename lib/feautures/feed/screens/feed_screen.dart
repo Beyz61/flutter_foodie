@@ -14,6 +14,8 @@ class FeedScreen extends StatefulWidget {
   State<FeedScreen> createState() => _FeedScreenState();
 }
 class _FeedScreenState extends State<FeedScreen> {
+  String searchQuery = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +35,14 @@ class _FeedScreenState extends State<FeedScreen> {
           padding: const EdgeInsets.only(top: 80),
           child: Column(
             children: [
-              const SearchButton(text: "Was möchtest du heute kochen?"),
+              SearchButton(
+                text: "Was möchtest du heute kochen?",
+                onChanged: (query) {
+                  setState(() {
+                    searchQuery = query;
+                  });
+                },
+              ),
               const SizedBox(height: 10),
               Expanded(
                 child: FutureBuilder(
@@ -47,7 +56,9 @@ class _FeedScreenState extends State<FeedScreen> {
                         ),
                       );
                     }
-                      final recipes = snapshot.data as List<Recipe>; // wenn die Daten fertig geladen sind dann speichern.
+                      final recipes = (snapshot.data as List<Recipe>).where((recipe) {
+                        return recipe.recipeName.toLowerCase().contains(searchQuery.toLowerCase());
+                      }).toList(); // wenn die Daten fertig geladen sind dann speichern.
                       return ListView.builder(  // alle rezepte werden in einer Liste angezeigt
                         padding: EdgeInsets.zero,
                         scrollDirection: Axis.vertical,
