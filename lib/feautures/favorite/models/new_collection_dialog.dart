@@ -22,6 +22,12 @@ void showNewCollection(BuildContext context, Function onCollectionAdded) {
         ),
         content: TextField(
           controller: controller,
+          style: const TextStyle(
+            color: Color.fromARGB(255, 56, 41, 36), 
+            fontWeight: FontWeight.w500,
+            fontStyle: FontStyle.italic,
+            fontFamily: "SFProDisplay",
+          ),
           decoration: const InputDecoration(
             hintText: "Kollektion Name",
             hintStyle: TextStyle(

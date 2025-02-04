@@ -6,7 +6,6 @@ import 'package:foodie_screen/feautures/discover/widgets/spot_widget.dart';
 import 'package:foodie_screen/feautures/feed/models/food_data.dart';
 import 'package:foodie_screen/feautures/feed/models/recipe.dart';
 import 'package:foodie_screen/feautures/feed/screens/recipe_screen.dart';
-import 'package:foodie_screen/shared/widgets/search_button.dart';
 import 'package:provider/provider.dart';
 
 class SpotScreen extends StatefulWidget {
@@ -37,9 +36,9 @@ class _SpotScreenState extends State<SpotScreen> {
               const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Expanded(
-                    child: SearchButton(text: "Was möchtest du heute kochen?"),
-                  ),
+                  // Expanded(
+                  //   child: SearchButton(text: "Was möchtest du heute kochen?"),
+                  // ),
                 ],
               ),
               const SizedBox(height: 10),
@@ -108,7 +107,10 @@ class _SpotScreenState extends State<SpotScreen> {
                   builder: (context, snapshot) {
                     if (snapshot.connectionState == ConnectionState.waiting) {
                       return const Center(
-                        child: CircularProgressIndicator(),
+                        child: CircularProgressIndicator(
+                          valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                          strokeCap: StrokeCap.round,
+                        ),
                       );
                     } else if (snapshot.hasError) {
                       return Center(

@@ -17,14 +17,14 @@ class SpotWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
           child: Image.asset(
             picture,
-            height: 130,
+            height: 180,
             fit: BoxFit.cover,
             width: 180,
           ),
         ),
         Container(
           width: 180,
-          height: 50,
+          height: 70,
           decoration: BoxDecoration(
             color: Colors.black.withOpacity(0.4),
             borderRadius: BorderRadius.circular(8),
@@ -36,7 +36,7 @@ class SpotWidget extends StatelessWidget {
             style: const TextStyle(
               color: Colors.white,
               fontSize: 20,
-              fontWeight: FontWeight.w500,
+              fontWeight: FontWeight.w600,
               fontStyle: FontStyle.italic,
               fontFamily: "SFProDisplay",
             ),

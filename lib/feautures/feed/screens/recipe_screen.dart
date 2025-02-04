@@ -39,7 +39,7 @@ class _RecipeScreenState extends State<RecipeScreen> {
           ),
         ),
         child: Padding(
-          padding: const EdgeInsets.only(top: 80, right: 20, left: 20), 
+          padding: const EdgeInsets.only(top: 70, right: 20, left: 20), 
           child: SingleChildScrollView(
             child: Column(
               // crossAxisAlignment: CrossAxisAlignment.center,
@@ -64,13 +64,13 @@ class _RecipeScreenState extends State<RecipeScreen> {
                     ],
                   ), 
                 ),   
-                const SizedBox(height: 20),
+                const SizedBox(height: 5),
                 IconButton(
                   icon: const Icon(Icons.favorite_border, color: Colors.white),
                   onPressed: _addToFavorites,
                 ),
                 IngredientsContainer(recipe: widget.recipe,),
-                const SizedBox(height: 30),
+                const SizedBox(height: 16),
                 const Divider(
                   thickness: 0.7,
                   color: Color.fromARGB(255, 251, 248, 248),
