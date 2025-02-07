@@ -62,34 +62,43 @@ class PreparationScreen extends StatelessWidget {
               if(recipe.tipp != null)
                Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      "Tipps: ",
-                      style: TextStyle(
-                        color: Colors.red,
-                        fontWeight: FontWeight.w600,
-                        fontStyle: FontStyle.italic,
-                        fontFamily: "SFProDisplay",
-                        fontSize: 18,
-                      decoration: TextDecoration.underline, 
-                      decorationColor:Color.fromARGB(255, 203, 20, 20),
-                      ),
-                    ),
-                    Expanded(
-                      child: Text(
-                        recipe.tipp!,
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w400,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(255, 255, 255, 255).withOpacity(0.2),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  padding: const EdgeInsets.all(10),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        "Tipp: ",
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 0, 0, 0),
+                          fontWeight: FontWeight.w700,
                           fontStyle: FontStyle.italic,
+                          
                           fontFamily: "SFProDisplay",
+                          fontSize: 18,
+                          decoration: TextDecoration.underline, 
+                          decorationColor: Color.fromARGB(255, 203, 20, 20),
                         ),
                       ),
-                    ),
-                  ],
+                      const SizedBox(width: 5),
+                      Expanded(
+                        child: Text(
+                          recipe.tipp!,
+                          style: const TextStyle(
+                            color: Color.fromARGB(255, 13, 13, 13),
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                            fontStyle: FontStyle.italic,
+                            fontFamily: "SFProDisplay",
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               const SizedBox(height: 10),
@@ -98,14 +107,14 @@ class PreparationScreen extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 70,
                   color: Color.fromARGB(255, 255, 255, 255),
-                  fontWeight: FontWeight.w400,
+                  fontWeight: FontWeight.w700, // Make the text bolder
                   fontStyle: FontStyle.italic,
                   fontFamily: "SFProDisplay",
                   shadows: [
                     Shadow(
                       blurRadius: 10,
-                      color: Color.fromARGB(255, 255, 255, 255),
-                      offset: Offset(2, 2),
+                      color: Color.fromARGB(255, 0, 0, 0), 
+                      offset: Offset(3, 3), 
                     ),
                   ],
                 ),
