@@ -14,35 +14,25 @@ import 'package:foodie_screen/firebase_options.dart';
 import 'package:foodie_screen/shared/widgets/buttom_navigator.dart';
 import 'package:provider/provider.dart';
 
-
 void main() async {
-WidgetsFlutterBinding.ensureInitialized();
-await Firebase.initializeApp(
-options: DefaultFirebaseOptions.currentPlatform,
-
-);
-  runApp(MultiProvider(providers: [
-    Provider<DatabaseRepository>(create: (_)=> SharedPreferencesDatabase()
-    ),
-    Provider<AuthRepository>(create: (_)=> FirebaseAuthRepository()
-    ),
-  ],
-    child: MyApp()));
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(MultiProvider(
+    providers: [
+      Provider<DatabaseRepository>(create: (_) => SharedPreferencesDatabase()),
+      Provider<AuthRepository>(create: (_) => FirebaseAuthRepository()),
+    ],
+    child: MyApp(),
+  ));
 }
 
-// void main() async {
-  
-//   final repository = MockDatabase();
-//   runApp(MyApp( repository: repository));
-  
-// }
 class MyApp extends StatelessWidget {
   MyApp({super.key});
  
  final authInstance = FirebaseAuth.instance;
  final firestoreInstance = FirebaseFirestore.instance;
-
-//final DatabaseRepository repository= MockDatabase();
 
   @override
   Widget build(BuildContext context) {

@@ -38,7 +38,6 @@ class MockDatabase implements DatabaseRepository {
   @override
   Future<void> addUser(String user) async {
     await Future.delayed(const Duration(milliseconds: 1));
-    // überprüfen ob user in der Liste bereits existiert
     users.add(user);
   }
 

@@ -9,30 +9,27 @@ import 'package:google_sign_in/google_sign_in.dart';
 class FirebaseAuthRepository implements AuthRepository {
   @override
   Future<void> signIn() async {
-    // Implement the signIn logic here
+
   }
 final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
 final GoogleSignIn googleSignIn = GoogleSignIn();
-  
-  /*
-  // Anmelden mit Google Account
+
   @override
-  Future<void> signInWithGoogle() async {
+  Future<AppUser?> createWithEmailAndPassword(String email, String password) async {
     try {
-      final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
-      final GoogleSignInAuthentication? googleAuth =
-          await googleUser?.authentication;
-      final credential = GoogleAuthProvider.credential(
-        accessToken: googleAuth?.accessToken,
-        idToken: googleAuth?.idToken,
+      final credential = await firebaseAuth.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
       );
-      await googleSignIn.signInWithCredential(credential);
-    } on Exception catch (e) {
-      print('exception->$e');
+      final user = credential.user;
+      if (user == null) return null;
+      return AppUser(userId: user.uid, email: user.email);
+    } catch (e) {
+      throw Exception("Failed to create user: $e");
     }
   }
-*/
-    @override
+  
+  @override
   Future<AppUser?> signInWithGoogle() async {
     final GoogleSignInAccount? googleUser = await googleSignIn.signIn();
     if (googleUser == null) return null;
@@ -104,4 +101,6 @@ final GoogleSignIn googleSignIn = GoogleSignIn();
       await user.updateEmail(email);
     }
   }
+  
+ 
 }

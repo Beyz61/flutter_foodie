@@ -4,20 +4,20 @@ import 'package:flutter/material.dart';
 import 'package:foodie_screen/config/colors.dart';
 import 'package:foodie_screen/data/repository/auth_repository.dart';
 import 'package:provider/provider.dart';
-//! Anmelde Button
-class FoodieButton extends StatefulWidget {
-  const FoodieButton({
-    super.key, required this.text, required Function() onPressed, 
+//! Registrierungs Button
+class signUpButton extends StatefulWidget {
+  const signUpButton({
+    super.key, required this.text, required this.onPressed,
   });
 
   final String text;
-
+  final Function() onPressed;
 
   @override
-  State<FoodieButton> createState() => _FoodieButtonState();
+  State<signUpButton> createState() => _SignUpScreenState();
 }
 
-class _FoodieButtonState extends State<FoodieButton> {
+class _SignUpScreenState extends State<signUpButton> {
 
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
@@ -29,10 +29,9 @@ class _FoodieButtonState extends State<FoodieButton> {
         emailController.text.trim(),
         passwordController.text.trim(),
       );
-      // ignore: use_build_context_synchronously
+      
       Navigator.pushNamed(context, "/bottomnavigationbarmain");
     } catch (e) {
-      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text("Login fehlgeschlagen: ${e.toString()}")),
       );
@@ -53,7 +52,7 @@ class _FoodieButtonState extends State<FoodieButton> {
         ],
       ),
       child: ElevatedButton(
-        onPressed: login,
+        onPressed: widget.onPressed,
         
         style: ElevatedButton.styleFrom(
           padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 15),
