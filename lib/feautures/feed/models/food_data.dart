@@ -119,7 +119,7 @@ List<Recipe> recipes = [
        portionAmount: "2 Pers.",
        price: 16.98,
       recipeName: "Pancakes mit Apfelsirup",
-      category: "veggie",
+      category: "Dessert",
       ingredients: [
         Ingredients(amount: 200, unit: "g", text: "Mehl"),
         Ingredients(amount: 1, unit: "TL", text: "Backpulver"),
@@ -166,7 +166,7 @@ List<Recipe> recipes = [
       preparationTime: "40 Min",
       portionAmount: "2 Pers.",
       price: 11,
-      category: "veggie",
+      category: "Veggie",
       ingredients: [
         Ingredients(amount: 250, unit: "g", text: "Kichererbsen (getrocknet)"),
         Ingredients(amount: 1, unit: "", text: "Zwiebel"),
@@ -210,7 +210,7 @@ List<Recipe> recipes = [
       preparationTime: "30 Min",
       portionAmount: "2 Pers.",
       price: 12.5,
-      category: "veggie",
+      category: "Veggie",
           imagePath: "assets/images/pizza.png",
       ingredients: [
         Ingredients(amount: 1, unit: "", text: "Pizzateig"),
@@ -249,7 +249,7 @@ List<Recipe> recipes = [
         preparationTime: "30 Min",
       portionAmount: "2 Pers.",
       price: 12.5,
-      category: "veggie",
+      category: "Veggie",
       imagePath: "assets/images/taco.png",
       ingredients: [
         Ingredients(amount: 8, unit: "", text: "kleine Tortillas"),
@@ -281,7 +281,7 @@ List<Recipe> recipes = [
         imagePath: "assets/images/steak.png",
           preparationTime: "30 Min",
       portionAmount: "2 Pers.",
-      category:"low carb",
+      category:"Season",
       price: 12.5,
       ingredients: [
         Ingredients(amount: 2, unit: "", text: "Rindersteaks (je ca. 200 g)"),
@@ -317,7 +317,7 @@ List<Recipe> recipes = [
             preparationTime: "30 Min",
       portionAmount: "2 Pers.",
       price: 12.5,
-      category: "fast food",
+      category: "Fast Food",
       ingredients: [
         Ingredients(amount: 2, unit: "", text: "Burgerbrötchen"),
         Ingredients(amount: 2, unit: "", text: "Rinderpattys"),
@@ -358,7 +358,7 @@ List<Recipe> recipes = [
     preparationTime: "30 Min",
     portionAmount: "2 Pers.",
     price: 16.98,
-    category: "veggie",
+    category: "Veggie",
     ingredients: [
       Ingredients(amount: 200, unit: "g", text: "Sushi-Reis"),
       Ingredients(amount: 1, unit: "", text: "Nori-Blatt"),
@@ -396,7 +396,7 @@ List<Recipe> recipes = [
     preparationTime: "30 Min",
     portionAmount: "2 Pers.",
     price: 15.98,
-    category: "veggie",
+    category: "Veggie",
     ingredients: [
       Ingredients(amount: 6, unit: "", text: "Yufka-Blätter"),
       Ingredients(amount: 300, unit: "g", text: "Spinat"),
@@ -434,7 +434,7 @@ List<Recipe> recipes = [
     preparationTime: "30 Min",
     portionAmount: "2 Pers.",
     price: 16.98,
-    category: "fast food",
+    category: "Fast Food",
     ingredients: [
       Ingredients(amount: 400, unit: "g", text: "Kabeljaufilets"),
       Ingredients(amount: 200, unit: "g", text: "Mehl"),
@@ -470,7 +470,7 @@ List<Recipe> recipes = [
     preparationTime: "30 Min",
     portionAmount: "2 Pers.",
     price: 13.98,
-    category: "italian",
+    category: " Fast Food",
     ingredients: [
       Ingredients(amount: 200, unit: "g", text: "Lasagneblätter"),
       Ingredients(amount: 400, unit: "g", text: "Hackfleisch"),
@@ -512,7 +512,7 @@ List<Recipe> recipes = [
     preparationTime: "30 Min",
     portionAmount: "2 Pers.",
     price: 12.00,
-    category: "dessert",
+    category: "Dessert",
     ingredients: [
       Ingredients(amount: 100, unit: "g", text: "Zartbitterschokolade"),
       Ingredients(amount: 50, unit: "g", text: "Butter"),
@@ -551,7 +551,7 @@ List<Recipe> recipes = [
     preparationTime: "30 Min",
     portionAmount: "2 Pers.",
     price: 19.00,
-    category: "side dish",
+    category: "Veggie",
     ingredients: [
       Ingredients(amount: 600, unit: "g", text: "Kartoffeln"),
       Ingredients(amount: 200, unit: "ml", text: "Sahne"),
@@ -578,5 +578,112 @@ List<Recipe> recipes = [
     ],
     portion: 1,
     tipp: null,
+  ),
+  Recipe(
+    recipeName: "Chicken Salat",
+    imagePath: "assets/images/chickensalad.png",
+    preparationTime: "20 Min",
+    portionAmount: "2 Pers.",
+    price: 10.00,
+    category: "Low Carb",
+    ingredients: [
+      Ingredients(amount: 200, unit: "g", text: "Hähnchenbrust"),
+      Ingredients(amount: 100, unit: "g", text: "Salatmix"),
+      Ingredients(amount: 1, unit: "", text: "Avocado"),
+      Ingredients(amount: 1, unit: "", text: "Tomate"),
+      Ingredients(amount: 50, unit: "g", text: "Feta-Käse"),
+      Ingredients(amount: 2, unit: "EL", text: "Olivenöl"),
+      Ingredients(amount: 1, unit: "EL", text: "Zitronensaft"),
+      Ingredients(amount: 1, unit: "Prise", text: "Salz"),
+      Ingredients(amount: 1, unit: "Prise", text: "Pfeffer"),
+    ],
+    preparations: [
+      Preparation(title: "1. Step", preparationTexts: [
+        "Hähnchenbrust in Streifen schneiden und in einer Pfanne mit Olivenöl anbraten.",
+      ]),
+      Preparation(title: "2. Step", preparationTexts: [
+        "Salatmix, Avocado, Tomate und Feta-Käse in einer Schüssel vermengen.",
+      ]),
+      Preparation(title: "3. Step", preparationTexts: [
+        "Hähnchenstreifen hinzufügen und mit Olivenöl, Zitronensaft, Salz und Pfeffer abschmecken.",
+      ]),
+      Preparation(title: "4. Step", preparationTexts: [
+        "Gut vermengen und servieren.",
+      ]),
+    ],
+    portion: 1,
+    tipp: "Für extra Geschmack etwas Balsamico-Essig hinzufügen.",
+  ),
+  Recipe(
+    recipeName: "Chicken Wings",
+    imagePath: "assets/images/chickenwings.png",
+    preparationTime: "30 Min",
+    portionAmount: "2 Pers.",
+    price: 12.00,
+    category: "Fast Food",
+    ingredients: [
+      Ingredients(amount: 500, unit: "g", text: "Hähnchenflügel"),
+      Ingredients(amount: 2, unit: "EL", text: "Olivenöl"),
+      Ingredients(amount: 1, unit: "TL", text: "Paprikapulver"),
+      Ingredients(amount: 1, unit: "TL", text: "Knoblauchpulver"),
+      Ingredients(amount: 1, unit: "TL", text: "Zwiebelpulver"),
+      Ingredients(amount: 1, unit: "Prise", text: "Salz"),
+      Ingredients(amount: 1, unit: "Prise", text: "Pfeffer"),
+      Ingredients(amount: 100, unit: "ml", text: "BBQ-Sauce"),
+    ],
+    preparations: [
+      Preparation(title: "1. Step", preparationTexts: [
+        "Hähnchenflügel mit Olivenöl, Paprikapulver, Knoblauchpulver, Zwiebelpulver, Salz und Pfeffer marinieren.",
+      ]),
+      Preparation(title: "2. Step", preparationTexts: [
+        "Im vorgeheizten Ofen bei 200°C ca. 25 Minuten backen.",
+      ]),
+      Preparation(title: "3. Step", preparationTexts: [
+        "Mit BBQ-Sauce bestreichen und weitere 5 Minuten backen.",
+      ]),
+      Preparation(title: "4. Step", preparationTexts: [
+        "Heiß servieren.",
+      ]),
+    ],
+    portion: 1,
+    tipp: "Mit frischen Kräutern garnieren.",
+  ),
+  Recipe(
+    recipeName: "Pumpkin Suppe",
+    imagePath: "assets/images/pumpkin_soup.png",
+    preparationTime: "40 Min",
+    portionAmount: "2 Pers.",
+    price: 8.00,
+    category: "Season",
+    ingredients: [
+      Ingredients(amount: 500, unit: "g", text: "Kürbis"),
+      Ingredients(amount: 1, unit: "", text: "Zwiebel"),
+      Ingredients(amount: 2, unit: "", text: "Knoblauchzehen"),
+      Ingredients(amount: 500, unit: "ml", text: "Gemüsebrühe"),
+      Ingredients(amount: 200, unit: "ml", text: "Kokosmilch"),
+      Ingredients(amount: 1, unit: "TL", text: "Ingwer (gerieben)"),
+      Ingredients(amount: 1, unit: "Prise", text: "Salz"),
+      Ingredients(amount: 1, unit: "Prise", text: "Pfeffer"),
+      Ingredients(amount: 1, unit: "EL", text: "Olivenöl"),
+    ],
+    preparations: [
+      Preparation(title: "1. Step", preparationTexts: [
+        "Kürbis schälen und würfeln. Zwiebel und Knoblauch hacken.",
+      ]),
+      Preparation(title: "2. Step", preparationTexts: [
+        "Zwiebel und Knoblauch in Olivenöl anbraten. Kürbis hinzufügen und kurz mitbraten.",
+      ]),
+      Preparation(title: "3. Step", preparationTexts: [
+        "Mit Gemüsebrühe ablöschen und ca. 20 Minuten köcheln lassen.",
+      ]),
+      Preparation(title: "4. Step", preparationTexts: [
+        "Kokosmilch und Ingwer hinzufügen und pürieren. Mit Salz und Pfeffer abschmecken.",
+      ]),
+      Preparation(title: "5. Step", preparationTexts: [
+        "Heiß servieren.",
+      ]),
+    ],
+    portion: 1,
+    tipp: "Mit Kürbiskernen und frischen Kräutern garnieren.",
   ),
 ];

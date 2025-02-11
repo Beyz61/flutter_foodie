@@ -16,12 +16,12 @@ class SpotScreen extends StatefulWidget {
 }
 
 class _SpotScreenState extends State<SpotScreen> {
-  String? selectedCategory;
+  String? selectedCategory; // Die ausgewählte Kategorie
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: Container,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [backroundColor2, backroundColor1],
@@ -46,7 +46,7 @@ class _SpotScreenState extends State<SpotScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Text(
-                    "Top Kategorien",
+                    "Top Kategorien", // Text für Top Kategorien
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 24,
@@ -68,12 +68,12 @@ class _SpotScreenState extends State<SpotScreen> {
               ),
               const SizedBox(height: 10),
               CategoryWidget(
-                onCategorySelected: (category) {
+                onCategorySelected: (category) { // Wenn eine Kategorie ausgewählt wird
                   setState(() {
-                    selectedCategory = category;
+                    selectedCategory = category; //  die ausgewählte Kategorie
                   });
                 },
-                selectedCategory: selectedCategory,
+                selectedCategory: selectedCategory, // aktuell ausgewählte Kategorie
               ),
               const SizedBox(height: 10),
               const Divider(
@@ -85,7 +85,7 @@ class _SpotScreenState extends State<SpotScreen> {
               ),
               const SizedBox(height: 10),
               Text(
-                selectedCategory ?? "Aktuell beliebte Rezepte",
+                selectedCategory ?? "Aktuell beliebte Rezepte", // Zeige die ausgewählte Kategorie oder Standardtext
                 style: const TextStyle(
                   color: Colors.white,
                   fontSize: 24,
@@ -98,12 +98,8 @@ class _SpotScreenState extends State<SpotScreen> {
               Expanded(
                 child: FutureBuilder<List<Recipe>>(
                   future: selectedCategory == null
-                      ? context.read<DatabaseRepository>().getAllRecipes()
-                      : Future.value(recipes.where((
-                        recipe) => recipe.category.toLowerCase(
-
-                        ) 
-                        == selectedCategory!.toLowerCase()).toList()),
+                      ? context.read<DatabaseRepository>().getAllRecipes() // Alle Rezepte holen, wenn keine Kategorie ausgewählt ist
+                      : Future.value(recipes.where((recipe) => recipe.category.toLowerCase() == selectedCategory!.toLowerCase()).toList()), // Rezepte nach Kategorie filtern
                   builder: (context, snapshot) {
                     if (snapshot.connectionState == ConnectionState.waiting) {
                       return const Center(
@@ -114,87 +110,53 @@ class _SpotScreenState extends State<SpotScreen> {
                       );
                     } else if (snapshot.hasError) {
                       return Center(
-                        child: Text("Error: ${snapshot.error}"),
-                      );
-                    } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-                      return const Center(
-                        child: Text("Keine Rezepte gefunden"),
+                        child: Text("Error: ${snapshot.error}"), // Fehler anzeigen
                       );
                     } else {
-                      final recipeList = snapshot.data!;
-                      return Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              GestureDetector(
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => RecipeScreen(recipe: recipeList[0]),
-                                    ),
-                                  );
-                                },
-                                child: SpotWidget(
-                                  text: recipeList[0].recipeName,
-                                  picture: recipeList[0].imagePath,
-                                ),
-                              ),
-                              const SizedBox(width: 10),
-                              GestureDetector(
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => RecipeScreen(recipe: recipeList[1]),
-                                    ),
-                                  );
-                                },
-                                child: SpotWidget(
-                                  text: recipeList[1].recipeName,
-                                  picture: recipeList[1].imagePath,
-                                ),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(height: 20),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              GestureDetector(
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => RecipeScreen(recipe: recipeList[2]),
-                                    ),
-                                  );
-                                },
-                                child: SpotWidget(
-                                  text: recipeList[2].recipeName,
-                                  picture: recipeList[2].imagePath,
-                                ),
-                              ),
-                              const SizedBox(width: 10),
-                              GestureDetector(
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => RecipeScreen(
-                                        recipe: recipeList[3]),
-                                    ),
-                                  );
-                                },
-                                child: SpotWidget(
-                                  text: recipeList[3].recipeName,
-                                  picture: recipeList[3].imagePath,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
+                      final recipeList = snapshot.data ?? [];
+                      final displayList = List<Recipe>.from(recipeList);
+                      while (displayList.length < 4) {
+                        displayList.add(Recipe(
+                          recipeName: "", // Leeres Rezept hinzufügen, wenn weniger als 4 Rezepte vorhanden sind
+                          imagePath: "",
+                          preparationTime: "",
+                          portionAmount: "",
+                          price: 0.0,
+                          category: "",
+                          ingredients: [],
+                          preparations: [],
+                          portion: 0,
+                          tipp: null,
+                        ));
+                      }
+                      return GridView.builder(
+                       padding: EdgeInsets.zero, 
+                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
+                          crossAxisSpacing: 10,
+                          mainAxisSpacing: 10,
+                          childAspectRatio: 1.0,
+                        ),
+                        itemCount: 4,
+                        itemBuilder: (context, index) {
+                          final recipe = displayList[index];
+                          return recipe.recipeName.isEmpty
+                              ? Container()
+                              : GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => RecipeScreen(recipe: recipe), // Rezeptdetails anzeigen
+                                      ),
+                                    );
+                                  },
+                                  child: SpotWidget(
+                                    text: recipe.recipeName, // Rezeptname anzeigen
+                                    picture: recipe.imagePath, // Rezeptbild anzeigen
+                                  ),
+                                );
+                        },
                       );
                     }
                   },
@@ -204,6 +166,6 @@ class _SpotScreenState extends State<SpotScreen> {
           ),
         ),
       ),
-    );
+    )
   }
 }
