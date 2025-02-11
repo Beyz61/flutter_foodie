@@ -58,10 +58,7 @@ void showNewCollection(BuildContext context, Function onCollectionAdded) {
                   FavCollection(
                     collectionName: collectionName,
                     recipes: [], // kommt später, noch keine Rezepte
-                    image1: " ",
-                    image2: " ",
-                    image3: " ",
-                    image4: "",
+                   
                   ),
                 );
                 

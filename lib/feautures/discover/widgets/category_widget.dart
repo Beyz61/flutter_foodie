@@ -70,7 +70,7 @@ class CategoryWidget extends StatelessWidget {
                   border: Border.all(color: Colors.white, width: 2),
                 ),
                 padding: const EdgeInsets.all(10),
-                child: Icon(Icons.timer, size: 40, color: selectedCategory == "Fast Food" ? Colors.black : const Color.fromARGB(255, 0, 0, 0)),
+                child: Icon(Icons.fastfood, size: 40, color: selectedCategory == "Fast Food" ? Colors.black : const Color.fromARGB(255, 91, 71, 71)),
               ),
               const SizedBox(height: 5),
               Text("Fast Food", style: TextStyle(color: selectedCategory == "Fast Food" ? Colors.black : Colors.white,

@@ -6,6 +6,7 @@ import 'package:foodie_screen/feautures/favorite/models/new_collection_dialog.da
 import 'package:foodie_screen/feautures/favorite/widgets/fav_container_widget.dart';
 import 'package:foodie_screen/feautures/favorite/widgets/fav_containers_list.dart';
 import 'package:foodie_screen/feautures/favorite/widgets/recipe_list_dialog.dart';
+import 'package:foodie_screen/feautures/feed/logic/recipe_service.dart';
 import 'package:foodie_screen/shared/widgets/fav_button.dart';
 
 class FavoritScreen extends StatefulWidget {
@@ -104,14 +105,13 @@ class _FavoritScreenState extends State<FavoritScreen> {
                           itemCount: favCollectionsList.length,
                           itemBuilder: (context, index) {
                             final favContainer = favCollectionsList[index];
+                            final firstRecipe= RecipeService().getByName(favContainer.recipes.last);
                             return DisplayFavContainer(
                               onTap: () {
                                 showRecipeListDialog(context, favContainer);
                               },
-                              picture1: favContainer.image1,
-                              picture2: favContainer.image2,
-                              picture3: favContainer.image3,
-                              picture4: favContainer.image4,
+                              picture: firstRecipe.imagePath,
+                             
                               text: favContainer.collectionName,
                               onDelete: () {
                                 _deleteCollection(index);

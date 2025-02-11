@@ -17,10 +17,6 @@ class SharedPreferencesHelper {
       return jsonEncode({
         "collectionName": collection.collectionName,
         "recipes": collection.recipes,
-        "image1": collection.image1,
-        "image2": collection.image2,
-        "image3": collection.image3,
-        "image4": collection.image4,
       });
     }).toList();
     await prefs.setStringList(_favCollectionsKey, encodedCollections);
@@ -51,10 +47,6 @@ class SharedPreferencesHelper {
       return FavCollection(
         collectionName: collectionMap["collectionName"],
         recipes: List<String>.from(collectionMap["recipes"]),
-        image1: collectionMap["image1"],
-        image2: collectionMap["image2"],
-        image3: collectionMap["image3"],
-        image4: collectionMap["image4"],
       );
     }).toList();
   }
@@ -82,10 +74,6 @@ Future<void> saveCollection(FavCollection collection) async {
   collections.add(jsonEncode({
     "collectionName": collection.collectionName,
     "recipes": collection.recipes,
-    "image1": collection.image1,
-    "image2": collection.image2,
-    "image3": collection.image3,
-    "image4": collection.image4,
     }));
 
   @override

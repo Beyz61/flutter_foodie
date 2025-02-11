@@ -94,7 +94,7 @@ class _SpotScreenState extends State<SpotScreen> {
                   fontFamily: "SFProDisplay",
                 ),
               ),
-              const SizedBox(height: 30),
+              const SizedBox(height: 10),
               Expanded(
                 child: FutureBuilder<List<Recipe>>(
                   future: selectedCategory == null

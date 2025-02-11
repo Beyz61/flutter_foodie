@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:foodie_screen/data/repository/shared_preferences_database.dart';
+import 'package:foodie_screen/feautures/favorite/models/fav_collection_item.dart';
 import 'package:foodie_screen/feautures/favorite/widgets/fav_containers_list.dart';
 
 class FavDialog {
-  static void showAddToCollectionDialog(BuildContext context, String recipeName, Function onAdded) {
+  static void showAddToCollectionDialog(
+  BuildContext context, 
+  String recipeName, 
+  Function onAdded,
+  ) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -35,7 +40,11 @@ class FavDialog {
     );
   }
 
-  static void showRemoveFromCollectionDialog(BuildContext context, String recipeName, Function onRemoved) {
+  static void showRemoveFromCollectionDialog(
+    BuildContext context,
+   String recipeName, 
+   Function onRemoved,
+) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
