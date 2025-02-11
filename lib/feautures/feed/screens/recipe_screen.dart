@@ -44,6 +44,7 @@ class _RecipeScreenState extends State<RecipeScreen> {
             child: Column(
               // crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+
                 Text(
                   widget.recipe.recipeName, 
                   textAlign: TextAlign.center,
@@ -64,6 +65,7 @@ class _RecipeScreenState extends State<RecipeScreen> {
                     ],
                   ), 
                 ),   
+                
                 const SizedBox(height: 5),
                 IconButton(
                   icon: const Icon(Icons.favorite_border, color: Colors.white),

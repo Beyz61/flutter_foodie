@@ -113,7 +113,13 @@ class _FavoritScreenState extends State<FavoritScreen> {
                           itemCount: favCollectionsList.length,
                           itemBuilder: (context, index) {
                             final favContainer = favCollectionsList[index];
+                            
+                            // Wenn es bereits eintrage in der liste giebt
+                             print(favContainer.recipes);
+                            if (favContainer.recipes.isNotEmpty){
+                             
                             final firstRecipe= RecipeService().getByName(favContainer.recipes.last);
+                            
                             return DisplayFavContainer(
                               onTap: () {
                                 showRecipeListDialog(context, favContainer);
@@ -124,7 +130,11 @@ class _FavoritScreenState extends State<FavoritScreen> {
                               onDelete: () {
                                 _deleteCollection(index);
                               },
-                            );
+                            );}
+                            // Wenn die liste noch leer ist
+                            else {
+                              return Container(height: 20, width: 20, color: Colors.grey,);
+                              }
                           },
                         ),
                       ),

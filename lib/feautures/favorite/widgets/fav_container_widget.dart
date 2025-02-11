@@ -80,7 +80,7 @@ class DisplayFavContainer extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 4),
                 decoration: BoxDecoration(
-                  color: Colors.black.withOpacity(0.5),
+                  color: const Color.fromARGB(255, 9, 9, 9).withOpacity(0.5),
                   borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(22), bottomRight: Radius.circular(22)),
                 ),
                 child: Row(
