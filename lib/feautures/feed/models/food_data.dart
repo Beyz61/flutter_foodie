@@ -281,7 +281,7 @@ List<Recipe> recipes = [
         imagePath: "assets/images/steak.png",
           preparationTime: "30 Min",
       portionAmount: "2 Pers.",
-      category:"Season",
+      category:"Low Carb",
       price: 12.5,
       ingredients: [
         Ingredients(amount: 2, unit: "", text: "Rindersteaks (je ca. 200 g)"),
@@ -654,7 +654,7 @@ List<Recipe> recipes = [
     preparationTime: "40 Min",
     portionAmount: "2 Pers.",
     price: 8.00,
-    category: "Season",
+    category: "Low Carb",
     ingredients: [
       Ingredients(amount: 500, unit: "g", text: "Kürbis"),
       Ingredients(amount: 1, unit: "", text: "Zwiebel"),

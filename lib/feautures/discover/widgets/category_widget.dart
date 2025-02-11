@@ -82,20 +82,20 @@ class CategoryWidget extends StatelessWidget {
           ),
         ),
         GestureDetector(
-          onTap: () => onCategorySelected("Season"),
+          onTap: () => onCategorySelected("Dessert"),
           child: Column(
             children: [
               Container(
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: selectedCategory == "Season" ? Colors.white : Colors.transparent,
+                  color: selectedCategory == "Dessert" ? Colors.white : Colors.transparent,
                   border: Border.all(color: Colors.white, width: 2),
                 ),
                 padding: const EdgeInsets.all(10),
-                child: Icon(Icons.wb_sunny, size: 40, color: selectedCategory == "Season" ? Colors.black : Colors.yellow),
+                child: Icon(Icons.cake_outlined, size: 40, color: selectedCategory == "Dessert" ? Colors.black : const Color.fromARGB(255, 193, 16, 111)),
               ),
               const SizedBox(height: 5),
-              Text("Season", style: TextStyle(color: selectedCategory == "Season" ? Colors.black : Colors.white,
+              Text("Dessert", style: TextStyle(color: selectedCategory == "Dessert" ? Colors.black : Colors.white,
                 fontWeight: FontWeight.w600,
                 fontStyle: FontStyle.italic,
                 fontFamily: "SFProDisplay",

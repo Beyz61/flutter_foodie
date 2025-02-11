@@ -21,7 +21,7 @@ class _SpotScreenState extends State<SpotScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container,
+      body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [backroundColor2, backroundColor1],
@@ -166,6 +166,6 @@ class _SpotScreenState extends State<SpotScreen> {
           ),
         ),
       ),
-    )
+    );
   }
 }
