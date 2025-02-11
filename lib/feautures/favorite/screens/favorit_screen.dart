@@ -87,10 +87,18 @@ class _FavoritScreenState extends State<FavoritScreen> {
                 child: Container(
                   margin: const EdgeInsets.all(10),
                   width: 370,
-                  padding: const EdgeInsets.all(8),
+                  padding: const EdgeInsets.all(16), 
                   decoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.5),
-                    borderRadius: BorderRadius.circular(16),
+                    color: const Color.fromARGB(15, 0, 0, 0).withOpacity(0.6), 
+                    borderRadius: BorderRadius.circular(20), 
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.2),
+                        spreadRadius: 2,
+                        blurRadius: 5,
+                        offset: const Offset(0, 3), 
+                      ),
+                    ],
                   ),
                   child: Column(
                     children: [
