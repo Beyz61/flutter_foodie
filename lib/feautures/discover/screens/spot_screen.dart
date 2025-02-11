@@ -16,7 +16,7 @@ class SpotScreen extends StatefulWidget {
 }
 
 class _SpotScreenState extends State<SpotScreen> {
-  String? selectedCategory; // Die ausgewählte Kategorie
+  String? selectedCategory;
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +46,7 @@ class _SpotScreenState extends State<SpotScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Text(
-                    "Top Kategorien", // Text für Top Kategorien
+                    "Top Kategorien",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 24,
@@ -68,12 +68,12 @@ class _SpotScreenState extends State<SpotScreen> {
               ),
               const SizedBox(height: 10),
               CategoryWidget(
-                onCategorySelected: (category) { // Wenn eine Kategorie ausgewählt wird
+                onCategorySelected: (category) {
                   setState(() {
-                    selectedCategory = category; //  die ausgewählte Kategorie
+                    selectedCategory = category;
                   });
                 },
-                selectedCategory: selectedCategory, // aktuell ausgewählte Kategorie
+                selectedCategory: selectedCategory,
               ),
               const SizedBox(height: 10),
               const Divider(
@@ -85,7 +85,7 @@ class _SpotScreenState extends State<SpotScreen> {
               ),
               const SizedBox(height: 10),
               Text(
-                selectedCategory ?? "Aktuell beliebte Rezepte", // Zeige die ausgewählte Kategorie oder Standardtext
+                selectedCategory ?? "Aktuell beliebte Rezepte",
                 style: const TextStyle(
                   color: Colors.white,
                   fontSize: 24,
@@ -98,8 +98,8 @@ class _SpotScreenState extends State<SpotScreen> {
               Expanded(
                 child: FutureBuilder<List<Recipe>>(
                   future: selectedCategory == null
-                      ? context.read<DatabaseRepository>().getAllRecipes() // Alle Rezepte holen, wenn keine Kategorie ausgewählt ist
-                      : Future.value(recipes.where((recipe) => recipe.category.toLowerCase() == selectedCategory!.toLowerCase()).toList()), // Rezepte nach Kategorie filtern
+                      ? context.read<DatabaseRepository>().getAllRecipes()
+                      : Future.value(recipes.where((recipe) => recipe.category.toLowerCase() == selectedCategory!.toLowerCase()).toList()),
                   builder: (context, snapshot) {
                     if (snapshot.connectionState == ConnectionState.waiting) {
                       return const Center(
@@ -110,14 +110,14 @@ class _SpotScreenState extends State<SpotScreen> {
                       );
                     } else if (snapshot.hasError) {
                       return Center(
-                        child: Text("Error: ${snapshot.error}"), // Fehler anzeigen
+                        child: Text("Error: ${snapshot.error}"),
                       );
                     } else {
                       final recipeList = snapshot.data ?? [];
                       final displayList = List<Recipe>.from(recipeList);
                       while (displayList.length < 4) {
                         displayList.add(Recipe(
-                          recipeName: "", // Leeres Rezept hinzufügen, wenn weniger als 4 Rezepte vorhanden sind
+                          recipeName: "",
                           imagePath: "",
                           preparationTime: "",
                           portionAmount: "",
@@ -147,13 +147,13 @@ class _SpotScreenState extends State<SpotScreen> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => RecipeScreen(recipe: recipe), // Rezeptdetails anzeigen
+                                        builder: (context) => RecipeScreen(recipe: recipe),
                                       ),
                                     );
                                   },
                                   child: SpotWidget(
-                                    text: recipe.recipeName, // Rezeptname anzeigen
-                                    picture: recipe.imagePath, // Rezeptbild anzeigen
+                                    text: recipe.recipeName,
+                                    picture: recipe.imagePath,
                                   ),
                                 );
                         },

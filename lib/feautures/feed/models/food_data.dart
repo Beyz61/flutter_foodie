@@ -686,4 +686,427 @@ List<Recipe> recipes = [
     portion: 1,
     tipp: "Mit Kürbiskernen und frischen Kräutern garnieren.",
   ),
+  Recipe(
+    recipeName: "Schokoladenkuchen",
+    imagePath: "assets/images/schokokuchen.png",
+    preparationTime: "45 Min",
+    portionAmount: "8 Pers.",
+    price: 20.00,
+    category: "Dessert",
+    ingredients: [
+      Ingredients(amount: 200, unit: "g", text: "Zartbitterschokolade"),
+      Ingredients(amount: 200, unit: "g", text: "Butter"),
+      Ingredients(amount: 200, unit: "g", text: "Zucker"),
+      Ingredients(amount: 4, unit: "", text: "Eier"),
+      Ingredients(amount: 100, unit: "g", text: "Mehl"),
+      Ingredients(amount: 1, unit: "TL", text: "Backpulver"),
+      Ingredients(amount: 1, unit: "Prise", text: "Salz"),
+    ],
+    preparations: [
+      Preparation(title: "1. Step", preparationTexts: [
+        "Schokolade und Butter im Wasserbad schmelzen.",
+      ]),
+      Preparation(title: "2. Step", preparationTexts: [
+        "Eier und Zucker schaumig schlagen, geschmolzene Schokolade unterrühren.",
+      ]),
+      Preparation(title: "3. Step", preparationTexts: [
+        "Mehl, Backpulver und Salz unterheben.",
+      ]),
+      Preparation(title: "4. Step", preparationTexts: [
+        "Teig in eine gefettete Form füllen und bei 180°C ca. 25-30 Minuten backen.",
+      ]),
+    ],
+    portion: 1,
+    tipp: "Mit Puderzucker bestäuben und servieren.",
+  ),
+  Recipe(
+    recipeName: "Erdbeer-Tiramisu",
+    imagePath: "assets/images/erdbeer_tiramisu.png",
+    preparationTime: "30 Min",
+    portionAmount: "6 Pers.",
+    price: 15.00,
+    category: "Dessert",
+    ingredients: [
+      Ingredients(amount: 500, unit: "g", text: "Erdbeeren"),
+      Ingredients(amount: 250, unit: "g", text: "Mascarpone"),
+      Ingredients(amount: 200, unit: "ml", text: "Sahne"),
+      Ingredients(amount: 100, unit: "g", text: "Zucker"),
+      Ingredients(amount: 1, unit: "Packung", text: "Löffelbiskuits"),
+      Ingredients(amount: 100, unit: "ml", text: "Orangensaft"),
+    ],
+    preparations: [
+      Preparation(title: "1. Step", preparationTexts: [
+        "Erdbeeren waschen und in Scheiben schneiden.",
+      ]),
+      Preparation(title: "2. Step", preparationTexts: [
+        "Mascarpone, Sahne und Zucker verrühren.",
+      ]),
+      Preparation(title: "3. Step", preparationTexts: [
+        "Löffelbiskuits in Orangensaft tauchen und in eine Form schichten.",
+      ]),
+      Preparation(title: "4. Step", preparationTexts: [
+        "Mascarponecreme und Erdbeeren darauf verteilen, Schichten wiederholen.",
+      ]),
+    ],
+    portion: 1,
+    tipp: "Mit Kakaopulver bestäuben und kalt servieren.",
+  ),
+  Recipe(
+    recipeName: "Panna Cotta",
+    imagePath: "assets/images/panna_cotta.png",
+    preparationTime: "20 Min",
+    portionAmount: "4 Pers.",
+    price: 10.00,
+    category: "Dessert",
+    ingredients: [
+      Ingredients(amount: 500, unit: "ml", text: "Sahne"),
+      Ingredients(amount: 100, unit: "g", text: "Zucker"),
+      Ingredients(amount: 1, unit: "Stange", text: "Vanille"),
+      Ingredients(amount: 4, unit: "Blatt", text: "Gelatine"),
+      Ingredients(amount: 200, unit: "g", text: "Beeren (zum Servieren)"),
+    ],
+    preparations: [
+      Preparation(title: "1. Step", preparationTexts: [
+        "Sahne, Zucker und Vanille in einem Topf erhitzen.",
+      ]),
+      Preparation(title: "2. Step", preparationTexts: [
+        "Gelatine in kaltem Wasser einweichen, ausdrücken und in der heißen Sahne auflösen.",
+      ]),
+      Preparation(title: "3. Step", preparationTexts: [
+        "In Förmchen füllen und im Kühlschrank fest werden lassen.",
+      ]),
+      Preparation(title: "4. Step", preparationTexts: [
+        "Mit Beeren servieren.",
+      ]),
+    ],
+    portion: 1,
+    tipp: "Mit Minzblättern garnieren.",
+  ),
+  Recipe(
+    recipeName: "Gemüsepfanne",
+    imagePath: "assets/images/gemuse_pfanne.png",
+    preparationTime: "20 Min",
+    portionAmount: "2 Pers.",
+    price: 8.00,
+    category: "Veggie",
+    ingredients: [
+      Ingredients(amount: 1, unit: "", text: "Zucchini"),
+      Ingredients(amount: 1, unit: "", text: "Paprika"),
+      Ingredients(amount: 1, unit: "", text: "Karotte"),
+      Ingredients(amount: 1, unit: "", text: "Zwiebel"),
+      Ingredients(amount: 2, unit: "EL", text: "Sojasauce"),
+      Ingredients(amount: 1, unit: "EL", text: "Olivenöl"),
+      Ingredients(amount: 1, unit: "Prise", text: "Salz"),
+      Ingredients(amount: 1, unit: "Prise", text: "Pfeffer"),
+    ],
+    preparations: [
+      Preparation(title: "1. Step", preparationTexts: [
+        "Gemüse waschen und in Streifen schneiden.",
+      ]),
+      Preparation(title: "2. Step", preparationTexts: [
+        "Olivenöl in einer Pfanne erhitzen, Gemüse darin anbraten.",
+      ]),
+      Preparation(title: "3. Step", preparationTexts: [
+        "Mit Sojasauce ablöschen und mit Salz und Pfeffer abschmecken.",
+      ]),
+      Preparation(title: "4. Step", preparationTexts: [
+        "Heiß servieren.",
+      ]),
+    ],
+    portion: 1,
+    tipp: "Mit Sesam bestreuen.",
+  ),
+  Recipe(
+    recipeName: "Auberginenauflauf",
+    imagePath: "assets/images/auberginenauflauf.png",
+    preparationTime: "40 Min",
+    portionAmount: "4 Pers.",
+    price: 12.00,
+    category: "Veggie",
+    ingredients: [
+      Ingredients(amount: 2, unit: "", text: "Auberginen"),
+      Ingredients(amount: 1, unit: "", text: "Zwiebel"),
+      Ingredients(amount: 2, unit: "", text: "Knoblauchzehen"),
+      Ingredients(amount: 400, unit: "g", text: "Tomaten (gehackt)"),
+      Ingredients(amount: 200, unit: "g", text: "Mozzarella"),
+      Ingredients(amount: 2, unit: "EL", text: "Olivenöl"),
+      Ingredients(amount: 1, unit: "TL", text: "Oregano"),
+      Ingredients(amount: 1, unit: "Prise", text: "Salz"),
+      Ingredients(amount: 1, unit: "Prise", text: "Pfeffer"),
+    ],
+    preparations: [
+      Preparation(title: "1. Step", preparationTexts: [
+        "Auberginen in Scheiben schneiden und salzen, 10 Minuten ziehen lassen.",
+      ]),
+      Preparation(title: "2. Step", preparationTexts: [
+        "Zwiebel und Knoblauch hacken und in Olivenöl anbraten.",
+      ]),
+      Preparation(title: "3. Step", preparationTexts: [
+        "Tomaten hinzufügen und köcheln lassen, mit Oregano, Salz und Pfeffer abschmecken.",
+      ]),
+      Preparation(title: "4. Step", preparationTexts: [
+        "Auberginenscheiben abtupfen und in einer Pfanne anbraten.",
+      ]),
+      Preparation(title: "5. Step", preparationTexts: [
+        "Auberginen und Tomatensauce in eine Auflaufform schichten, mit Mozzarella belegen.",
+      ]),
+      Preparation(title: "6. Step", preparationTexts: [
+        "Im vorgeheizten Ofen bei 180°C ca. 25-30 Minuten backen.",
+      ]),
+    ],
+    portion: 1,
+    tipp: "Mit frischem Basilikum garnieren.",
+  ),
+  Recipe(
+    recipeName: "Quinoa-Salat",
+    imagePath: "assets/images/quino.png",
+    preparationTime: "20 Min",
+    portionAmount: "2 Pers.",
+    price: 10.00,
+    category: "Veggie",
+    ingredients: [
+      Ingredients(amount: 200, unit: "g", text: "Quinoa"),
+      Ingredients(amount: 1, unit: "", text: "Gurke"),
+      Ingredients(amount: 1, unit: "", text: "Paprika"),
+      Ingredients(amount: 1, unit: "", text: "Avocado"),
+      Ingredients(amount: 1, unit: "Handvoll", text: "Petersilie"),
+      Ingredients(amount: 2, unit: "EL", text: "Olivenöl"),
+      Ingredients(amount: 1, unit: "EL", text: "Zitronensaft"),
+      Ingredients(amount: 1, unit: "Prise", text: "Salz"),
+      Ingredients(amount: 1, unit: "Prise", text: "Pfeffer"),
+    ],
+    preparations: [
+      Preparation(title: "1. Step", preparationTexts: [
+        "Quinoa nach Packungsanleitung kochen und abkühlen lassen.",
+      ]),
+      Preparation(title: "2. Step", preparationTexts: [
+        "Gurke, Paprika und Avocado würfeln, Petersilie hacken.",
+      ]),
+      Preparation(title: "3. Step", preparationTexts: [
+        "Quinoa und Gemüse in einer Schüssel vermengen.",
+      ]),
+      Preparation(title: "4. Step", preparationTexts: [
+        "Mit Olivenöl, Zitronensaft, Salz und Pfeffer abschmecken.",
+      ]),
+      Preparation(title: "5. Step", preparationTexts: [
+        "Gut vermengen und servieren.",
+      ]),
+    ],
+    portion: 1,
+    tipp: "Mit Feta-Käse bestreuen.",
+  ),
+  Recipe(
+    recipeName: "Zoodles mit Pesto",
+    imagePath: "assets/images/zoodles_pesto.png",
+    preparationTime: "15 Min",
+    portionAmount: "2 Pers.",
+    price: 8.00,
+    category: "Low Carb",
+    ingredients: [
+      Ingredients(amount: 2, unit: "", text: "Zucchini"),
+      Ingredients(amount: 50, unit: "g", text: "Basilikum"),
+      Ingredients(amount: 30, unit: "g", text: "Parmesan"),
+      Ingredients(amount: 30, unit: "g", text: "Pinienkerne"),
+      Ingredients(amount: 1, unit: "Zehe", text: "Knoblauch"),
+      Ingredients(amount: 50, unit: "ml", text: "Olivenöl"),
+      Ingredients(amount: 1, unit: "Prise", text: "Salz"),
+      Ingredients(amount: 1, unit: "Prise", text: "Pfeffer"),
+    ],
+    preparations: [
+      Preparation(title: "1. Step", preparationTexts: [
+        "Zucchini mit einem Spiralschneider in Zoodles schneiden.",
+      ]),
+      Preparation(title: "2. Step", preparationTexts: [
+        "Basilikum, Parmesan, Pinienkerne, Knoblauch und Olivenöl in einem Mixer zu Pesto verarbeiten.",
+      ]),
+      Preparation(title: "3. Step", preparationTexts: [
+        "Zoodles in einer Pfanne kurz anbraten.",
+      ]),
+      Preparation(title: "4. Step", preparationTexts: [
+        "Mit Pesto vermengen und mit Salz und Pfeffer abschmecken.",
+      ]),
+      Preparation(title: "5. Step", preparationTexts: [
+        "Heiß servieren.",
+      ]),
+    ],
+    portion: 1,
+    tipp: "Mit gerösteten Pinienkernen bestreuen.",
+  ),
+  Recipe(
+    recipeName: "Blumenkohlreis",
+    imagePath: "assets/images/blumenkohl.png",
+    preparationTime: "20 Min",
+    portionAmount: "2 Pers.",
+    price: 6.00,
+    category: "Low Carb",
+    ingredients: [
+      Ingredients(amount: 1, unit: "", text: "Blumenkohl"),
+      Ingredients(amount: 1, unit: "", text: "Zwiebel"),
+      Ingredients(amount: 2, unit: "EL", text: "Olivenöl"),
+      Ingredients(amount: 1, unit: "Prise", text: "Salz"),
+      Ingredients(amount: 1, unit: "Prise", text: "Pfeffer"),
+      Ingredients(amount: 1, unit: "Prise", text: "Kurkuma"),
+    ],
+    preparations: [
+      Preparation(title: "1. Step", preparationTexts: [
+        "Blumenkohl in Röschen teilen und in einer Küchenmaschine zu Reis verarbeiten.",
+      ]),
+      Preparation(title: "2. Step", preparationTexts: [
+        "Zwiebel hacken und in Olivenöl anbraten.",
+      ]),
+      Preparation(title: "3. Step", preparationTexts: [
+        "Blumenkohlreis hinzufügen und kurz mitbraten.",
+      ]),
+      Preparation(title: "4. Step", preparationTexts: [
+        "Mit Salz, Pfeffer und Kurkuma abschmecken.",
+      ]),
+      Preparation(title: "5. Step", preparationTexts: [
+        "Heiß servieren.",
+      ]),
+    ],
+    portion: 1,
+    tipp: "Mit frischen Kräutern garnieren.",
+  ),
+  Recipe(
+    recipeName: "Gefüllte Paprika",
+    imagePath: "assets/images/dolma.png",
+    preparationTime: "30 Min",
+    portionAmount: "2 Pers.",
+    price: 10.00,
+    category: "Low Carb",
+    ingredients: [
+      Ingredients(amount: 2, unit: "", text: "Paprika"),
+      Ingredients(amount: 200, unit: "g", text: "Hackfleisch"),
+      Ingredients(amount: 1, unit: "", text: "Zwiebel"),
+      Ingredients(amount: 2, unit: "", text: "Knoblauchzehen"),
+      Ingredients(amount: 1, unit: "Dose", text: "Tomaten (gehackt)"),
+      Ingredients(amount: 1, unit: "TL", text: "Oregano"),
+      Ingredients(amount: 1, unit: "Prise", text: "Salz"),
+      Ingredients(amount: 1, unit: "Prise", text: "Pfeffer"),
+      Ingredients(amount: 2, unit: "EL", text: "Olivenöl"),
+    ],
+    preparations: [
+      Preparation(title: "1. Step", preparationTexts: [
+        "Paprika halbieren und entkernen.",
+      ]),
+      Preparation(title: "2. Step", preparationTexts: [
+        "Zwiebel und Knoblauch hacken und in Olivenöl anbraten.",
+      ]),
+      Preparation(title: "3. Step", preparationTexts: [
+        "Hackfleisch hinzufügen und krümelig braten.",
+      ]),
+      Preparation(title: "4. Step", preparationTexts: [
+        "Tomaten und Gewürze hinzufügen und köcheln lassen.",
+      ]),
+      Preparation(title: "5. Step", preparationTexts: [
+        "Paprikahälften mit der Hackfleischmischung füllen und im vorgeheizten Ofen bei 180°C ca. 20 Minuten backen.",
+      ]),
+    ],
+    portion: 1,
+    tipp: "Mit geriebenem Käse bestreuen.",
+  ),
+  Recipe(
+    recipeName: "Hot Dogs",
+    imagePath: "assets/images/hotdog.png",
+    preparationTime: "15 Min",
+    portionAmount: "2 Pers.",
+    price: 8.00,
+    category: "Fast Food",
+    ingredients: [
+      Ingredients(amount: 2, unit: "", text: "Hot Dog Brötchen"),
+      Ingredients(amount: 2, unit: "", text: "Würstchen"),
+      Ingredients(amount: 1, unit: "", text: "Zwiebel"),
+      Ingredients(amount: 1, unit: "", text: "Gurke"),
+      Ingredients(amount: 1, unit: "EL", text: "Senf"),
+      Ingredients(amount: 1, unit: "EL", text: "Ketchup"),
+      Ingredients(amount: 1, unit: "Prise", text: "Salz"),
+      Ingredients(amount: 1, unit: "Prise", text: "Pfeffer"),
+    ],
+    preparations: [
+      Preparation(title: "1. Step", preparationTexts: [
+        "Würstchen in heißem Wasser erhitzen.",
+      ]),
+      Preparation(title: "2. Step", preparationTexts: [
+        "Zwiebel und Gurke in Scheiben schneiden.",
+      ]),
+      Preparation(title: "3. Step", preparationTexts: [
+        "Hot Dog Brötchen aufschneiden und mit Senf und Ketchup bestreichen.",
+      ]),
+      Preparation(title: "4. Step", preparationTexts: [
+        "Würstchen in die Brötchen legen und mit Zwiebel und Gurke belegen.",
+      ]),
+      Preparation(title: "5. Step", preparationTexts: [
+        "Mit Salz und Pfeffer abschmecken.",
+      ]),
+    ],
+    portion: 1,
+    tipp: "Mit Röstzwiebeln bestreuen.",
+  ),
+  Recipe(
+    recipeName: "Pommes Frites",
+    imagePath: "assets/images/pommes.png",
+    preparationTime: "30 Min",
+    portionAmount: "2 Pers.",
+    price: 5.00,
+    category: "Fast Food",
+    ingredients: [
+      Ingredients(amount: 500, unit: "g", text: "Kartoffeln"),
+      Ingredients(amount: 1, unit: "EL", text: "Olivenöl"),
+      Ingredients(amount: 1, unit: "Prise", text: "Salz"),
+      Ingredients(amount: 1, unit: "Prise", text: "Pfeffer"),
+      Ingredients(amount: 1, unit: "Prise", text: "Paprikapulver"),
+    ],
+    preparations: [
+      Preparation(title: "1. Step", preparationTexts: [
+        "Kartoffeln schälen und in Stifte schneiden.",
+      ]),
+      Preparation(title: "2. Step", preparationTexts: [
+        "Kartoffelstifte in einer Schüssel mit Olivenöl, Salz, Pfeffer und Paprikapulver vermengen.",
+      ]),
+      Preparation(title: "3. Step", preparationTexts: [
+        "Auf einem Backblech verteilen und im vorgeheizten Ofen bei 200°C ca. 25-30 Minuten backen.",
+      ]),
+      Preparation(title: "4. Step", preparationTexts: [
+        "Heiß servieren.",
+      ]),
+    ],
+    portion: 1,
+    tipp: "Mit Ketchup oder Mayonnaise servieren.",
+  ),
+  Recipe(
+    recipeName: "Chicken Nuggets",
+    imagePath: "assets/images/nugetts.png",
+    preparationTime: "20 Min",
+    portionAmount: "2 Pers.",
+    price: 10.00,
+    category: "Fast Food",
+    ingredients: [
+      Ingredients(amount: 300, unit: "g", text: "Hähnchenbrust"),
+      Ingredients(amount: 100, unit: "g", text: "Mehl"),
+      Ingredients(amount: 2, unit: "", text: "Eier"),
+      Ingredients(amount: 100, unit: "g", text: "Paniermehl"),
+      Ingredients(amount: 1, unit: "Prise", text: "Salz"),
+      Ingredients(amount: 1, unit: "Prise", text: "Pfeffer"),
+      Ingredients(amount: 0, unit: "", text: "Öl zum Frittieren"),
+    ],
+    preparations: [
+      Preparation(title: "1. Step", preparationTexts: [
+        "Hähnchenbrust in mundgerechte Stücke schneiden.",
+      ]),
+      Preparation(title: "2. Step", preparationTexts: [
+        "Mehl, Eier und Paniermehl jeweils in separate Schalen geben.",
+      ]),
+      Preparation(title: "3. Step", preparationTexts: [
+        "Hähnchenstücke zuerst in Mehl, dann in Ei und schließlich in Paniermehl wenden.",
+      ]),
+      Preparation(title: "4. Step", preparationTexts: [
+        "In heißem Öl frittieren, bis sie goldbraun sind.",
+      ]),
+      Preparation(title: "5. Step", preparationTexts: [
+        "Heiß servieren.",
+      ]),
+    ],
+    portion: 1,
+    tipp: "Mit BBQ-Sauce oder Ketchup servieren.",
+  ),
 ];
