@@ -64,13 +64,13 @@ class DisplayFavContainer extends StatelessWidget {
               image: AssetImage(picture), 
               fit: BoxFit.cover),
               color: Colors.black.withOpacity(0.5),
-            borderRadius: BorderRadius.circular(22),
+            borderRadius: BorderRadius.circular(12),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.5),
+                color: Colors.black.withOpacity(0.3),
                 spreadRadius: 2,
                 blurRadius: 4,
-                offset: const Offset(0, 3), 
+                offset: const Offset(0, 3),
               ),
             ],
           ),
@@ -81,7 +81,9 @@ class DisplayFavContainer extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 4),
                 decoration: BoxDecoration(
                   color: const Color.fromARGB(255, 9, 9, 9).withOpacity(0.5),
-                  borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(22), bottomRight: Radius.circular(22)),
+                  borderRadius: const BorderRadius.only(
+                    bottomLeft: Radius.circular(12), 
+                    bottomRight: Radius.circular(12)),
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,

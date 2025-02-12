@@ -9,11 +9,11 @@ void showNewCollection(BuildContext context, Function onCollectionAdded) {
     context: context,
     builder: (BuildContext context) {
       return AlertDialog(
-        backgroundColor: const Color.fromARGB(255, 237, 226, 193),
+        backgroundColor: Colors.black.withOpacity(0.8),
         title: const Text(
           "Neue Kollektion erstellen",
           style: TextStyle(
-            color: Color.fromARGB(255, 56, 41, 36),
+            color: Colors.white,
             fontSize: 20,
             fontWeight: FontWeight.w600,
             fontStyle: FontStyle.italic,
@@ -23,7 +23,7 @@ void showNewCollection(BuildContext context, Function onCollectionAdded) {
         content: TextField(
           controller: controller,
           style: const TextStyle(
-            color: Color.fromARGB(255, 56, 41, 36), 
+            color: Colors.white, 
             fontWeight: FontWeight.w500,
             fontStyle: FontStyle.italic,
             fontFamily: "SFProDisplay",
@@ -31,7 +31,7 @@ void showNewCollection(BuildContext context, Function onCollectionAdded) {
           decoration: const InputDecoration(
             hintText: "Kollektion Name",
             hintStyle: TextStyle(
-              color: Color.fromARGB(255, 56, 41, 36),
+              color: Colors.white54,
               fontSize: 20,
               fontWeight: FontWeight.w500,
               fontStyle: FontStyle.italic,
@@ -44,10 +44,15 @@ void showNewCollection(BuildContext context, Function onCollectionAdded) {
             onPressed: () {
               Navigator.of(context).pop();
             },
-            child: const Icon(
-              Icons.close,
-              color: Color.fromARGB(255, 56, 41, 36),
-              size: 30,
+            child: const Text(
+              "Abbrechen",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+                fontStyle: FontStyle.italic,
+                fontFamily: "SFProDisplay",
+              ),
             ),
           ),
           TextButton(
@@ -58,18 +63,21 @@ void showNewCollection(BuildContext context, Function onCollectionAdded) {
                   FavCollection(
                     collectionName: collectionName,
                     recipes: [], // kommt später, noch keine Rezepte
-                   
                   ),
                 );
-                
                 onCollectionAdded();
               }
               Navigator.of(context).pop();
             },
-            child: const Icon(
-              Icons.check,
-              color: Color.fromARGB(255, 56, 41, 36),
-              size: 30,
+            child: const Text(
+              "Hinzufügen",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+                fontStyle: FontStyle.italic,
+                fontFamily: "SFProDisplay",
+              ),
             ),
           ),
         ],
