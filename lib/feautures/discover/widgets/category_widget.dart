@@ -22,20 +22,20 @@ class CategoryWidget extends StatelessWidget {
               Container(
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: selectedCategory == "Low Carb" ? Colors.white : Colors.transparent,
-                  border: Border.all(color: Colors.white, width: 2),
+                  color: selectedCategory == "Low Carb" ? const Color.fromARGB(255, 255, 98, 0) : Colors.transparent,
+                  border: Border.all(color: const Color.fromARGB(255, 255, 255, 255), width: 2),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black.withOpacity(0.3),
                       spreadRadius: 2,
                       blurRadius: 6,
-                      offset: const Offset(0, 4), // changes position of shadow
+                      offset: const Offset(0, 4),
                     ),
                     BoxShadow(
                       color: Colors.white.withOpacity(0.5),
                       spreadRadius: 2,
                       blurRadius: 6,
-                      offset: const Offset(0, 0), // outer glow effect
+                      offset: const Offset(0, 0), 
                     ),
                   ],
                 ),
@@ -49,7 +49,7 @@ class CategoryWidget extends StatelessWidget {
                         color: Colors.white.withOpacity(0.5),
                         spreadRadius: 2,
                         blurRadius: 6,
-                        offset: const Offset(0, 0), // inner glow effect
+                        offset: const Offset(0, 0), 
                       ),
                     ],
                   ),
@@ -73,20 +73,20 @@ class CategoryWidget extends StatelessWidget {
               Container(
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: selectedCategory == "Veggie" ? Colors.white : Colors.transparent,
+                  color: selectedCategory == "Veggie" ? const Color.fromARGB(255, 249, 92, 8) : Colors.transparent,
                   border: Border.all(color: Colors.white, width: 2),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black.withOpacity(0.3),
                       spreadRadius: 2,
                       blurRadius: 6,
-                      offset: const Offset(0, 4), // changes position of shadow
+                      offset: const Offset(0, 4), 
                     ),
                     BoxShadow(
-                      color: Colors.white.withOpacity(0.5),
+                      color: const Color.fromARGB(255, 255, 248, 248).withOpacity(0.5),
                       spreadRadius: 2,
                       blurRadius: 6,
-                      offset: const Offset(0, 0), // outer glow effect
+                      offset: const Offset(0, 0), 
                     ),
                   ],
                 ),
@@ -100,7 +100,7 @@ class CategoryWidget extends StatelessWidget {
                         color: Colors.white.withOpacity(0.5),
                         spreadRadius: 2,
                         blurRadius: 6,
-                        offset: const Offset(0, 0), // inner glow effect
+                        offset: const Offset(0, 0),
                       ),
                     ],
                   ),
@@ -124,20 +124,20 @@ class CategoryWidget extends StatelessWidget {
               Container(
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: selectedCategory == "Fast Food" ? Colors.white : Colors.transparent,
+                  color: selectedCategory == "Fast Food" ? const Color.fromARGB(255, 255, 98, 0) : Colors.transparent,
                   border: Border.all(color: Colors.white, width: 2),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black.withOpacity(0.3),
                       spreadRadius: 2,
                       blurRadius: 6,
-                      offset: const Offset(0, 4), // changes position of shadow
+                      offset: const Offset(0, 4), 
                     ),
                     BoxShadow(
                       color: Colors.white.withOpacity(0.5),
                       spreadRadius: 2,
                       blurRadius: 6,
-                      offset: const Offset(0, 0), // outer glow effect
+                      offset: const Offset(0, 0),
                     ),
                   ],
                 ),
@@ -151,7 +151,7 @@ class CategoryWidget extends StatelessWidget {
                         color: Colors.white.withOpacity(0.5),
                         spreadRadius: 2,
                         blurRadius: 6,
-                        offset: const Offset(0, 0), // inner glow effect
+                        offset: const Offset(0, 0), 
                       ),
                     ],
                   ),
@@ -175,20 +175,20 @@ class CategoryWidget extends StatelessWidget {
               Container(
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: selectedCategory == "Dessert" ? Colors.white : Colors.transparent,
+                  color: selectedCategory == "Dessert" ? const Color.fromARGB(255, 255, 98, 0) : Colors.transparent,
                   border: Border.all(color: Colors.white, width: 2),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black.withOpacity(0.3),
                       spreadRadius: 2,
                       blurRadius: 6,
-                      offset: const Offset(0, 4), // changes position of shadow
+                      offset: const Offset(0, 4), 
                     ),
                     BoxShadow(
                       color: Colors.white.withOpacity(0.5),
                       spreadRadius: 2,
                       blurRadius: 6,
-                      offset: const Offset(0, 0), // outer glow effect
+                      offset: const Offset(0, 0), 
                     ),
                   ],
                 ),
@@ -202,7 +202,7 @@ class CategoryWidget extends StatelessWidget {
                         color: Colors.white.withOpacity(0.5),
                         spreadRadius: 2,
                         blurRadius: 6,
-                        offset: const Offset(0, 0), // inner glow effect
+                        offset: const Offset(0, 0), 
                       ),
                     ],
                   ),

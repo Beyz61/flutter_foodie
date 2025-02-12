@@ -1,5 +1,6 @@
+import 'dart:math';
+
 import "package:flutter/material.dart";
-import 'package:foodie_screen/config/colors.dart';
 import 'package:foodie_screen/data/repository/database_repository.dart';
 import 'package:foodie_screen/feautures/discover/widgets/category_widget.dart';
 import 'package:foodie_screen/feautures/discover/widgets/spot_widget.dart';
@@ -36,10 +37,14 @@ class _SpotScreenState extends State<SpotScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 227, 218, 211),
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [backroundColor2, backroundColor1],
+            colors: [
+              Color.fromARGB(255, 75, 67, 59),
+              Color.fromARGB(255, 24, 23, 22),
+            ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -79,11 +84,11 @@ class _SpotScreenState extends State<SpotScreen> {
                   ),
                   const SizedBox(height: 8),
                   const Divider(
-                    thickness: 0.6,
+                    thickness: 2,
                     height: 20,
                     indent: 20,
                     endIndent: 20,
-                    color: Color.fromARGB(255, 255, 252, 247),
+                    color: Color.fromARGB(255, 246, 100, 3,),
                   ),
                   const SizedBox(height: 10),
                   CategoryWidget(
@@ -97,11 +102,11 @@ class _SpotScreenState extends State<SpotScreen> {
                   ),
                   const SizedBox(height: 10),
                   const Divider(
-                    thickness: 0.6,
+                    thickness: 2,
                     height: 20,
                     indent: 20,
                     endIndent: 20,
-                    color: Color.fromARGB(255, 255, 252, 247),
+                    color: Color.fromARGB(255, 246, 100, 3,),
                   ),
                   const SizedBox(height: 05),
                   Text(
@@ -141,22 +146,25 @@ class _SpotScreenState extends State<SpotScreen> {
                         child: Text("Error: ${snapshot.error}"),
                       );
                     } else {
-                      final recipeList = snapshot.data ?? [];
-                      final displayList = List<Recipe>.from(recipeList);
-                      while (displayList.length < 4) {
-                        displayList.add(Recipe(
-                          recipeName: "",
-                          imagePath: "",
-                          preparationTime: "",
-                          portionAmount: "",
-                          price: 0.0,
-                          category: "",
-                          ingredients: [],
-                          preparations: [],
-                          portion: 0,
-                          tipp: null,
-                        ));
-                      }
+                      final recipeList =List.from(snapshot.data ?? [])..shuffle(Random());
+                      // final displayList = List<Recipe>.from(recipeList);
+                      // var random= Random();
+                      // while (displayList.length < 4) {
+                        
+                      //   displayList.add(Recipe(
+                      //     recipeName: "",
+                      //     imagePath: "",
+                      //     preparationTime: "",
+                      //     portionAmount: "",
+                      //     price: 0.0,
+                      //     category: "",
+                      //     ingredients: [],
+                      //     preparations: [],
+                      //     portion: 0,
+                      //     tipp: null,
+                      //   ));
+                      // }
+                      var random= Random();
                       return RefreshIndicator(
                         onRefresh: () async {
                           _loadRecipes();
@@ -171,7 +179,7 @@ class _SpotScreenState extends State<SpotScreen> {
                           ),
                           itemCount: 4,
                           itemBuilder: (context, index) {
-                            final recipe = displayList[index];
+                            final recipe = recipeList[index];
                             return recipe.recipeName.isEmpty
                                 ? Container()
                                 : GestureDetector(
