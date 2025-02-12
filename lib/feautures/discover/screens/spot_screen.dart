@@ -41,60 +41,74 @@ class _SpotScreenState extends State<SpotScreen> {
                   // ),
                 ],
               ),
-              const SizedBox(height: 10),
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+              Column(
                 children: [
-                  Text(
+                  const SizedBox(height: 0),
+                  const Text(
                     "Top Kategorien",
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 24,
-                      fontWeight: FontWeight.w600,
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
                       fontStyle: FontStyle.italic,
                       fontFamily: "SFProDisplay",
+                      shadows: [
+                        Shadow(
+                          offset: Offset(0, 3),
+                          blurRadius: 6,
+                          color: Colors.black54,
+                        ),
+                      ],
                     ),
+                    textAlign: TextAlign.center,
                   ),
-                  SizedBox(width: 150),
+                  const SizedBox(height: 8),
+                  const Divider(
+                    thickness: 0.6,
+                    height: 20,
+                    indent: 20,
+                    endIndent: 20,
+                    color: Color.fromARGB(255, 255, 252, 247),
+                  ),
+                  const SizedBox(height: 10),
+                  CategoryWidget(
+                    onCategorySelected: (category) {
+                      setState(() {
+                        selectedCategory = category;
+                      });
+                    },
+                    selectedCategory: selectedCategory,
+                  ),
+                  const SizedBox(height: 10),
+                  const Divider(
+                    thickness: 0.6,
+                    height: 20,
+                    indent: 20,
+                    endIndent: 20,
+                    color: Color.fromARGB(255, 255, 252, 247),
+                  ),
+                  const SizedBox(height: 05),
+                  Text(
+                    selectedCategory ?? "Aktuell beliebte Rezepte",
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      fontStyle: FontStyle.italic,
+                      fontFamily: "SFProDisplay",
+                      shadows: [
+                        Shadow(
+                          offset: Offset(0, 3),
+                          blurRadius: 6,
+                          color: Colors.black54,
+                        ),
+                      ],
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 05),
                 ],
               ),
-              const SizedBox(height: 10),
-              const Divider(
-                thickness: 0.6,
-                height: 20,
-                indent: 20,
-                endIndent: 20,
-                color: Color.fromARGB(255, 255, 252, 247),
-              ),
-              const SizedBox(height: 10),
-              CategoryWidget(
-                onCategorySelected: (category) {
-                  setState(() {
-                    selectedCategory = category;
-                  });
-                },
-                selectedCategory: selectedCategory,
-              ),
-              const SizedBox(height: 10),
-              const Divider(
-                thickness: 0.6,
-                height: 20,
-                indent: 20,
-                endIndent: 20,
-                color: Color.fromARGB(255, 255, 252, 247),
-              ),
-              const SizedBox(height: 10),
-              Text(
-                selectedCategory ?? "Aktuell beliebte Rezepte",
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w600,
-                  fontStyle: FontStyle.italic,
-                  fontFamily: "SFProDisplay",
-                ),
-              ),
-              const SizedBox(height: 10),
               Expanded(
                 child: FutureBuilder<List<Recipe>>(
                   future: selectedCategory == null
