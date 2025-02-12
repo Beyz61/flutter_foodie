@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:foodie_screen/config/colors.dart';
 
 class SignOutButton extends StatefulWidget {
   const SignOutButton({
@@ -18,6 +17,12 @@ class _SignOutButtonState extends State<SignOutButton> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          colors: [Color.fromARGB(255, 242, 220, 186), Color.fromARGB(255, 223, 187, 147)],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+        borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.3),
@@ -30,9 +35,11 @@ class _SignOutButtonState extends State<SignOutButton> {
         onPressed: widget.onPressed,
         style: ElevatedButton.styleFrom(
           padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 15),
-          backgroundColor: signInBtnColor,
+          backgroundColor: Colors.transparent,
+          shadowColor: Colors.transparent,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
+            side: const BorderSide(color: Colors.white, width: 0.5),
           ),
         ),
         child: Text(
