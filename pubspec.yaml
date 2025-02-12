@@ -19,6 +19,7 @@ dependencies:
   cloud_firestore: ^5.6.0
   shared_preferences: ^2.3.4
   intl: ^0.20.1
+  lottie: ^3.3.1
   
 
 dev_dependencies:
@@ -26,6 +27,7 @@ dev_dependencies:
     sdk: flutter
   flutter_launcher_icons: ^0.14.1
   http: ^1.2.2
+  
   
 
 
@@ -39,6 +41,8 @@ flutter:
   assets:
     - assets/images/
     - assets/icon/
+    - assets/gifs/
+
 
   fonts:
     - family: SFProDisplay

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 
-class DisplayFavContainer extends StatelessWidget {
+class DisplayFavContainer extends StatefulWidget {
   final Function()? onTap;
   final String text;
   final String? picture;
-
   final VoidCallback onDelete;
 
   const DisplayFavContainer({
@@ -14,6 +13,19 @@ class DisplayFavContainer extends StatelessWidget {
     this.picture,
     required this.onDelete,
   });
+
+  @override
+  _DisplayFavContainerState createState() => _DisplayFavContainerState();
+}
+
+class _DisplayFavContainerState extends State<DisplayFavContainer> {
+  late String collectionName;
+
+  @override
+  void initState() {
+    super.initState();
+    collectionName = widget.text;
+  }
 
   void _confirmDelete(BuildContext context) {
     showDialog(
@@ -37,7 +49,7 @@ class DisplayFavContainer extends StatelessWidget {
             ),
             TextButton(
               onPressed: () async {
-                onDelete();
+                widget.onDelete();
                 Navigator.of(context).pop();
               },
               child: const Text(
@@ -52,7 +64,7 @@ class DisplayFavContainer extends StatelessWidget {
   }
 
   void _editCollectionName(BuildContext context) {
-    final TextEditingController controller = TextEditingController(text: text);
+    final TextEditingController controller = TextEditingController(text: collectionName);
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -82,6 +94,9 @@ class DisplayFavContainer extends StatelessWidget {
             ),
             TextButton(
               onPressed: () {
+                setState(() {
+                  collectionName = controller.text;
+                });
                 Navigator.of(context).pop();
               },
               child: const Text(
@@ -98,14 +113,14 @@ class DisplayFavContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: widget.onTap,
       child: Center(
         child: Container(
           height: 234,
           width: 215,
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage(picture ?? "assets/icon/bosssss.png"),
+              image: AssetImage(widget.picture ?? "assets/icon/bosssss.png"),
               fit: BoxFit.cover,
               scale: 4.0, 
             ),
@@ -199,7 +214,7 @@ class DisplayFavContainer extends StatelessWidget {
                           child: FittedBox(
                             fit: BoxFit.scaleDown,
                             child: Text(
-                              text,
+                              collectionName,
                               style: const TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.w600,

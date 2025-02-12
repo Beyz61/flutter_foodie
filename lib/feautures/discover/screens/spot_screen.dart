@@ -135,10 +135,11 @@ class _SpotScreenState extends State<SpotScreen> {
                   future: _recipesFuture,
                   builder: (context, snapshot) {
                     if (snapshot.connectionState == ConnectionState.waiting) {
-                      return const Center(
-                        child: CircularProgressIndicator(
-                          valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-                          strokeCap: StrokeCap.round,
+                      return Center(
+                        child: SizedBox(
+                          width: 100,
+                          height: 100,
+                          child: Image.asset("assets/icon/pizzagif.gif"),
                         ),
                       );
                     } else if (snapshot.hasError) {
