@@ -17,27 +17,43 @@ class FavButton extends StatelessWidget {
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.3),
-            offset: const Offset(0, 2),
-            blurRadius: 16,
+            offset: const Offset(0, 4),
+            blurRadius: 8,
+            spreadRadius: 2,
           ),
         ],
+        borderRadius: BorderRadius.circular(18),
+        border: Border.all(
+          color: Colors.white.withOpacity(0.5),
+          width: 1,
+        ),
       ),
       child: ElevatedButton(
         onPressed: onPressed,
-        child: Text(
-          text,style:  TextStyle(
-                                color: Color.fromARGB(255, 255, 252, 250),
-                                fontWeight: FontWeight.w600,
-                                fontSize: 15.7,
-                                fontStyle: FontStyle.italic,
-                                fontFamily: "SFProDisplay",
-                              ),
-                            ),
         style: ElevatedButton.styleFrom(
           padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
           backgroundColor: const Color.fromARGB(255, 190, 155, 124),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(18),
+          ),
+          elevation: 5,
+          shadowColor: Colors.black.withOpacity(0.3),
+        ),
+        child: Text(
+          text,
+          style: const TextStyle(
+            color: Color.fromARGB(255, 255, 252, 250),
+            fontWeight: FontWeight.w600,
+            fontSize: 16,
+            fontStyle: FontStyle.italic,
+            fontFamily: "SFProDisplay",
+            shadows: [
+              Shadow(
+                offset: Offset(0, 2),
+                blurRadius: 4,
+                color: Colors.black54,
+              ),
+            ],
           ),
         ),
       ),
