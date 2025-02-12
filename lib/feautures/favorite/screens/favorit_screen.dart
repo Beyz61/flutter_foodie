@@ -1,3 +1,5 @@
+import 'dart:math'; // Add this import for random selection
+
 import 'package:flutter/material.dart';
 import 'package:foodie_screen/config/colors.dart';
 import 'package:foodie_screen/data/repository/shared_preferences_database.dart';
@@ -17,6 +19,8 @@ class FavoritScreen extends StatefulWidget {
 }
 
 class _FavoritScreenState extends State<FavoritScreen> {
+  String? lastUsedImage;
+
   @override
   void initState() {
     super.initState();
@@ -133,8 +137,32 @@ class _FavoritScreenState extends State<FavoritScreen> {
                             );}
                             // Wenn die liste noch leer ist
                             else {
-                              return Container(height: 20, width: 20, color: Colors.grey,);
-                              }
+                              // Randomly select an image that is not the last used one
+                              final random = Random();
+                              final images = [
+                                'assets/images/lustig.png',
+                                'assets/images/hunger.png',
+                                'assets/images/hungerpommes.png'
+                                "assets/images/keine_rezepte.png",
+                                "assets/images/keine_rezepte1.png",
+                              ];
+                              String randomImage;
+                              do {
+                                randomImage = images[random.nextInt(images.length)];
+                              } while (randomImage == lastUsedImage);
+                              lastUsedImage = randomImage;
+
+                              return DisplayFavContainer(
+                                onTap: () {
+                                  // Handle tap
+                                },
+                                picture: randomImage,
+                                text: "Leere Küche!",
+                                onDelete: () {
+                                  _deleteCollection(index);
+                                },
+                              );
+                            }
                           },
                         ),
                       ),

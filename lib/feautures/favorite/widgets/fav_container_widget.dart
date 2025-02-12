@@ -61,27 +61,46 @@ class DisplayFavContainer extends StatelessWidget {
           width: 215,
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage(picture), 
-              fit: BoxFit.cover),
-              color: Colors.black.withOpacity(0.5),
+              image: AssetImage(picture),
+              fit: BoxFit.cover,
+            ),
+            gradient: LinearGradient(
+              colors: [
+                Colors.white.withOpacity(0.1),
+                Colors.white.withOpacity(0.2),
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
             borderRadius: BorderRadius.circular(22),
             boxShadow: [
               BoxShadow(
                 color: Colors.black.withOpacity(0.5),
                 spreadRadius: 2,
                 blurRadius: 4,
-                offset: const Offset(0, 3), 
+                offset: const Offset(0, 3),
               ),
             ],
           ),
           child: Column(
             children: [
-              const Expanded(child: SizedBox(),),
+              const Expanded(child: SizedBox()),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 4),
                 decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 9, 9, 9).withOpacity(0.5),
-                  borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(22), bottomRight: Radius.circular(22)),
+                  color: Colors.black.withOpacity(0.5),
+                  borderRadius: const BorderRadius.only(
+                    bottomLeft: Radius.circular(22),
+                    bottomRight: Radius.circular(22),
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.3),
+                      spreadRadius: 2,
+                      blurRadius: 6,
+                      offset: const Offset(0, 3),
+                    ),
+                  ],
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
