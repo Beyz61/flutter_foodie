@@ -51,39 +51,40 @@ class IngredientsContainer extends StatelessWidget {
                     ),    
                     ),
                 const SizedBox(height: 10),
-                Row(
-                  children: [
-                   Text(
-                   recipe.getIngredientsUnitText(),
-                     textAlign: TextAlign.end,
-                     style: const TextStyle(
-                       color: Color.fromARGB(255, 255, 252, 249),
-                       fontWeight: FontWeight.w600,
-                                 fontSize: 17,
-                                 fontStyle: FontStyle.italic,
-                                 fontFamily: "SFProDisplay",
+                IntrinsicHeight(
+                  child: Row(
+                    children: [
+                     Text(
+                     recipe.getIngredientsUnitText(),
+                       textAlign: TextAlign.end,
+                       style: const TextStyle(
+                         color: Color.fromARGB(255, 255, 252, 249),
+                         fontWeight: FontWeight.w600,
+                                   fontSize: 17,
+                                   fontStyle: FontStyle.italic,
+                                   fontFamily: "SFProDisplay",
+                       ),
                      ),
-                   ),
-                  const SizedBox( height: 340,
-                    child: VerticalDivider( thickness: 1, width: 17,
-                    color: Color.fromARGB(255, 255, 252, 249)),
-                  ), // noch nicht fertig!!!
-                 // SizedBox(height:10),
-                   Flexible(
-                     child: Text(
-                                       recipe.getIngredientsValues(),
-                      style: const TextStyle(
-                        color: Color.fromARGB(255, 255, 252, 249),
-                        fontWeight: FontWeight.w500,
-                                  fontSize: 16.5,
-                                  fontStyle: FontStyle.italic,
-                                  fontFamily: "SFProDisplay",
-                                  
-                      ),
-                                       ),
-                   ),
-                ],
-              ),
+                    const VerticalDivider( thickness: 1, width: 17,
+                    color: Color.fromARGB(255, 255, 252, 249)), // noch nicht fertig!!!
+                    const SizedBox(height:10),
+                     Flexible(
+                       child: Text(
+                                         recipe.getIngredientsValues(),
+                        style: const TextStyle(
+                          color: Color.fromARGB(255, 255, 252, 249),
+                          fontWeight: FontWeight.w500,
+                                    fontSize: 16.5,
+                                    fontStyle: FontStyle.italic,
+                                    fontFamily: "SFProDisplay",
+                                    
+                        ),
+                                         ),
+                     ),
+                  ],
+
+                                ),
+                ),
              ],
             ),
             
