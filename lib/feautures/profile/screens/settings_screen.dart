@@ -58,23 +58,39 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     ),
                   ),
                   const SizedBox(height: 10),
-                  Image.asset(
-                    "assets/images/iconfoodie1.png",
-                    height: 300,
-                    width: 550,
-                    fit: BoxFit.contain,
+                  Center(
+                    child: Image.asset(
+                      "assets/images/iconfoodie1.png",
+                      height: 300,
+                      width: 550,
+                      fit: BoxFit.contain,
+                      alignment: Alignment.center,
+                    ),
                   ),
                 ],
               ),
             ),
             ListTile(
-              leading: const Icon(Icons.notifications, color: Colors.white),
+              leading: const Icon(Icons.notifications, color: Colors.white, shadows: [
+                Shadow(
+                  blurRadius: 5,
+                  color: Colors.black,
+                  offset: Offset(1, 2),
+                ),
+              ]),
               title: const Text(
                 "Benachrichtigungen",
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w600,
                   fontStyle: FontStyle.italic,
+                  shadows: [
+                    Shadow(
+                      blurRadius: 5,
+                      color: Colors.black,
+                      offset: Offset(1, 2),
+                    ),
+                  ],
                 ),
               ),
               trailing: Switch(
@@ -93,18 +109,39 @@ class _SettingsScreenState extends State<SettingsScreen> {
               color: Color.fromARGB(255, 255, 255, 255),
               indent: 52,
               endIndent: 30,
+              thickness: 2,
+              height: 20,
             ),
             ListTile(
-              leading: const Icon(Icons.email, color: Colors.white),
+              leading: const Icon(Icons.email, color: Colors.white, shadows: [
+                Shadow(
+                  blurRadius: 5,
+                  color: Colors.black,
+                  offset: Offset(1, 2),
+                ),
+              ]),
               title: Text(
                 user?.email ?? "Keine E-Mail",
                 style: const TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w600,
                   fontStyle: FontStyle.italic,
+                  shadows: [
+                    Shadow(
+                      blurRadius: 5,
+                      color: Colors.black,
+                      offset: Offset(1, 2),
+                    ),
+                  ],
                 ),
               ),
-              trailing: const Icon(Icons.arrow_forward_ios, color: Colors.white),
+              trailing: const Icon(Icons.arrow_forward_ios, color: Colors.white, shadows: [
+                Shadow(
+                  blurRadius: 5,
+                  color: Colors.black,
+                  offset: Offset(1, 2),
+                ),
+              ]),
               onTap: () {
                 Navigator.push(
                   context,
@@ -113,34 +150,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 );
               },
             ),
-            // const Divider(color: Color.fromARGB(255, 255, 255, 255),
-            // indent: 52,
-            // endIndent: 30,
-            // ),
-            // ListTile(
-            //   leading: const Icon(Icons.fastfood_sharp, color: Colors.white),
-            //   title: const Text(
-            //     "Essgewohnheiten", 
-            //   style: TextStyle(
-            //   color: Colors.white,
-            //   fontWeight: FontWeight.w600,
-            //   fontStyle: FontStyle.italic,
-            //   ),                
-            //   ),
-            //   trailing: const Icon(Icons.arrow_forward_ios, color: Colors.white),
-            //   onTap: () {Navigator.push(
-            //       context,
-            //       MaterialPageRoute(
-            //           builder: (context) => const FoodChoices()),
-            //     );
-            //   },
-            // ),
-            const Divider(color: Color.fromARGB(255, 255, 255, 255),
-            indent: 52,
-            endIndent: 30,
+            const Divider(
+              color: Color.fromARGB(255, 255, 255, 255),
+              indent: 52,
+              endIndent: 30,
+              thickness: 2,
+              height: 20,
             ),
-             const SizedBox(height: 50),
-              SignOutButton(
+            const SizedBox(height: 50),
+            SignOutButton(
               text: "Abmelden",
               onPressed: () async {
                 final authRepository = context.read<AuthRepository>();
