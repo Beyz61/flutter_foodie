@@ -18,7 +18,7 @@ class _SignOutButtonState extends State<SignOutButton> {
     return Container(
       decoration: BoxDecoration(
         gradient: const LinearGradient(
-          colors: [Color.fromARGB(255, 242, 220, 186), Color.fromARGB(255, 223, 187, 147)],
+          colors: [Color.fromARGB(255, 24, 23, 22), Color.fromARGB(255, 75, 67, 59)],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
@@ -39,12 +39,12 @@ class _SignOutButtonState extends State<SignOutButton> {
           shadowColor: Colors.transparent,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
-            side: const BorderSide(color: Colors.white, width: 0.5),
+            side: const BorderSide(color: Color.fromARGB(255, 242, 101, 8), width: 0.5),
           ),
         ),
         child: Text(
           widget.text,style: const TextStyle(
-            color: Color.fromARGB(255, 45, 25, 7),
+            color: Color.fromARGB(255, 242, 101, 8),
             fontWeight: FontWeight.w600,
             fontSize: 14,
             fontStyle: FontStyle.italic,

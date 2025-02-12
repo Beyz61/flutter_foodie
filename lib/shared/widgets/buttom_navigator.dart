@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:foodie_screen/config/colors.dart';
 import 'package:foodie_screen/feautures/discover/screens/spot_screen.dart';
 import 'package:foodie_screen/feautures/favorite/screens/favorit_screen.dart';
 import 'package:foodie_screen/feautures/feed/screens/feed_screen.dart';
@@ -37,18 +36,14 @@ class _ButtonNavigator extends State<ButtonNavigator> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 227, 218, 211),
       body: _screens[_selectedPage],
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: searchButtonColor1, 
-        fixedColor: const Color.fromARGB(255, 174, 90, 11), 
-       // currentIndex: _selectedIndex,
-       currentIndex: _selectedPage,
-     //   onTap: _onItemTapped,
-          onTap: (int index) {
-            setState(() {
-              _selectedPage = index;
-            });
-          },
+        backgroundColor: const Color.fromARGB(255, 24, 23, 22), 
+        selectedItemColor: const Color.fromARGB(255, 242, 101, 8),
+        unselectedItemColor: const Color.fromARGB(255, 225, 175, 131),
+        currentIndex: _selectedPage,
+        onTap: _onItemTapped,
         type: BottomNavigationBarType.fixed,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.restaurant), label: "Heute"),

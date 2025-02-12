@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:foodie_screen/config/colors.dart';
 import 'package:foodie_screen/data/repository/auth_repository.dart';
 import 'package:foodie_screen/feautures/authentification/screens/main_screen.dart';
 import 'package:foodie_screen/feautures/authentification/widgets/sign_out_button.dart';
@@ -22,12 +21,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
     final user = authRepository.currentUser;
 
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 24, 23, 22),
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              backroundColor2,
-              backroundColor1,
+              Color.fromARGB(255, 75, 67, 59),
+              Color.fromARGB(255, 24, 23, 22),
             ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
@@ -47,7 +47,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       fontWeight: FontWeight.w700,
                       fontStyle: FontStyle.italic,
                       fontFamily: "SFProDisplay",
-                      color: Color.fromARGB(255, 80, 57, 50),
+                      color: Color.fromARGB(255, 242, 101, 8),
                       shadows: [
                         Shadow(
                           blurRadius: 5,
@@ -71,7 +71,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               ),
             ),
             ListTile(
-              leading: const Icon(Icons.notifications, color: Colors.white, shadows: [
+              leading: const Icon(Icons.notifications, color: Color.fromARGB(255, 246, 191, 143), shadows: [
                 Shadow(
                   blurRadius: 5,
                   color: Colors.black,
@@ -81,7 +81,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               title: const Text(
                 "Benachrichtigungen",
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Color.fromARGB(255, 246, 191, 143),
                   fontWeight: FontWeight.w600,
                   fontStyle: FontStyle.italic,
                   shadows: [
@@ -106,14 +106,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
               ),
             ),
             const Divider(
-              color: Color.fromARGB(255, 255, 255, 255),
+              color: Color.fromARGB(255, 246, 191, 143),
               indent: 52,
               endIndent: 30,
               thickness: 2,
               height: 20,
             ),
             ListTile(
-              leading: const Icon(Icons.email, color: Colors.white, shadows: [
+              leading: const Icon(Icons.email, color: Color.fromARGB(255, 246, 191, 143), shadows: [
                 Shadow(
                   blurRadius: 5,
                   color: Colors.black,
@@ -123,7 +123,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               title: Text(
                 user?.email ?? "Keine E-Mail",
                 style: const TextStyle(
-                  color: Colors.white,
+                  color: Color.fromARGB(255, 246, 191, 143),
                   fontWeight: FontWeight.w600,
                   fontStyle: FontStyle.italic,
                   shadows: [
@@ -135,7 +135,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   ],
                 ),
               ),
-              trailing: const Icon(Icons.arrow_forward_ios, color: Colors.white, shadows: [
+              trailing: const Icon(Icons.arrow_forward_ios, color: Color.fromARGB(255, 246, 191, 143), shadows: [
                 Shadow(
                   blurRadius: 5,
                   color: Colors.black,
@@ -151,7 +151,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               },
             ),
             const Divider(
-              color: Color.fromARGB(255, 255, 255, 255),
+              color: Color.fromARGB(255, 246, 191, 143),
               indent: 52,
               endIndent: 30,
               thickness: 2,

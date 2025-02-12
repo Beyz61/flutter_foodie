@@ -32,7 +32,7 @@ class FavButton extends StatelessWidget {
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-          backgroundColor: const Color.fromARGB(255, 190, 155, 124),
+          backgroundColor: const Color.fromARGB(255, 24, 23, 22),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(18),
           ),
@@ -42,7 +42,7 @@ class FavButton extends StatelessWidget {
         child: Text(
           text,
           style: const TextStyle(
-            color: Color.fromARGB(255, 255, 252, 250),
+            color: Color.fromARGB(255, 242, 101, 8),
             fontWeight: FontWeight.w600,
             fontSize: 16,
             fontStyle: FontStyle.italic,

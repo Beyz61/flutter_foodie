@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:foodie_screen/config/colors.dart';
 
 class SearchButton extends StatelessWidget {
   const SearchButton({
@@ -17,7 +16,7 @@ class SearchButton extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 38, vertical: 15),
       child: Container(
         decoration: BoxDecoration(
-          color: searchButtonColor1,
+          color: const Color.fromARGB(255, 24, 23, 22),
           borderRadius: BorderRadius.circular(25),
           boxShadow: [
             BoxShadow(
@@ -35,7 +34,7 @@ class SearchButton extends StatelessWidget {
             fontWeight: FontWeight.w500,
             fontFamily: "SFProDisplay",
             fontStyle: FontStyle.italic,
-            color: Colors.black54, 
+            color: Color.fromARGB(255, 242, 101, 8), 
           ),
           decoration: InputDecoration(
             hintText: text,
@@ -44,7 +43,7 @@ class SearchButton extends StatelessWidget {
               fontWeight: FontWeight.w500,
               fontFamily: "SFProDisplay",
               fontStyle: FontStyle.italic,
-              color: Colors.black54, 
+              color: Color.fromARGB(255, 246, 191, 143), 
             ),
             filled: true,
             fillColor: Colors.transparent,
@@ -66,7 +65,7 @@ class SearchButton extends StatelessWidget {
               padding: EdgeInsets.only(left: 20),
               child: Icon(
                 Icons.search,
-                color: Colors.black54, 
+                color: Color.fromARGB(255, 246, 191, 143), 
               ),
             ),
           ),
