@@ -48,31 +48,27 @@ class _RecipeScreenState extends State<RecipeScreen> {
                 Text(
                   widget.recipe.recipeName, 
                   textAlign: TextAlign.center,
-                  style: const TextStyle(         
-                    fontSize: 32,
-                    fontWeight: FontWeight.w600,
-                    fontStyle: FontStyle.italic, // Kursiv
+                  style: const TextStyle(
                     color: Colors.white,
-                    decoration: TextDecoration.underline, // Unterstrich
-                    decorationColor: Colors.white, // Unterstrich Farbe
-                    shadows:[
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    fontStyle: FontStyle.italic,
+                    fontFamily: "SFProDisplay",
+                    shadows: [
                       Shadow(
-                        blurRadius: 0.5,
-                        color: Color.fromARGB(255, 175, 163, 163),
-                        offset: Offset(0,1)
-                        
+                        offset: Offset(0, 3),
+                        blurRadius: 6,
+                        color: Colors.black54,
                       ),
                     ],
-                  ), 
+                  ),
                 ),   
-                
-                const SizedBox(height: 5),
                 IconButton(
-                  icon: const Icon(Icons.favorite_border, color: Colors.white),
+                  icon: const Icon(Icons.favorite_border, color: Color.fromARGB(255, 179, 16, 16)),
                   onPressed: _addToFavorites,
                 ),
                 IngredientsContainer(recipe: widget.recipe,),
-                const SizedBox(height: 16),
+                const SizedBox(height: 190),
                 const Divider(
                   thickness: 0.7,
                   color: Color.fromARGB(255, 251, 248, 248),
@@ -90,49 +86,60 @@ class _RecipeScreenState extends State<RecipeScreen> {
                     ],
                   ),
                 ),
-                const Text( " Portion", style: TextStyle(  fontSize: 36,
-                        fontWeight: FontWeight.w600,
-                        fontStyle: FontStyle.italic,
-                        fontFamily: "SFProDisplay",
-                        color: Color.fromARGB(255, 255, 252, 249),
-                        shadows:[
-                          Shadow(
-                            blurRadius: 4,
-                            color: Color.fromARGB(255, 255, 252, 249),
-                   ),
-                 ],
+                const Text(
+                  "Portion", 
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    fontStyle: FontStyle.italic,
+                    fontFamily: "SFProDisplay",
+                    shadows: [
+                      Shadow(
+                        offset: Offset(0, 3),
+                        blurRadius: 6,
+                        color: Colors.black54,
+                      ),
+                    ],
+                  ),
                 ),
-               ),
-               const SizedBox(height: 10),
-               PortionCounter(recipe: widget.recipe, callback: () => setState(() {
+                const SizedBox(height: 10),
+                PortionCounter(recipe: widget.recipe, callback: () => setState(() {
                  
                })),
                 const SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => PreparationScreen(recipe: widget.recipe),
-                      ),
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color.fromARGB(10, 25, 25, 24), // Hintergrundfarbe des Buttons
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => PreparationScreen(recipe: widget.recipe),
+                        ),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color.fromARGB(10, 25, 25, 24), // Hintergrundfarbe des Buttons
                     ),
-                  ),
-                  child: const Text(
-                    "Zu der Zubereitung",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w600,
-                      fontStyle: FontStyle.italic,
-                      fontFamily: "SFProDisplay",
-                      color: Color.fromARGB(2255, 255, 252, 249),
-                      decoration: TextDecoration.underline,
-                      decorationColor: Color.fromARGB(255, 227, 206, 188),
+                    child: const Text(
+                      "Zu der Zubereitung",
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                        fontStyle: FontStyle.italic,
+                        fontFamily: "SFProDisplay",
+                        color: Colors.white,
+                        decoration: TextDecoration.underline,
+                        decorationColor: Color.fromARGB(255, 227, 206, 188),
+                        shadows: [
+                          Shadow(
+                            offset: Offset(0, 2),
+                            blurRadius: 4,
+                            color: Colors.black54,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),

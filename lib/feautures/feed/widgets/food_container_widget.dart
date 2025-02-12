@@ -36,8 +36,15 @@ class _FoodContainerWidgetState extends State<FoodContainerWidget> {
           child: Container(
             height: 94,
             decoration: BoxDecoration(
-              color: Colors.black.withOpacity(0.5), 
-              borderRadius: BorderRadius.circular(10), 
+              color: Colors.black.withOpacity(0.5),
+              borderRadius: BorderRadius.circular(10),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.3),
+                  offset: const Offset(0, 4),
+                  blurRadius: 8,
+                ),
+              ],
             ),
             child: Row(
               children: [
@@ -52,6 +59,13 @@ class _FoodContainerWidgetState extends State<FoodContainerWidget> {
                         image: AssetImage(widget.foodRecipe.imagePath),
                         fit: BoxFit.cover,
                       ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.3),
+                          offset: const Offset(0, 4),
+                          blurRadius: 8,
+                        ),
+                      ],
                     ),
                   ),
                 ),

@@ -17,6 +17,21 @@ class SpotScreen extends StatefulWidget {
 
 class _SpotScreenState extends State<SpotScreen> {
   String? selectedCategory;
+  late Future<List<Recipe>> _recipesFuture;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadRecipes();
+  }
+
+  void _loadRecipes() {
+    setState(() {
+      _recipesFuture = selectedCategory == null
+          ? context.read<DatabaseRepository>().getAllRecipes()
+          : Future.value(recipes.where((recipe) => recipe.category.toLowerCase() == selectedCategory!.toLowerCase()).toList());
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -75,6 +90,7 @@ class _SpotScreenState extends State<SpotScreen> {
                     onCategorySelected: (category) {
                       setState(() {
                         selectedCategory = category;
+                        _loadRecipes();
                       });
                     },
                     selectedCategory: selectedCategory,
@@ -111,9 +127,7 @@ class _SpotScreenState extends State<SpotScreen> {
               ),
               Expanded(
                 child: FutureBuilder<List<Recipe>>(
-                  future: selectedCategory == null
-                      ? context.read<DatabaseRepository>().getAllRecipes()
-                      : Future.value(recipes.where((recipe) => recipe.category.toLowerCase() == selectedCategory!.toLowerCase()).toList()),
+                  future: _recipesFuture,
                   builder: (context, snapshot) {
                     if (snapshot.connectionState == ConnectionState.waiting) {
                       return const Center(
@@ -143,34 +157,39 @@ class _SpotScreenState extends State<SpotScreen> {
                           tipp: null,
                         ));
                       }
-                      return GridView.builder(
-                       padding: EdgeInsets.zero, 
-                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                          crossAxisSpacing: 10,
-                          mainAxisSpacing: 10,
-                          childAspectRatio: 1.0,
-                        ),
-                        itemCount: 4,
-                        itemBuilder: (context, index) {
-                          final recipe = displayList[index];
-                          return recipe.recipeName.isEmpty
-                              ? Container()
-                              : GestureDetector(
-                                  onTap: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => RecipeScreen(recipe: recipe),
-                                      ),
-                                    );
-                                  },
-                                  child: SpotWidget(
-                                    text: recipe.recipeName,
-                                    picture: recipe.imagePath,
-                                  ),
-                                );
+                      return RefreshIndicator(
+                        onRefresh: () async {
+                          _loadRecipes();
                         },
+                        child: GridView.builder(
+                          padding: EdgeInsets.zero,
+                          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2,
+                            crossAxisSpacing: 10,
+                            mainAxisSpacing: 10,
+                            childAspectRatio: 1.0,
+                          ),
+                          itemCount: 4,
+                          itemBuilder: (context, index) {
+                            final recipe = displayList[index];
+                            return recipe.recipeName.isEmpty
+                                ? Container()
+                                : GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => RecipeScreen(recipe: recipe),
+                                        ),
+                                      );
+                                    },
+                                    child: SpotWidget(
+                                      text: recipe.recipeName,
+                                      picture: recipe.imagePath,
+                                    ),
+                                  );
+                          },
+                        ),
                       );
                     }
                   },
