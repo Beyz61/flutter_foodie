@@ -53,15 +53,25 @@ class SpotWidget extends StatelessWidget {
                   ],
                 ),
                 child: Center(
-                  child: Text(
-                    text,
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      fontSize: 17,
-                      fontWeight: FontWeight.w500,
-                      fontStyle: FontStyle.italic,
-                      fontFamily: "SFProDisplay",
-                      color: Color.fromARGB(255, 255, 249, 249),
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Text(
+                      text,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                        fontSize: 21,
+                        fontWeight: FontWeight.w600,
+                        fontStyle: FontStyle.italic,
+                        fontFamily: "SFProDisplay",
+                        color: Color.fromARGB(255, 255, 249, 249),
+                        shadows: [
+                          Shadow(
+                            blurRadius: 3,
+                            color: Colors.black,
+                            offset: Offset(0, 1),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
