@@ -1,7 +1,6 @@
 import 'dart:math'; // Add this import for random selection
 
 import 'package:flutter/material.dart';
-import 'package:foodie_screen/config/colors.dart';
 import 'package:foodie_screen/data/repository/shared_preferences_database.dart';
 import 'package:foodie_screen/feautures/favorite/models/fav_collection_item.dart';
 import 'package:foodie_screen/feautures/favorite/models/new_collection_dialog.dart';
@@ -50,12 +49,13 @@ class _FavoritScreenState extends State<FavoritScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 227, 218, 211),
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              backroundColor2,
-              backroundColor1,
+              Color.fromARGB(255, 75, 67, 59),
+              Color.fromARGB(255, 24, 23, 22),
             ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
@@ -93,78 +93,87 @@ class _FavoritScreenState extends State<FavoritScreen> {
                   width: 370,
                   padding: const EdgeInsets.all(16), 
                   decoration: BoxDecoration(
-                    color: const Color.fromARGB(15, 0, 0, 0).withOpacity(0.6), 
-                    borderRadius: BorderRadius.circular(20), 
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.2),
-                        spreadRadius: 2,
-                        blurRadius: 5,
-                        offset: const Offset(0, 3), 
-                      ),
-                    ],
+                  color: const Color.fromARGB(15, 0, 0, 0).withOpacity(0.6), 
+                  borderRadius: BorderRadius.circular(20), 
+                  boxShadow: [
+                    BoxShadow(
+                    color: Colors.black.withOpacity(0.2),
+                    spreadRadius: 2,
+                    blurRadius: 5,
+                    offset: const Offset(0, 3), 
+                    ),
+                  ],
                   ),
-                  child: Column(
+                  child: Stack(
                     children: [
-                      Expanded(
-                        child: GridView.builder(
-                          padding: EdgeInsets.zero, 
-                          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2, 
-                            crossAxisSpacing: 8.0, 
-                            mainAxisSpacing: 8.0, 
+                      Center(
+                        child: Opacity(
+                          opacity: 0.5,
+                          child: Image.asset(
+                            "assets/icon/icon.png",
+                            width: 250, 
+                            height: 250, 
                           ),
-                          itemCount: favCollectionsList.length,
-                          itemBuilder: (context, index) {
-                            final favContainer = favCollectionsList[index];
-                            
-                            // Wenn es bereits eintrage in der liste giebt
-                             print(favContainer.recipes);
-                            if (favContainer.recipes.isNotEmpty){
-                             
-                            final firstRecipe= RecipeService().getByName(favContainer.recipes.last);
-                            
-                            return DisplayFavContainer(
-                              onTap: () {
-                                showRecipeListDialog(context, favContainer);
-                              },
-                              picture: firstRecipe.imagePath,
-                             
-                              text: favContainer.collectionName,
-                              onDelete: () {
-                                _deleteCollection(index);
-                              },
-                            );}
-                            // Wenn die liste noch leer ist
-                            else {
-                              // Randomly select an image that is not the last used one
-                              final random = Random();
-                              final images = [
-                                'assets/images/lustig.png',
-                                'assets/images/hunger.png',
-                                'assets/images/hungerpommes.png'
-                                "assets/images/keine_rezepte.png",
-                                "assets/images/keine_rezepte1.png",
-                              ];
-                              String randomImage;
-                              do {
-                                randomImage = images[random.nextInt(images.length)];
-                              } while (randomImage == lastUsedImage);
-                              lastUsedImage = randomImage;
-
-                              return DisplayFavContainer(
-                                onTap: () {
-                                  // Handle tap
-                                },
-                                picture: randomImage,
-                                text: "Leere Küche!",
-                                onDelete: () {
-                                  _deleteCollection(index);
-                                },
-                              );
-                            }
-                          },
                         ),
+                      ),
+                      Column(
+                        children: [
+                          Expanded(
+                            child: GridView.builder(
+                              padding: EdgeInsets.zero, 
+                              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 2, 
+                                crossAxisSpacing: 8.0, 
+                                mainAxisSpacing: 8.0, 
+                              ),
+                              itemCount: favCollectionsList.length,
+                              itemBuilder: (context, index) {
+                                final favContainer = favCollectionsList[index];
+                                
+                                 print(favContainer.recipes);
+                                if (favContainer.recipes.isNotEmpty){
+                                 
+                                final firstRecipe= RecipeService().getByName(favContainer.recipes.last);
+                                
+                                return DisplayFavContainer(
+                                  onTap: () {
+                                  showRecipeListDialog(context, favContainer);
+                                  },
+                                  picture: firstRecipe.imagePath,
+                                 
+                                  text: favContainer.collectionName,
+                                  onDelete: () {
+                                  _deleteCollection(index);
+                                  },
+                                );}
+                                else {
+                                  final random = Random();
+                                  final images = [
+                                  'assets/images/lustig.png',
+                                  'assets/images/hunger.png',
+                                  'assets/images/hungerpommes.png'
+                                  "assets/images/keine_rezepte.png",
+                                  "assets/images/keine_rezepte1.png",
+                                  ];
+                                  String randomImage;
+                                  do {
+                                  randomImage = images[random.nextInt(images.length)];
+                                  } while (randomImage == lastUsedImage);
+                                  lastUsedImage = randomImage;
+
+                                  return DisplayFavContainer(
+                                  onTap: () {
+                                  },
+                                  text: favContainer.collectionName,
+                                  onDelete: () {
+                                    _deleteCollection(index);
+                                  },
+                                  );
+                                }
+                              },
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),

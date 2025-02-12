@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:foodie_screen/config/colors.dart';
 import 'package:foodie_screen/feautures/feed/models/fav_dialog.dart';
 import 'package:foodie_screen/feautures/feed/models/portion_counter.dart';
 import 'package:foodie_screen/feautures/feed/models/recipe.dart';
@@ -28,23 +27,17 @@ class _RecipeScreenState extends State<RecipeScreen> {
     return Scaffold(
       body: Container(
         height: screenSize.height,
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [ 
-              backroundColor2,
-              backroundColor1
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(widget.recipe.imagePath),
+            fit: BoxFit.cover,
           ),
         ),
         child: Padding(
           padding: const EdgeInsets.only(top: 70, right: 20, left: 20), 
           child: SingleChildScrollView(
             child: Column(
-              // crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-
                 Text(
                   widget.recipe.recipeName, 
                   textAlign: TextAlign.center,
@@ -64,11 +57,13 @@ class _RecipeScreenState extends State<RecipeScreen> {
                   ),
                 ),   
                 IconButton(
-                  icon: const Icon(Icons.favorite_border, color: Color.fromARGB(255, 179, 16, 16)),
+                  icon: const Icon(Icons.favorite_border,
+                   color: Color.fromARGB(255, 236, 107, 8),
+                   size: 30,),
                   onPressed: _addToFavorites,
                 ),
                 IngredientsContainer(recipe: widget.recipe,),
-                const SizedBox(height: 190),
+                const SizedBox(height: 10),
                 const Divider(
                   thickness: 0.7,
                   color: Color.fromARGB(255, 251, 248, 248),
@@ -151,8 +146,3 @@ class _RecipeScreenState extends State<RecipeScreen> {
     );
   }
 }
-   
-
-
-// scaffoldBackgroundColor: Colors.transparent,
-//           fontFamily: "SFProDisplay");

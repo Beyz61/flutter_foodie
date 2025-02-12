@@ -101,7 +101,7 @@ class _FoodContainerWidgetState extends State<FoodContainerWidget> {
                               icon: Icon(
                                 isFavorite ? Icons.favorite : Icons.favorite_border,
                                 size: 25,
-                                color: const Color.fromARGB(255, 255, 252, 247),
+                                color: const Color.fromARGB(255, 236, 107, 8),
                               ),
                               onPressed: () {
                                 if (isFavorite) {
