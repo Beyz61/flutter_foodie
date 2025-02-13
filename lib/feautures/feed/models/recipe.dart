@@ -53,7 +53,7 @@ class Recipe {
   String buildPreparationTexts(Preparation preparation) {
     List<String> text = [];
     for (String preparationText in preparation.preparationTexts) {
-      text.add("• $preparationText");
+      text.add(" $preparationText");
     }
     return text.join("\n");
   }

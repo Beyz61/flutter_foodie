@@ -17,7 +17,7 @@ class IngredientsContainer extends StatelessWidget {
         filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8), // Verschwommenheit
         child: Container(
           decoration: BoxDecoration(
-            color: Colors.black.withOpacity(0.2), // Schwarzer, leicht durchsichtiger Hintergrund
+            color: Colors.black.withOpacity(0.5), // Schwarzer, leicht durchsichtiger Hintergrund
             border: Border.all(color: Colors.white, width: 0.1), // Weiße Umrandung
             borderRadius: BorderRadius.circular(16), // Runder Rahmen    
           ),

@@ -80,21 +80,24 @@ class _FoodContainerWidgetState extends State<FoodContainerWidget> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text(
-                              widget.foodRecipe.recipeName,
-                              style: const TextStyle(
-                                color: Color.fromARGB(255, 255, 252, 247),
-                                fontWeight: FontWeight.w500,
-                                fontSize: 21.5,
-                                fontStyle: FontStyle.italic,
-                                fontFamily: "SFProDisplay",
-                                shadows: [
-                                  Shadow(
-                                    color: Color.fromARGB(255, 67, 65, 65),
-                                    offset: Offset(0, 1),
-                                    blurRadius: 2,
-                                  ),
-                                ],
+                            Flexible(
+                              child: Text(
+                                widget.foodRecipe.recipeName,
+                                style: const TextStyle(
+                                  fontSize: 21,
+                                  fontWeight: FontWeight.w600,
+                                  fontStyle: FontStyle.italic,
+                                  fontFamily: "SFProDisplay",
+                                  color: Color.fromARGB(255, 255, 249, 249),
+                                  shadows: [
+                                    Shadow(
+                                      blurRadius: 3,
+                                      color: Colors.black,
+                                      offset: Offset(0, 1),
+                                    ),
+                                  ],
+                                ),
+                                overflow: TextOverflow.ellipsis,
                               ),
                             ),
                             IconButton(

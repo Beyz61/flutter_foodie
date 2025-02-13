@@ -1,4 +1,5 @@
 import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class PreparationContainer extends StatelessWidget {
@@ -14,32 +15,34 @@ class PreparationContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(15),
+      borderRadius: BorderRadius.circular(26),
       child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+        filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),
         child: Container(
-          margin: const EdgeInsets.symmetric(vertical: 14, horizontal: 14),
-          padding: const EdgeInsets.all(16),
+           margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 4),
+          padding: const EdgeInsets.all(12),
           decoration: BoxDecoration(
-            color: Colors.transparent.withOpacity(0.5),
-            borderRadius: BorderRadius.circular(16),
+            color: Colors.transparent.withOpacity(0.6),
+            borderRadius: BorderRadius.circular(26),
           ),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center, 
             children: [
               Text(
                 title,
+                textAlign: TextAlign.center,
                 style: const TextStyle(
-                  color: Color.fromARGB(255, 251, 251, 251),
-                  fontWeight: FontWeight.w500,
-                  fontSize: 20,
+                  color: Color.fromARGB(255, 255, 252, 249),
+                  fontWeight: FontWeight.w700,
+                  fontSize: 28, 
                   fontStyle: FontStyle.italic,
                   fontFamily: "SFProDisplay",
+                  decorationColor: Color.fromARGB(255, 225, 218, 211),
                   shadows: [
                     Shadow(
-                      blurRadius: 3,
-                      color: Color.fromARGB(255, 255, 255, 255),
-                      offset: Offset(0, 1),
+                      blurRadius: 5,
+                      color: Colors.black,
+                      offset: Offset(0, 2),
                     ),
                   ],
                 ),
@@ -48,11 +51,18 @@ class PreparationContainer extends StatelessWidget {
               Text(
                 description,
                 style: const TextStyle(
-                  color: Color.fromARGB(255, 240, 239, 238),
-                  fontWeight: FontWeight.w500,
+                  color: Color.fromARGB(255, 255, 252, 249),
+                  fontWeight: FontWeight.w600,
                   fontSize: 16,
                   fontStyle: FontStyle.italic,
                   fontFamily: "SFProDisplay",
+                  shadows: [
+                    Shadow(
+                      blurRadius: 5,
+                      color: Colors.black,
+                      offset: Offset(0, 2),
+                    ),
+                  ],
                 ),
               ),
             ],
