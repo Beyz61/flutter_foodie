@@ -45,6 +45,7 @@ class _PortionCounterState extends State<PortionCounter> {
       decoration: BoxDecoration(
         color: Colors.black.withOpacity(0.5), 
         borderRadius: BorderRadius.circular(10),
+        border: Border.all(color: Colors.white, width: 1),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.3),

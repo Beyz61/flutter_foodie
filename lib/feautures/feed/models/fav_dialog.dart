@@ -1,22 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:foodie_screen/data/repository/shared_preferences_database.dart';
-import 'package:foodie_screen/feautures/favorite/models/fav_collection_item.dart';
 import 'package:foodie_screen/feautures/favorite/widgets/fav_containers_list.dart';
 
 class FavDialog {
   static void showAddToCollectionDialog(
-  BuildContext context, 
-  String recipeName, 
-  Function onAdded,
+    BuildContext context, 
+    String recipeName, 
+    Function onAdded,
   ) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
           backgroundColor: Colors.black.withOpacity(0.8),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+            side: const BorderSide(color: Colors.white, width: 1), 
+          ),
           title: const Text(
             "Kollektion auswählen",
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 20,
+              fontWeight: FontWeight.w600,
+              fontStyle: FontStyle.italic,
+              fontFamily: "SFProDisplay",
+            ),
           ),
           content: Column(
             mainAxisSize: MainAxisSize.min,
@@ -24,7 +33,7 @@ class FavDialog {
               return ListTile(
                 title: Text(
                   collection.collectionName,
-                  style: const TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white, fontSize: 16),
                 ),
                 onTap: () async {
                   collection.recipes.add(recipeName);
@@ -42,17 +51,27 @@ class FavDialog {
 
   static void showRemoveFromCollectionDialog(
     BuildContext context,
-   String recipeName, 
-   Function onRemoved,
-) {
+    String recipeName, 
+    Function onRemoved,
+  ) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
           backgroundColor: Colors.black.withOpacity(0.8),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+            side: const BorderSide(color: Colors.white, width: 1), // Thin border
+          ),
           title: const Text(
             "Aus Kollektion entfernen?",
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 20,
+              fontWeight: FontWeight.w600,
+              fontStyle: FontStyle.italic,
+              fontFamily: "SFProDisplay",
+            ),
           ),
           actions: [
             TextButton(
@@ -61,7 +80,13 @@ class FavDialog {
               },
               child: const Text(
                 "Abbrechen",
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                  fontStyle: FontStyle.italic,
+                  fontFamily: "SFProDisplay",
+                ),
               ),
             ),
             TextButton(
@@ -75,7 +100,13 @@ class FavDialog {
               },
               child: const Text(
                 "Entfernen",
-                style: TextStyle(color: Colors.red),
+                style: TextStyle(
+                  color: Colors.red,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                  fontStyle: FontStyle.italic,
+                  fontFamily: "SFProDisplay",
+                ),
               ),
             ),
           ],

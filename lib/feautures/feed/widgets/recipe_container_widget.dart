@@ -18,8 +18,8 @@ class IngredientsContainer extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
             color: Colors.black.withOpacity(0.5), // Schwarzer, leicht durchsichtiger Hintergrund
-            border: Border.all(color: Colors.white, width: 0.1), // Weiße Umrandung
-            borderRadius: BorderRadius.circular(16), // Runder Rahmen    
+            border: Border.all(color: Colors.white, width: 1), 
+            borderRadius: BorderRadius.circular(16),   
           ),
           child: Padding(
             padding: const EdgeInsets.all(16),

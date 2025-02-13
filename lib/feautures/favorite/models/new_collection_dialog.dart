@@ -10,6 +10,10 @@ void showNewCollection(BuildContext context, Function onCollectionAdded) {
     builder: (BuildContext context) {
       return AlertDialog(
         backgroundColor: Colors.black.withOpacity(0.8),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+          side: const BorderSide(color: Colors.white, width: 1), 
+        ),
         title: const Text(
           "Neue Kollektion erstellen",
           style: TextStyle(

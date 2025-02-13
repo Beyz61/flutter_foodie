@@ -43,7 +43,7 @@ class _RecipeScreenState extends State<RecipeScreen> {
                   textAlign: TextAlign.center,
                   style: const TextStyle(
                     color: Colors.white,
-                    fontSize: 30,
+                    fontSize: 40,
                     fontWeight: FontWeight.bold,
                     fontStyle: FontStyle.italic,
                     fontFamily: "SFProDisplay",
@@ -59,7 +59,8 @@ class _RecipeScreenState extends State<RecipeScreen> {
                 IconButton(
                   icon: const Icon(Icons.favorite_border,
                    color: Color.fromARGB(255, 236, 107, 8),
-                   size: 30,),
+                   size: 30,
+                  ),
                   onPressed: _addToFavorites,
                 ),
                 IngredientsContainer(recipe: widget.recipe,),
@@ -105,35 +106,58 @@ class _RecipeScreenState extends State<RecipeScreen> {
                 const SizedBox(height: 20),
                 ClipRRect(
                   borderRadius: BorderRadius.circular(10),
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => PreparationScreen(recipe: widget.recipe),
+                  child: Container(
+                    width: 250,
+                    padding: const EdgeInsets.all(5),
+                    decoration: BoxDecoration(
+                      color: Colors.black.withOpacity(0.5), 
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: Colors.white, width: 1),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.3),
+                          offset: const Offset(4, 4),
+                          blurRadius: 8,
+                          spreadRadius: 1,
                         ),
-                      );
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color.fromARGB(10, 25, 25, 24), // Hintergrundfarbe des Buttons
+                        BoxShadow(
+                          color: Colors.white.withOpacity(0.1),
+                          offset: const Offset(-4, -4),
+                          blurRadius: 8,
+                          spreadRadius: 1,
+                        ),
+                      ],
                     ),
-                    child: const Text(
-                      "Zu der Zubereitung",
-                      style: TextStyle(
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold,
-                        fontStyle: FontStyle.italic,
-                        fontFamily: "SFProDisplay",
-                        color: Colors.white,
-                        decoration: TextDecoration.underline,
-                        decorationColor: Color.fromARGB(255, 227, 206, 188),
-                        shadows: [
-                          Shadow(
-                            offset: Offset(0, 2),
-                            blurRadius: 4,
-                            color: Colors.black54,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => PreparationScreen(recipe: widget.recipe),
                           ),
-                        ],
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.transparent, 
+                        shadowColor: Colors.transparent, 
+                      ),
+                      child: const Text(
+                        "Zu der Zubereitung",
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          fontStyle: FontStyle.italic,
+                          fontFamily: "SFProDisplay",
+                          color: Color.fromARGB(255, 245, 81, 16),
+                          decorationColor: Color.fromARGB(255, 227, 206, 188),
+                          shadows: [
+                            Shadow(
+                              offset: Offset(0, 2),
+                              blurRadius: 4,
+                              color: Colors.black54,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),

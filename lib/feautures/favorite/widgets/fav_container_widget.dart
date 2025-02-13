@@ -33,6 +33,10 @@ class _DisplayFavContainerState extends State<DisplayFavContainer> {
       builder: (BuildContext context) {
         return AlertDialog(
           backgroundColor: Colors.black.withOpacity(0.8),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+            side: const BorderSide(color: Colors.white, width: 1), 
+          ),
           title: const Text(
             "Kollektion löschen?",
             style: TextStyle(color: Colors.white),
@@ -70,6 +74,10 @@ class _DisplayFavContainerState extends State<DisplayFavContainer> {
       builder: (BuildContext context) {
         return AlertDialog(
           backgroundColor: Colors.black.withOpacity(0.8),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+            side: const BorderSide(color: Colors.white, width: 1), // Thin border
+          ),
           title: const Text(
             "Kollektion bearbeiten",
             style: TextStyle(color: Colors.white),
