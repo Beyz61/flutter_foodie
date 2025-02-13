@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodie_screen/data/repository/shared_preferences_database.dart';
+import 'package:foodie_screen/feautures/favorite/models/new_collection_dialog.dart';
 import 'package:foodie_screen/feautures/favorite/widgets/fav_containers_list.dart';
 
 class FavDialog {
@@ -29,20 +30,40 @@ class FavDialog {
           ),
           content: Column(
             mainAxisSize: MainAxisSize.min,
-            children: favCollectionsList.map((collection) {
-              return ListTile(
-                title: Text(
-                  collection.collectionName,
-                  style: const TextStyle(color: Colors.white, fontSize: 16),
-                ),
-                onTap: () async {
-                  collection.recipes.add(recipeName);
-                  await SharedPreferencesHelper.saveFavCollections(favCollectionsList);
-                  onAdded();
+            children: [
+              ...favCollectionsList.map((collection) {
+                return ListTile(
+                  title: Text(
+                    collection.collectionName,
+                    style: const TextStyle(color: Colors.white, fontSize: 16),
+                  ),
+                  onTap: () async {
+                    collection.recipes.add(recipeName);
+                    await SharedPreferencesHelper.saveFavCollections(favCollectionsList);
+                    onAdded();
+                    Navigator.of(context).pop();
+                  },
+                );
+              }),
+              const SizedBox(height: 10),
+              TextButton.icon(
+                onPressed: () {
                   Navigator.of(context).pop();
+                  showNewCollection(context, onAdded);
                 },
-              );
-            }).toList(),
+                icon: const Icon(Icons.add, color: Colors.orange),
+                label: const Text(
+                  "Neue Kollektion hinzufügen",
+                  style: TextStyle(
+                    color: Colors.orange,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                    fontStyle: FontStyle.italic,
+                    fontFamily: "SFProDisplay",
+                  ),
+                ),
+              ),
+            ],
           ),
         );
       },

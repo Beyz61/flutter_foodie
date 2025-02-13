@@ -41,6 +41,12 @@ void showNewCollection(BuildContext context, Function onCollectionAdded) {
               fontStyle: FontStyle.italic,
               fontFamily: "SFProDisplay",
             ),
+            enabledBorder: UnderlineInputBorder(
+              borderSide: BorderSide(color: Colors.white54),
+            ),
+            focusedBorder: UnderlineInputBorder(
+              borderSide: BorderSide(color: Colors.white),
+            ),
           ),
         ),
         actions: [
@@ -76,7 +82,7 @@ void showNewCollection(BuildContext context, Function onCollectionAdded) {
             child: const Text(
               "Hinzufügen",
               style: TextStyle(
-                color: Colors.white,
+                color: Colors.red,
                 fontSize: 16,
                 fontWeight: FontWeight.w600,
                 fontStyle: FontStyle.italic,
