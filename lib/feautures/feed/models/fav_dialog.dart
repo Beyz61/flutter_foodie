@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:foodie_screen/data/repository/shared_preferences_database.dart';
+import 'package:foodie_screen/feautures/favorite/models/fav_collection_item.dart';
 import 'package:foodie_screen/feautures/favorite/models/new_collection_dialog.dart';
 import 'package:foodie_screen/feautures/favorite/widgets/fav_containers_list.dart';
 
 class FavDialog {
   static void showAddToCollectionDialog(
-    BuildContext context, 
-    String recipeName, 
+    BuildContext context,
+    String recipeName,
     Function onAdded,
   ) {
     showDialog(
@@ -16,7 +17,7 @@ class FavDialog {
           backgroundColor: Colors.black.withOpacity(0.8),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
-            side: const BorderSide(color: Colors.white, width: 1), 
+            side: const BorderSide(color: Colors.white, width: 1),
           ),
           title: const Text(
             "Kollektion auswählen",
@@ -28,42 +29,79 @@ class FavDialog {
               fontFamily: "SFProDisplay",
             ),
           ),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              ...favCollectionsList.map((collection) {
-                return ListTile(
-                  title: Text(
-                    collection.collectionName,
-                    style: const TextStyle(color: Colors.white, fontSize: 16),
-                  ),
-                  onTap: () async {
-                    collection.recipes.add(recipeName);
-                    await SharedPreferencesHelper.saveFavCollections(favCollectionsList);
-                    onAdded();
-                    Navigator.of(context).pop();
-                  },
-                );
-              }),
-              const SizedBox(height: 10),
-              TextButton.icon(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                  showNewCollection(context, onAdded);
-                },
-                icon: const Icon(Icons.add, color: Colors.orange),
-                label: const Text(
-                  "Neue Kollektion hinzufügen",
-                  style: TextStyle(
-                    color: Colors.orange,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                    fontStyle: FontStyle.italic,
-                    fontFamily: "SFProDisplay",
-                  ),
-                ),
-              ),
-            ],
+          content: FutureBuilder(
+            future: SharedPreferencesHelper.loadFavCollections(),
+            builder: (context, snapshot) {
+              if (snapshot.hasError) {
+                return Text("Fehler: ${snapshot.error}");
+              } else if (snapshot.connectionState == ConnectionState.waiting &&
+                  !snapshot.hasData) {
+                return const CircularProgressIndicator();
+              } else {
+                if (snapshot.hasData) {
+                  final collections = snapshot.data!;
+
+                  return Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      ...collections.map((collection){
+                          
+                          return ListTile(
+                            title: Text(
+                              collection.collectionName,
+                              style: const TextStyle(
+                                  color: Colors.white, fontSize: 16),
+                            ),
+                            onTap: () async {
+                              collection.recipes.add(recipeName);
+                              await SharedPreferencesHelper.saveFavCollections(
+                                  favCollectionsList);
+                                  
+                              onAdded();
+                              if (context.mounted) {
+                                Navigator.of(context).pop();
+                              }
+                            },
+                          );
+                      }),
+                      const SizedBox(height: 10),
+                      TextButton.icon(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                          showNewCollection(
+                              context,
+                              (collectionName) async {
+
+                                print("Here");
+                                    favCollectionsList.add(FavCollection(
+                                        collectionName: collectionName,
+                                        recipes: [recipeName]));
+                                    await SharedPreferencesHelper
+                                        .saveFavCollections(favCollectionsList);
+
+                                        print("Saved Collection");
+                                    onAdded();
+                                  });
+                        },
+                        icon: const Icon(Icons.add, color: Colors.orange),
+                        label: const Text(
+                          "Neue Kollektion hinzufügen",
+                          style: TextStyle(
+                            color: Colors.orange,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                            fontStyle: FontStyle.italic,
+                            fontFamily: "SFProDisplay",
+                          ),
+                        ),
+                      ),
+                    ],
+                  );
+                } else {
+                  return const Text("Keine Kolleketionen");
+                }
+              }
+            },
           ),
         );
       },
@@ -72,7 +110,7 @@ class FavDialog {
 
   static void showRemoveFromCollectionDialog(
     BuildContext context,
-    String recipeName, 
+    String recipeName,
     Function onRemoved,
   ) {
     showDialog(
@@ -82,7 +120,8 @@ class FavDialog {
           backgroundColor: Colors.black.withOpacity(0.8),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
-            side: const BorderSide(color: Colors.white, width: 1), // Thin border
+            side:
+                const BorderSide(color: Colors.white, width: 1), // Thin border
           ),
           title: const Text(
             "Aus Kollektion entfernen?",
@@ -115,7 +154,8 @@ class FavDialog {
                 for (var collection in favCollectionsList) {
                   collection.recipes.remove(recipeName);
                 }
-                await SharedPreferencesHelper.saveFavCollections(favCollectionsList);
+                await SharedPreferencesHelper.saveFavCollections(
+                    favCollectionsList);
                 onRemoved();
                 Navigator.of(context).pop();
               },

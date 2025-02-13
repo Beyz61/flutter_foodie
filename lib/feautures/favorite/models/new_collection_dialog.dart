@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:foodie_screen/feautures/favorite/models/fav_collection_item.dart';
-import 'package:foodie_screen/feautures/favorite/widgets/fav_containers_list.dart';
 
-void showNewCollection(BuildContext context, Function onCollectionAdded) {
+void showNewCollection(BuildContext context, Function(String) onCollectionAdded) {
   final TextEditingController controller = TextEditingController();
 
   showDialog(
@@ -12,7 +10,7 @@ void showNewCollection(BuildContext context, Function onCollectionAdded) {
         backgroundColor: Colors.black.withOpacity(0.8),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
-          side: const BorderSide(color: Colors.white, width: 1), 
+          side: const BorderSide(color: Colors.white, width: 1),
         ),
         title: const Text(
           "Neue Kollektion erstellen",
@@ -27,7 +25,7 @@ void showNewCollection(BuildContext context, Function onCollectionAdded) {
         content: TextField(
           controller: controller,
           style: const TextStyle(
-            color: Colors.white, 
+            color: Colors.white,
             fontWeight: FontWeight.w500,
             fontStyle: FontStyle.italic,
             fontFamily: "SFProDisplay",
@@ -67,15 +65,11 @@ void showNewCollection(BuildContext context, Function onCollectionAdded) {
           ),
           TextButton(
             onPressed: () {
-              String collectionName = controller.text; // der Name der Kollektion
+              String collectionName =
+                  controller.text; // der Name der Kollektion
               if (collectionName.isNotEmpty) {
-                favCollectionsList.add(
-                  FavCollection(
-                    collectionName: collectionName,
-                    recipes: [], // kommt später, noch keine Rezepte
-                  ),
-                );
-                onCollectionAdded();
+                onCollectionAdded(collectionName);
+                print("On Collection Added");
               }
               Navigator.of(context).pop();
             },

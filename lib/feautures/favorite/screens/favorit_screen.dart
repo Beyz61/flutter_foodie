@@ -34,16 +34,18 @@ class _FavoritScreenState extends State<FavoritScreen> {
     print("collections:${loadedCollections.length}");
   }
 
-  void _addNewCollection() {
-    setState(() {});
+  void _addNewCollection(String collectionName) {
+    favCollectionsList.add(FavCollection(collectionName: collectionName, recipes: []));
     SharedPreferencesHelper.saveFavCollections(favCollectionsList);
+    _loadFavCollections();
+    setState(() {});
   }
 
   void _deleteCollection(int index) {
-    setState(() {
-      favCollectionsList.removeAt(index);
-    });
+    favCollectionsList.removeAt(index);
     SharedPreferencesHelper.saveFavCollections(favCollectionsList);
+    _loadFavCollections();
+    setState(() {});
   }
 
   @override
