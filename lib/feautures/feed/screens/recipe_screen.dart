@@ -100,9 +100,7 @@ class _RecipeScreenState extends State<RecipeScreen> {
                   ),
                 ),
                 const SizedBox(height: 10),
-                PortionCounter(recipe: widget.recipe, callback: () => setState(() {
-                 
-               })),
+                PortionCounter(recipe: widget.recipe, callback: () => setState(() {})),
                 const SizedBox(height: 20),
                 ClipRRect(
                   borderRadius: BorderRadius.circular(10),

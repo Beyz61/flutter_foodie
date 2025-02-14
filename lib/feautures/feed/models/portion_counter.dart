@@ -34,6 +34,7 @@ class _PortionCounterState extends State<PortionCounter> {
         _portionCount--;
         widget.recipe.portion--;
       });
+      widget.callback();
     }
   }
 
