@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodie_screen/data/repository/database_repository.dart';
+import 'package:foodie_screen/data/repository/recipe/shared_preferences_recipe_repository.dart';
 import 'package:foodie_screen/feautures/feed/models/recipe.dart';
 import 'package:foodie_screen/feautures/feed/screens/recipe_screen.dart';
 import 'package:foodie_screen/feautures/feed/widgets/food_container_widget.dart';
@@ -17,6 +18,7 @@ class _FeedScreenState extends State<FeedScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final sharedProvider = Provider.of<SharedPreferencesRecipeRepository>(context);
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 227, 218, 211),
       body: Container(
@@ -64,7 +66,7 @@ class _FeedScreenState extends State<FeedScreen> {
                     child: FutureBuilder(
                       future: context.read<DatabaseRepository>().getAllRecipes(),
                       builder: (context, snapshot) {
-                        if (snapshot.connectionState == ConnectionState.waiting) {
+                        if (snapshot.connectionState != ConnectionState.done) {
                           return const Center(
                             child: CircularProgressIndicator(
                               valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
@@ -82,6 +84,7 @@ class _FeedScreenState extends State<FeedScreen> {
                           itemBuilder: (context, index) {
                             final recipe = recipes[index];
                             return FoodContainerWidget(
+                              collectionName: sharedProvider.getCollectionNameFromRecipe(recipe.recipeName) ?? "",
                               onTap: () {
                                 Navigator.push(
                                   context,

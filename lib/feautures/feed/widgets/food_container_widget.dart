@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:foodie_screen/feautures/favorite/widgets/fav_containers_list.dart';
+import 'package:foodie_screen/data/repository/recipe/shared_preferences_recipe_repository.dart';
 import 'package:foodie_screen/feautures/feed/models/fav_dialog.dart';
 import 'package:foodie_screen/feautures/feed/models/recipe.dart';
+import 'package:provider/provider.dart';
 
 class FoodContainerWidget extends StatefulWidget {
   final Function()? onTap;
   final Recipe foodRecipe;
+  final String collectionName;
 
   const FoodContainerWidget({
     super.key,
     required this.onTap,
-    required this.foodRecipe, 
+    required this.foodRecipe,
+    required this.collectionName
   });
 
   @override
@@ -18,16 +21,14 @@ class FoodContainerWidget extends StatefulWidget {
 }
 
 class _FoodContainerWidgetState extends State<FoodContainerWidget> {
-  bool isFavorite = false;
 
-  @override
-  void initState() {
-    super.initState();
-    isFavorite = favCollectionsList.any((collection) => collection.recipes.contains(widget.foodRecipe.recipeName));
-  }
+
+ 
 
   @override
   Widget build(BuildContext context) {
+
+    final sharedProvider = Provider.of<SharedPreferencesRecipeRepository>(context);
     return GestureDetector(
       onTap: widget.onTap,
       child: Padding(
@@ -71,11 +72,10 @@ class _FoodContainerWidgetState extends State<FoodContainerWidget> {
                 ),
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.only(left: 0, right: 6 ), 
+                    padding: const EdgeInsets.only(left: 0, right: 6),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
-                    
                       children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -100,39 +100,48 @@ class _FoodContainerWidgetState extends State<FoodContainerWidget> {
                                 overflow: TextOverflow.ellipsis,
                               ),
                             ),
-                            IconButton(
+                            Consumer<SharedPreferencesRecipeRepository>(
+                              builder: (context, state , _){
+
+                                bool isFavorite = state.getFavoriteState(widget.collectionName, widget.foodRecipe.recipeName);
+                                return IconButton(
                               icon: Icon(
-                                isFavorite ? Icons.favorite : Icons.favorite_border,
+                                isFavorite
+                                    ? Icons.favorite
+                                    : Icons.favorite_border,
                                 size: 25,
                                 color: const Color.fromARGB(255, 236, 107, 8),
                               ),
                               onPressed: () {
                                 if (isFavorite) {
-                                  FavDialog.showRemoveFromCollectionDialog(context, widget.foodRecipe.recipeName, () {
-                                    setState(() {
-                                      isFavorite = false;
-                                    });
+                                  FavDialog.showRemoveFromCollectionDialog(
+                                      context,  widget.collectionName,widget.foodRecipe.recipeName,
+                                      () {
+                                       
                                   });
                                 } else {
-                                  FavDialog.showAddToCollectionDialog(context, widget.foodRecipe.recipeName, () {
-                                    setState(() {
-                                      isFavorite = true;
-                                    });
+                                  FavDialog.showAddToCollectionDialog(
+                                      context, widget.foodRecipe.recipeName,
+                                      () {
+                               
                                   });
                                 }
                               },
-                            ),
+                            );
+                              },
+                            )
                           ],
                         ),
                         const SizedBox(height: 10),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            const Icon(Icons.schedule,
+                            const Icon(
+                              Icons.schedule,
                               size: 18.5,
                               color: Color.fromARGB(2255, 255, 252, 247),
                             ),
-                            const SizedBox(width: 4),                            
+                            const SizedBox(width: 4),
                             Text(
                               widget.foodRecipe.preparationTime,
                               style: const TextStyle(
@@ -155,7 +164,6 @@ class _FoodContainerWidgetState extends State<FoodContainerWidget> {
                               ),
                             ),
                           ],
-                          
                         ),
                       ],
                     ),

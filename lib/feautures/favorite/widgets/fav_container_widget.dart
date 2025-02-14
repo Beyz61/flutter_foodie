@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:foodie_screen/data/repository/recipe/shared_preferences_recipe_repository.dart';
+import 'package:provider/provider.dart';
 
 class DisplayFavContainer extends StatefulWidget {
   final Function()? onTap;
@@ -68,10 +70,11 @@ class _DisplayFavContainerState extends State<DisplayFavContainer> {
   }
 
   void _editCollectionName(BuildContext context) {
-    final TextEditingController controller = TextEditingController(text: collectionName);
+    final TextEditingController controller = TextEditingController(text: widget.text);
     showDialog(
       context: context,
       builder: (BuildContext context) {
+        final sharedProvider = Provider.of<SharedPreferencesRecipeRepository>(context);
         return AlertDialog(
           backgroundColor: Colors.black.withOpacity(0.8),
           shape: RoundedRectangleBorder(
@@ -102,9 +105,7 @@ class _DisplayFavContainerState extends State<DisplayFavContainer> {
             ),
             TextButton(
               onPressed: () {
-                setState(() {
-                  collectionName = controller.text;
-                });
+                sharedProvider.changeCollectionName(widget.text, controller.text);
                 Navigator.of(context).pop();
               },
               child: const Text(
@@ -222,7 +223,7 @@ class _DisplayFavContainerState extends State<DisplayFavContainer> {
                           child: FittedBox(
                             fit: BoxFit.scaleDown,
                             child: Text(
-                              collectionName,
+                              widget.text,
                               style: const TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.w600,

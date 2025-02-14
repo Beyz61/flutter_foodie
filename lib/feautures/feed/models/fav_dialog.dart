@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:foodie_screen/data/repository/shared_preferences_database.dart';
-import 'package:foodie_screen/feautures/favorite/models/fav_collection_item.dart';
+import 'package:foodie_screen/data/repository/recipe/shared_preferences_recipe_repository.dart';
 import 'package:foodie_screen/feautures/favorite/models/new_collection_dialog.dart';
-import 'package:foodie_screen/feautures/favorite/widgets/fav_containers_list.dart';
+import 'package:provider/provider.dart';
 
 class FavDialog {
   static void showAddToCollectionDialog(
@@ -13,6 +12,7 @@ class FavDialog {
     showDialog(
       context: context,
       builder: (BuildContext context) {
+          final sharedProvider = Provider.of<SharedPreferencesRecipeRepository>(context);
         return AlertDialog(
           backgroundColor: Colors.black.withOpacity(0.8),
           shape: RoundedRectangleBorder(
@@ -29,19 +29,10 @@ class FavDialog {
               fontFamily: "SFProDisplay",
             ),
           ),
-          content: FutureBuilder(
-            future: SharedPreferencesHelper.loadFavCollections(),
-            builder: (context, snapshot) {
-              if (snapshot.hasError) {
-                return Text("Fehler: ${snapshot.error}");
-              } else if (snapshot.connectionState == ConnectionState.waiting &&
-                  !snapshot.hasData) {
-                return const CircularProgressIndicator();
-              } else {
-                if (snapshot.hasData) {
-                  final collections = snapshot.data!;
-
-                  return Column(
+          content: Consumer<SharedPreferencesRecipeRepository>(
+            builder: (context, state, _){
+              final collections = state.favCollections;
+              return Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       ...collections.map((collection){
@@ -53,10 +44,7 @@ class FavDialog {
                                   color: Colors.white, fontSize: 16),
                             ),
                             onTap: () async {
-                              collection.recipes.add(recipeName);
-                              await SharedPreferencesHelper.saveFavCollections(
-                                  favCollectionsList);
-                                  
+                              sharedProvider.addRecipeToCollection(collection.collectionName, recipeName);
                               onAdded();
                               if (context.mounted) {
                                 Navigator.of(context).pop();
@@ -71,15 +59,7 @@ class FavDialog {
                           showNewCollection(
                               context,
                               (collectionName) async {
-
-                                print("Here");
-                                    favCollectionsList.add(FavCollection(
-                                        collectionName: collectionName,
-                                        recipes: [recipeName]));
-                                    await SharedPreferencesHelper
-                                        .saveFavCollections(favCollectionsList);
-
-                                        print("Saved Collection");
+                                  sharedProvider.addCollection(collectionName, recipeName);
                                     onAdded();
                                   });
                         },
@@ -97,10 +77,6 @@ class FavDialog {
                       ),
                     ],
                   );
-                } else {
-                  return const Text("Keine Kolleketionen");
-                }
-              }
             },
           ),
         );
@@ -110,12 +86,14 @@ class FavDialog {
 
   static void showRemoveFromCollectionDialog(
     BuildContext context,
+    String collectionName,
     String recipeName,
     Function onRemoved,
   ) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
+        final sharedProvider = Provider.of<SharedPreferencesRecipeRepository>(context);
         return AlertDialog(
           backgroundColor: Colors.black.withOpacity(0.8),
           shape: RoundedRectangleBorder(
@@ -151,11 +129,8 @@ class FavDialog {
             ),
             TextButton(
               onPressed: () async {
-                for (var collection in favCollectionsList) {
-                  collection.recipes.remove(recipeName);
-                }
-                await SharedPreferencesHelper.saveFavCollections(
-                    favCollectionsList);
+                print("Collection: $collectionName");
+                sharedProvider.removeRecipeFromCollection(collectionName,recipeName);
                 onRemoved();
                 Navigator.of(context).pop();
               },

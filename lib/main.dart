@@ -8,6 +8,7 @@ import 'package:foodie_screen/config/themes.dart';
 import 'package:foodie_screen/data/repository/auth_repository.dart';
 import 'package:foodie_screen/data/repository/database_repository.dart';
 import 'package:foodie_screen/data/repository/firebase_auth_repository.dart';
+import 'package:foodie_screen/data/repository/recipe/shared_preferences_recipe_repository.dart';
 import 'package:foodie_screen/data/repository/shared_preferences_database.dart';
 import 'package:foodie_screen/feautures/authentification/screens/main_screen.dart';
 import 'package:foodie_screen/firebase_options.dart';
@@ -19,9 +20,15 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  final sharedPreferecesRecipeRepository = SharedPreferencesRecipeRepository();
+  await sharedPreferecesRecipeRepository.init();
+  await sharedPreferecesRecipeRepository.getAllCollections();
+
   runApp(MultiProvider(
     providers: [
       Provider<DatabaseRepository>(create: (_) => SharedPreferencesDatabase()),
+      ChangeNotifierProvider<SharedPreferencesRecipeRepository>(create: (_) => sharedPreferecesRecipeRepository),
       Provider<AuthRepository>(create: (_) => FirebaseAuthRepository()),
     ],
     child: MyApp(),

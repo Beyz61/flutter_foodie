@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:foodie_screen/data/repository/shared_preferences_database.dart';
+import 'package:foodie_screen/data/repository/recipe/shared_preferences_recipe_repository.dart';
 import 'package:foodie_screen/feautures/favorite/models/fav_collection_item.dart';
-import 'package:foodie_screen/feautures/favorite/widgets/fav_containers_list.dart';
 import 'package:foodie_screen/feautures/feed/models/food_data.dart';
 import 'package:foodie_screen/feautures/feed/screens/recipe_screen.dart';
+import 'package:provider/provider.dart';
 
 void showRecipeListDialog(BuildContext context, FavCollection collection) {
   showDialog(
     context: context,
     builder: (BuildContext context) {
+      final sharedProvider = Provider.of<SharedPreferencesRecipeRepository>(context);
       return AlertDialog(
         backgroundColor: const Color.fromARGB(255, 14, 13, 13).withOpacity(0.8),
         shape: RoundedRectangleBorder(
@@ -37,8 +38,7 @@ void showRecipeListDialog(BuildContext context, FavCollection collection) {
                   trailing: IconButton(
                     icon: const Icon(Icons.delete, color: Colors.red),
                     onPressed: () async {
-                      collection.recipes.remove(recipeName);
-                      await SharedPreferencesHelper.saveFavCollections(favCollectionsList);
+                      sharedProvider.removeRecipeFromCollection(collection.collectionName, recipeName);
                       Navigator.of(context).pop();
                       showRecipeListDialog(context, collection);
                     },
