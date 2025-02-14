@@ -166,7 +166,6 @@ class _UserScreenState extends State<UserScreen> {
                             fontFamily: "SFProDisplay",
                           ),
                         ),
-                        const SizedBox(height: 20),
                         TextField(
                           controller: _newPasswordController,
                           obscureText: !_isNewPasswordVisible,
