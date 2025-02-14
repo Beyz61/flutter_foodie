@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:foodie_screen/data/repository/recipe/shared_preferences_recipe_repository.dart';
 import 'package:foodie_screen/feautures/feed/models/fav_dialog.dart';
 import 'package:foodie_screen/feautures/feed/models/portion_counter.dart';
 import 'package:foodie_screen/feautures/feed/models/recipe.dart';
 import 'package:foodie_screen/feautures/feed/screens/preperation_screen.dart';
 import 'package:foodie_screen/feautures/feed/widgets/recipe_container_widget.dart';
+import 'package:provider/provider.dart';
 
 class RecipeScreen extends StatefulWidget {
   final Recipe recipe;
@@ -15,10 +17,30 @@ class RecipeScreen extends StatefulWidget {
 }
 
 class _RecipeScreenState extends State<RecipeScreen> {
+  bool isFavorite = false;
+
+  @override
+  void initState() {
+    super.initState();
+    final sharedProvider = Provider.of<SharedPreferencesRecipeRepository>(context, listen: false);
+    isFavorite = sharedProvider.getFavoriteState('default', widget.recipe.recipeName);
+  }
+
   void _addToFavorites() {
-    FavDialog.showAddToCollectionDialog(context, widget.recipe.recipeName, () {
-      setState(() {});
-    });
+    final sharedProvider = Provider.of<SharedPreferencesRecipeRepository>(context, listen: false);
+    if (isFavorite) {
+      FavDialog.showRemoveFromCollectionDialog(context, 'default', widget.recipe.recipeName, () {
+        setState(() {
+          isFavorite = false;
+        });
+      });
+    } else {
+      FavDialog.showAddToCollectionDialog(context, widget.recipe.recipeName, () {
+        setState(() {
+          isFavorite = true;
+        });
+      });
+    }
   }
 
   @override
@@ -43,7 +65,7 @@ class _RecipeScreenState extends State<RecipeScreen> {
                   textAlign: TextAlign.center,
                   style: const TextStyle(
                     color: Colors.white,
-                    fontSize: 40,
+                    fontSize: 38,
                     fontWeight: FontWeight.bold,
                     fontStyle: FontStyle.italic,
                     fontFamily: "SFProDisplay",
@@ -55,14 +77,41 @@ class _RecipeScreenState extends State<RecipeScreen> {
                       ),
                     ],
                   ),
+                  maxLines: 2,
+                  overflow: TextOverflow.visible,
                 ),   
-                IconButton(
-                  icon: const Icon(Icons.favorite_border,
-                   color: Color.fromARGB(255, 236, 107, 8),
-                   size: 30,
+                Container(
+                  decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: Colors.white,
+                    width: 1.5,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                    color: Colors.black.withOpacity(0.5),
+                    offset: const Offset(0, 1),
+                    blurRadius: 3,
+                    ),
+                  ],
+                  ),
+                  child: IconButton(
+                  icon: Icon(
+                    isFavorite ? Icons.favorite : Icons.favorite_border,
+                    color: isFavorite ? const Color.fromARGB(255, 236, 107, 8) : const Color.fromARGB(255, 255, 255, 255),
+                    size: 25,
+                    shadows: const [
+                    Shadow(
+                      offset: Offset(0, 0),
+                      blurRadius: 8,
+                      color: Color.fromARGB(255, 34, 21, 4),
+                    ),
+                    ],
                   ),
                   onPressed: _addToFavorites,
+                  ),
                 ),
+                const SizedBox(height: 10),
                 IngredientsContainer(recipe: widget.recipe,),
                 const SizedBox(height: 10),
                 const Divider(
