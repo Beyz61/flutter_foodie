@@ -69,7 +69,7 @@ class _PortionCounterState extends State<PortionCounter> {
             icon: const Icon(
               Icons.remove,
               size: 35,
-              color: Color.fromARGB(221, 0, 0, 0),
+              color: Color.fromARGB(221, 57, 215, 255),
               shadows: [
                 Shadow(
                   offset: Offset(0, 1),
