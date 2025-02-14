@@ -17,10 +17,12 @@ class PreparationScreen extends StatelessWidget {
           ),
         ),
         child: SafeArea(
+          top: true,
+          bottom: false,
           child: SingleChildScrollView(
             child: Column(
               children: [
-                const SizedBox(height: 70),
+                // const SizedBox(height: 70),
                 const Text(
                   "Zubereitung:",
                   style: TextStyle(
