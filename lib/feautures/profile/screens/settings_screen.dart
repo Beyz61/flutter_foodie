@@ -13,8 +13,6 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
-  bool isClickOn = true;
-
   @override
   Widget build(BuildContext context) {
     final authRepository = context.read<AuthRepository>();
@@ -37,32 +35,34 @@ class _SettingsScreenState extends State<SettingsScreen> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 50.0, bottom: 20.0),
+              padding: const EdgeInsets.only(top: 80.0, bottom: 20.0),
               child: Column(
                 children: [
-                  const Text(
-                    "Foodie ",
-                    style: TextStyle(
-                      fontSize: 70,
-                      fontWeight: FontWeight.w700,
-                      fontStyle: FontStyle.italic,
-                      fontFamily: "SFProDisplay",
-                      color: Color.fromARGB(255, 242, 101, 8),
-                      shadows: [
-                        Shadow(
-                          blurRadius: 5,
-                          color: Colors.black,
-                          offset: Offset(1, 2),
-                        ),
-                      ],
+                  const Center(
+                    child: Text(
+                      "Foodie",
+                      style: TextStyle(
+                        fontSize: 90,
+                        fontWeight: FontWeight.w700,
+                        fontStyle: FontStyle.italic,
+                        fontFamily: "SFProDisplay",
+                        color: Color.fromARGB(255, 242, 101, 8),
+                        shadows: [
+                          Shadow(
+                            blurRadius: 5,
+                            color: Colors.black,
+                            offset: Offset(1, 2),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   const SizedBox(height: 10),
                   Center(
                     child: Image.asset(
                       "assets/images/iconfoodie1.png",
-                      height: 300,
-                      width: 550,
+                      height: 260,
+                      width: 300,
                       fit: BoxFit.contain,
                       alignment: Alignment.center,
                     ),
@@ -70,94 +70,64 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 ],
               ),
             ),
-            ListTile(
-              leading: const Icon(Icons.notifications, color: Color.fromARGB(255, 246, 191, 143), shadows: [
-                Shadow(
-                  blurRadius: 5,
-                  color: Colors.black,
-                  offset: Offset(1, 2),
-                ),
-              ]),
-              title: const Text(
-                "Benachrichtigungen",
-                style: TextStyle(
-                  color: Color.fromARGB(255, 246, 191, 143),
-                  fontWeight: FontWeight.w600,
-                  fontStyle: FontStyle.italic,
-                  shadows: [
-                    Shadow(
-                      blurRadius: 5,
-                      color: Colors.black,
-                      offset: Offset(1, 2),
-                    ),
-                  ],
-                ),
+            const SizedBox(
+              height: 10,
+            ),
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+              padding: const EdgeInsets.all(16.0),
+              decoration: BoxDecoration(
+                color: Colors.black.withOpacity(0.8),
+                borderRadius: BorderRadius.circular(10.0),
+                border: Border.all(color: Colors.white, width: 1),
+                boxShadow: const [
+                  BoxShadow(
+                    color: Colors.black26,
+                    blurRadius: 5,
+                    offset: Offset(0, 2),
+                  ),
+                ],
               ),
-              trailing: Switch(
-                value: isClickOn,
-                onChanged: (value) {
-                  setState(() {
-                    isClickOn = value;
-                  });
+              child: ListTile(
+                leading: const Icon(Icons.person, color: Color.fromARGB(255, 246, 191, 143), shadows: [
+                  Shadow(
+                    blurRadius: 5,
+                    color: Colors.black,
+                    offset: Offset(1, 2),
+                  ),
+                ]),
+                title: const Text(
+                  "Benutzer",
+                  style: TextStyle(
+                    color: Color.fromARGB(255, 246, 191, 143),
+                    fontWeight: FontWeight.w600,
+                    fontStyle: FontStyle.italic,
+                    shadows: [
+                      Shadow(
+                        blurRadius: 5,
+                        color: Colors.black,
+                        offset: Offset(1, 2),
+                      ),
+                    ],
+                  ),
+                ),
+                trailing: const Icon(Icons.edit, color: Color.fromARGB(255, 246, 191, 143), shadows: [
+                  Shadow(
+                    blurRadius: 5,
+                    color: Colors.black,
+                    offset: Offset(1, 2),
+                  ),
+                ]),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const UserScreen()),
+                  );
                 },
-                activeColor: isClickOn
-                    ? const Color.fromARGB(255, 46, 37, 23)
-                    : Colors.grey,
               ),
             ),
-            const Divider(
-              color: Color.fromARGB(255, 246, 191, 143),
-              indent: 52,
-              endIndent: 30,
-              thickness: 2,
-              height: 20,
-            ),
-            ListTile(
-              leading: const Icon(Icons.email, color: Color.fromARGB(255, 246, 191, 143), shadows: [
-                Shadow(
-                  blurRadius: 5,
-                  color: Colors.black,
-                  offset: Offset(1, 2),
-                ),
-              ]),
-              title: Text(
-                user?.email ?? "Keine E-Mail",
-                style: const TextStyle(
-                  color: Color.fromARGB(255, 246, 191, 143),
-                  fontWeight: FontWeight.w600,
-                  fontStyle: FontStyle.italic,
-                  shadows: [
-                    Shadow(
-                      blurRadius: 5,
-                      color: Colors.black,
-                      offset: Offset(1, 2),
-                    ),
-                  ],
-                ),
-              ),
-              trailing: const Icon(Icons.arrow_forward_ios, color: Color.fromARGB(255, 246, 191, 143), shadows: [
-                Shadow(
-                  blurRadius: 5,
-                  color: Colors.black,
-                  offset: Offset(1, 2),
-                ),
-              ]),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const UserScreen()),
-                );
-              },
-            ),
-            const Divider(
-              color: Color.fromARGB(255, 246, 191, 143),
-              indent: 52,
-              endIndent: 30,
-              thickness: 2,
-              height: 20,
-            ),
-            const SizedBox(height: 50),
+            const SizedBox(height: 30),
             SignOutButton(
               text: "Abmelden",
               onPressed: () async {

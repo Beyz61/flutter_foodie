@@ -66,7 +66,7 @@ class _RecipeScreenState extends State<RecipeScreen> {
                 IngredientsContainer(recipe: widget.recipe,),
                 const SizedBox(height: 10),
                 const Divider(
-                  thickness: 0.7,
+                  thickness: 2,
                   color: Color.fromARGB(255, 251, 248, 248),
                   height: 1,
                 ),
