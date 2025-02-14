@@ -8,7 +8,7 @@ import "package:foodie_screen/feautures/authentification/widgets/signup_button.d
 import "package:foodie_screen/feautures/feed/screens/feed_screen.dart";
 import "package:foodie_screen/shared/widgets/buttom_navigator.dart";
 import "package:provider/provider.dart";
-
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key}); 
@@ -22,6 +22,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController repeatPasswordController = TextEditingController();
+
+  Future<void> _saveUsername(String username) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString('username', username);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -95,6 +100,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         emailController.text,
                         passwordController.text,
                       );
+                      await _saveUsername(usernameController.text);
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => const ButtonNavigator()),

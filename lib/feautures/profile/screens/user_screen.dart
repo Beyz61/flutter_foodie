@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:foodie_screen/feautures/authentification/widgets/sign_out_button.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class UserScreen extends StatefulWidget {
   const UserScreen({super.key});
@@ -15,6 +16,104 @@ class _UserScreenState extends State<UserScreen> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   bool _isCurrentPasswordVisible = false;
   bool _isNewPasswordVisible = false;
+  String? username;
+  final TextEditingController _usernameController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    _loadUsername();
+  }
+
+  Future<void> _loadUsername() async {
+    final prefs = await SharedPreferences.getInstance();
+    setState(() {
+      username = prefs.getString('username');
+    });
+  }
+
+  Future<void> _saveUsername(String newUsername) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString('username', newUsername);
+    setState(() {
+      username = newUsername;
+    });
+  }
+
+  void _showEditUsernameDialog() {
+    _usernameController.text = username ?? '';
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          backgroundColor: Colors.black.withOpacity(0.8),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0),
+            side: const BorderSide(color: Colors.white, width: 1),
+          ),
+          title: const Text(
+            'Benutzernamen ändern',
+            style: TextStyle(
+              color: Color.fromARGB(255, 246, 191, 143),
+              fontWeight: FontWeight.w600,
+              fontStyle: FontStyle.italic,
+              fontFamily: "SFProDisplay",
+            ),
+          ),
+          content: TextField(
+            controller: _usernameController,
+            decoration: const InputDecoration(
+              labelText: 'Neuer Benutzername',
+              labelStyle: TextStyle(color: Color.fromARGB(255, 255, 250, 245)),
+              enabledBorder: UnderlineInputBorder(
+                borderSide: BorderSide(color: Color.fromARGB(255, 255, 250, 245)),
+              ),
+              focusedBorder: UnderlineInputBorder(
+                borderSide: BorderSide(color: Color.fromARGB(255, 255, 250, 245)),
+              ),
+            ),
+            style: const TextStyle(
+              color: Color.fromARGB(255, 255, 254, 254),
+              fontWeight: FontWeight.w600,
+              fontStyle: FontStyle.italic,
+              fontFamily: "SFProDisplay",
+            ),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text(
+                'Abbrechen',
+                style: TextStyle(
+                  color: Color.fromARGB(255, 255, 108, 3),
+                  fontWeight: FontWeight.w600,
+                  fontStyle: FontStyle.italic,
+                  fontFamily: "SFProDisplay",
+                ),
+              ),
+            ),
+            TextButton(
+              onPressed: () {
+                _saveUsername(_usernameController.text);
+                Navigator.of(context).pop();
+              },
+              child: const Text(
+                'Speichern',
+                style: TextStyle(
+                  color: Color.fromARGB(255, 255, 108, 3),
+                  fontWeight: FontWeight.w600,
+                  fontStyle: FontStyle.italic,
+                  fontFamily: "SFProDisplay",
+                ),
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -72,19 +171,44 @@ class _UserScreenState extends State<UserScreen> {
                       ],
                     ),
                   ),
-                  const Text(
-                    "Benutzer",
-                    style: TextStyle(
-                      fontSize: 40,
-                      fontWeight: FontWeight.w700,
-                      fontStyle: FontStyle.italic,
-                      fontFamily: "SFProDisplay",
-                      color: Color.fromARGB(255, 220, 175, 144),
-                      shadows: [
-                        Shadow(
+                  Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+                    decoration: BoxDecoration(
+                      color: const Color.fromARGB(81, 0, 0, 0).withOpacity(0.6),
+                      borderRadius: BorderRadius.circular(10.0),
+                      border: Border.all(color: const Color.fromARGB(255, 253, 110, 0), width: 1),
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Colors.black26,
                           blurRadius: 5,
-                          color: Colors.black,
-                          offset: Offset(1, 2),
+                          offset: Offset(0, 2),
+                        ),
+                      ],
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          username ?? "Kein Benutzername",
+                          style: const TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            fontStyle: FontStyle.italic,
+                            fontFamily: "SFProDisplay",
+                            color: Color.fromARGB(255, 255, 255, 255),
+                            shadows: [
+                              Shadow(
+                                blurRadius: 5,
+                                color: Colors.black,
+                                offset: Offset(1, 2),
+                              ),
+                            ],
+                          ),
+                        ),
+                        IconButton(
+                          icon: const Icon(Icons.edit, color: Color.fromARGB(255, 255, 255, 255)),
+                          onPressed: _showEditUsernameDialog,
                         ),
                       ],
                     ),
@@ -107,21 +231,12 @@ class _UserScreenState extends State<UserScreen> {
                     ),
                     child: Column(
                       children: [
-                        ListTile(
-                          leading: const Icon(Icons.email, color: Color.fromARGB(255, 246, 191, 143), shadows: [
-                            Shadow(
-                              blurRadius: 5,
-                              color: Colors.black,
-                              offset: Offset(1, 2),
-                            ),
-                          ]),
-                          title: Text(
-                            user?.email ?? "Keine E-Mail",
-                            style: const TextStyle(
-                              color: Color.fromARGB(255, 246, 191, 143),
-                              fontWeight: FontWeight.w600,
-                              fontStyle: FontStyle.italic,
-                              fontFamily: "SFProDisplay",
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Icon(
+                              Icons.email,
+                              color: Color.fromARGB(255, 255, 108, 3),
                               shadows: [
                                 Shadow(
                                   blurRadius: 5,
@@ -130,7 +245,24 @@ class _UserScreenState extends State<UserScreen> {
                                 ),
                               ],
                             ),
-                          ),
+                            const SizedBox(width: 8),
+                            Text(
+                              user?.email ?? "Keine E-Mail",
+                              style: const TextStyle(
+                                color: Color.fromARGB(255, 255, 108, 3),
+                                fontWeight: FontWeight.w600,
+                                fontStyle: FontStyle.italic,
+                                fontFamily: "SFProDisplay",
+                                shadows: [
+                                  Shadow(
+                                    blurRadius: 5,
+                                    color: Colors.black,
+                                    offset: Offset(1, 2),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
                         ),
                         const Divider(
                           color: Color.fromARGB(255, 255, 108, 3),
