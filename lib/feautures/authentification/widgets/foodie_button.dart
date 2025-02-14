@@ -1,7 +1,6 @@
 import 'dart:developer' as dev;
 
 import 'package:flutter/material.dart';
-import 'package:foodie_screen/config/colors.dart';
 import 'package:foodie_screen/data/repository/auth_repository.dart';
 import 'package:provider/provider.dart';
 //! Anmelde Button
@@ -44,6 +43,9 @@ class _FoodieButtonState extends State<FoodieButton> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
+        color: Colors.black.withOpacity(0.8),
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: Colors.white, width: 1),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.3),
@@ -57,14 +59,15 @@ class _FoodieButtonState extends State<FoodieButton> {
         
         style: ElevatedButton.styleFrom(
           padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 15),
-          backgroundColor: signInBtnColor,
+          backgroundColor: Colors.transparent,
+          shadowColor: Colors.transparent,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),
         ),
         child: Text(
           widget.text,style: const TextStyle(
-            color: Color.fromARGB(255, 45, 25, 7),
+            color: Color.fromARGB(255, 255, 255, 255),
             fontWeight: FontWeight.w600,
             fontSize: 14,
             fontStyle: FontStyle.italic,
@@ -77,11 +80,4 @@ class _FoodieButtonState extends State<FoodieButton> {
 }
   
 
-                //          TextStyle(
-                //                 color: Color.fromARGB(255, 234, 220, 208),
-                //  fontWeight: FontWeight.w600,
-                //                 fontSize: 18,
-                //                 fontStyle: FontStyle.italic,
-                //                 fontFamily: "SFProDisplay",
-                //               ),
-                //             ),
+                
