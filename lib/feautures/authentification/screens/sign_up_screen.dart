@@ -107,7 +107,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       );
                     } catch (e) {
                       ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(content: Text("Registration failed: ${e.toString()}")),
+                        const SnackBar(content: Text("Registrierung fehlgeschlagen")),
                       );
                     }
                   } else {
