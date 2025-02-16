@@ -25,6 +25,7 @@ class _PasswordButtonState extends State<PasswordButton> {
         decoration: BoxDecoration(
           color: const Color.fromARGB(255, 232, 196, 164),
           borderRadius: BorderRadius.circular(13),
+          border: Border.all(color: const Color.fromARGB(255, 45, 39, 39), width: 1), 
           boxShadow: [
             BoxShadow(
               color: Colors.black.withOpacity(0.3),
@@ -41,7 +42,7 @@ class _PasswordButtonState extends State<PasswordButton> {
               textAlign: TextAlign.center,
               style: const TextStyle(
                 color: Color.fromARGB(255, 45, 39, 39),
-                fontWeight: FontWeight.w500,
+                fontWeight: FontWeight.w600,
                 fontSize: 14,
                 fontStyle: FontStyle.italic,
                 fontFamily: "SFProDisplay",

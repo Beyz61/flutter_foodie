@@ -59,6 +59,7 @@ class _SignUpScreenState extends State<signUpButton> {
           backgroundColor: signInBtnColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
+            side: const BorderSide(color: Color.fromARGB(255, 45, 39, 39), width: 1), // Outline border
           ),
         ),
         child: Text(
@@ -74,13 +75,3 @@ class _SignUpScreenState extends State<signUpButton> {
     );
   }
 }
-  
-
-                //          TextStyle(
-                //                 color: Color.fromARGB(255, 234, 220, 208),
-                //  fontWeight: FontWeight.w600,
-                //                 fontSize: 18,
-                //                 fontStyle: FontStyle.italic,
-                //                 fontFamily: "SFProDisplay",
-                //               ),
-                //             ),

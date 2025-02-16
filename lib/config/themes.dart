@@ -39,7 +39,7 @@ ThemeData myTheme = ThemeData(
     ), // 5
   ),
   scaffoldBackgroundColor: Colors.transparent, // 6
-  primaryColor: Color.fromARGB(255, 80, 57, 50), // 7
+  primaryColor: const Color.fromARGB(255, 80, 57, 50), // 7
   appBarTheme: const AppBarTheme(
     backgroundColor: Color.fromARGB(255, 103, 71, 31),
     titleTextStyle: TextStyle(
@@ -48,7 +48,7 @@ ThemeData myTheme = ThemeData(
       fontWeight: FontWeight.bold,
     ),
   ), // 8
-  buttonTheme: ButtonThemeData(
+  buttonTheme: const ButtonThemeData(
     buttonColor: Color.fromARGB(255, 80, 57, 50), // Hintergrundfarbe der Buttons
     textTheme: ButtonTextTheme.primary,
   ),

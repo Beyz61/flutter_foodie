@@ -58,16 +58,24 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),                        
                   //style: Theme.of(context).textTheme.titleLarge   
                 ),
-              ),
-               const Text(
-              "Erstelle dein kostenloses\n            Rezeptbuch",
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w600,
-                 fontFamily: "SFProDisplay",
-                 fontStyle: FontStyle.italic,
-                color: Color.fromARGB(255, 80, 57, 50),
-              ),
+                ),
+                const Text(
+                "Erstelle dein kostenloses\nRezeptbuch",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: "SFProDisplay",
+                  fontStyle: FontStyle.italic,
+                  color: Color.fromARGB(255, 80, 57, 50),
+                ),
+              // style: TextStyle(
+              //   fontSize: 18,
+              //   fontWeight: FontWeight.w600,
+              //    fontFamily: "SFProDisplay",
+              //    fontStyle: FontStyle.italic,
+              //   color: Color.fromARGB(255, 80, 57, 50),
+              // ),
             ),
               const SizedBox(height: 20),
               const Divider(
@@ -78,9 +86,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 color: Color.fromARGB(255, 103, 71, 31),
               ),
               MailButton(text: "E-Mail", controller: emailController),
-              MailButton(text: "Username", controller: usernameController),
-              PasswordButton(text: "Password", controller: passwordController),
-              PasswordButton(text: "Repeat Password", controller: repeatPasswordController),
+              MailButton(text: "Benutzername", controller: usernameController),
+              PasswordButton(text: "Passwort", controller: passwordController),
+              PasswordButton(text: "Passwort", controller: repeatPasswordController),
               const SizedBox(height: 20),
                const Divider(
                 thickness: 0.9,
@@ -92,7 +100,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: signUpButton(
-                text: "Sign Up!",
+                text: "Registrieren",
                 onPressed: () async {
                   if (passwordController.text == repeatPasswordController.text) {
                     try {

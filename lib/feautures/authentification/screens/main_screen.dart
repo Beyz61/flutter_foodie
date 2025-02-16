@@ -24,7 +24,7 @@ class MainScreen extends StatelessWidget {
             side: const BorderSide(color: Colors.white, width: 1),
           ),
           title: const Text(
-            'Passwort vergessen',
+            "Passwort vergessen",
             style: TextStyle(
               color: Color.fromARGB(255, 246, 191, 143),
               fontWeight: FontWeight.w600,
@@ -35,7 +35,7 @@ class MainScreen extends StatelessWidget {
           content: TextField(
             controller: emailController,
             decoration: const InputDecoration(
-              labelText: 'E-Mail',
+              labelText: "E-Mail",
               labelStyle: TextStyle(color: Color.fromARGB(255, 255, 250, 245)),
               enabledBorder: UnderlineInputBorder(
                 borderSide: BorderSide(color: Color.fromARGB(255, 255, 250, 245)),
@@ -57,7 +57,7 @@ class MainScreen extends StatelessWidget {
                 Navigator.of(context).pop();
               },
               child: const Text(
-                'Abbrechen',
+                "Abbrechen",
                 style: TextStyle(
                   color: Color.fromARGB(255, 255, 108, 3),
                   fontWeight: FontWeight.w600,
@@ -82,7 +82,7 @@ class MainScreen extends StatelessWidget {
                 }
               },
               child: const Text(
-                'Senden',
+                "Senden",
                 style: TextStyle(
                   color: Color.fromARGB(255, 255, 108, 3),
                   fontWeight: FontWeight.w600,
@@ -165,7 +165,7 @@ class MainScreen extends StatelessWidget {
             ),
             const SizedBox(height: 0),
             PasswordButton(
-              text: "Password",
+              text: "Passwort",
               controller: passwordController,
             ),
             const SizedBox(height: 5),
@@ -197,10 +197,11 @@ class MainScreen extends StatelessWidget {
                 backgroundColor: signInBtnColor,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
+                  side: const BorderSide(color: Color.fromARGB(255, 45, 39, 39), width: 1), // Outline border
                 ),
               ),
               child: const Text(
-                "Sign in!",
+                "Anmelden",
                 style: TextStyle(
                   color: Color.fromARGB(255, 45, 25, 7),
                   fontWeight: FontWeight.w600,
@@ -220,12 +221,22 @@ class MainScreen extends StatelessWidget {
                   ),
                 );
               },
-              child: const Text(
-                "No account? Sign up.",
-                style: TextStyle(
-                  color: Colors.black87,
-                  fontSize: 12,
-                  fontWeight: FontWeight.normal,
+              child: const Text.rich(
+                TextSpan(
+                  text: "Kein Account? ",
+                  style: TextStyle(
+                    color: Colors.black87,
+                    fontSize: 13,
+                    fontWeight: FontWeight.normal,
+                  ),
+                  children: [
+                    TextSpan(
+                      text: "Registrieren",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
                 ),
                 textAlign: TextAlign.right,
               ),

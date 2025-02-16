@@ -23,6 +23,7 @@ class _MailButtonState extends State<MailButton> {
         decoration: BoxDecoration(
           color: const Color.fromARGB(255, 232, 196, 164),
           borderRadius: BorderRadius.circular(13),
+          border: Border.all(color: const Color.fromARGB(255, 45, 39, 39), width: 1), // Outline border
           boxShadow: [
             BoxShadow(
               color: Colors.black.withOpacity(0.3),
@@ -45,7 +46,7 @@ class _MailButtonState extends State<MailButton> {
               decoration: InputDecoration(
                 hintText: widget.text,
                 hintStyle: const TextStyle(
-                  fontWeight: FontWeight.w500,
+                  fontWeight: FontWeight.w600,
                   fontSize: 14,
                   fontStyle: FontStyle.italic,
                   fontFamily: "SFProDisplay",
