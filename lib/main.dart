@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:foodie_screen/config/themes.dart';
 import 'package:foodie_screen/data/repository/auth_repository.dart';
 import 'package:foodie_screen/data/repository/database_repository.dart';
@@ -20,6 +21,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await dotenv.load(fileName: ".env");
 
   final sharedPreferecesRecipeRepository = SharedPreferencesRecipeRepository();
   await sharedPreferecesRecipeRepository.init();

@@ -8,13 +8,17 @@
 		<data>
 		h5OB7aKzS5WR9SemvZAyN6FEkJs=
 		</data>
+		<key>flutter_assets/.env</key>
+		<data>
+		DsSBgDqNoZTECLDtW6xz1InpxO8=
+		</data>
 		<key>flutter_assets/AssetManifest.bin</key>
 		<data>
-		V5i0z33thEWqMl/4KFS9aD3mUU4=
+		j0WpDCd/fLw01gEAyU+sRphkrkc=
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		4+qy8mOCkkfXIQfsVjLFihriJIk=
+		7fHteghEWPNDYiTv/mmA/MsZ5Qk=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -22,7 +26,7 @@
 		</data>
 		<key>flutter_assets/NOTICES.Z</key>
 		<data>
-		7jDSaHk1E85eJocnyixjki26Fu4=
+		X6XKrrc/UpSOMc/+k6fhrjRgplQ=
 		</data>
 		<key>flutter_assets/assets/fonts/SFPRODISPLAYTHINITALIC.OTF</key>
 		<data>
@@ -334,7 +338,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		YrSFXzxlZnilsn2K5ZTKiwD+KOw=
+		2ZmbzWL+YbdoONvI+1RhiIEzV2U=
 		</data>
 		<key>flutter_assets/packages/social_login_buttons/lib/assets/2.0x/apple-black-logo.png</key>
 		<data>
@@ -431,18 +435,25 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>flutter_assets/.env</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			y645Bhujbb/M+dwbMdIVMi8RQSSiyrfw53L8yIC+UMA=
+			</data>
+		</dict>
 		<key>flutter_assets/AssetManifest.bin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9lMporjH7RpVCJ74BcbszRdFGYyTZyNsLv+yp6bBeu0=
+			y5RJQFKsF9FzC4afhNmnowB7LEqJisT2Iw+g/8O/TME=
 			</data>
 		</dict>
 		<key>flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			1u0aBYmvn0APnxu+OOX5LD6McUj4zI7MnF8nlbYyEwg=
+			N9qziBzy/iNqSZ+6f9L/YG4EEtr6YvTMKuGz/XSx1zk=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -456,7 +467,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			IMuvcUoi4vAjL4IQNHrPryiBSSpCXsNfDikbbsFPxuk=
+			e7Ht5FC6QOmPNiAqYIJ/AAEVBYqe8hmoAfkELjM1iq0=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/fonts/SFPRODISPLAYTHINITALIC.OTF</key>
@@ -1002,7 +1013,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			W9p2pDUNnZ4dPz2ID+Tyuqv7HEARJ5jI7S7eLl+MUK4=
+			iQW1LxJldYKHIn6ueLvnVkgWs+aiAcOjn7GNfDCZ2TY=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/social_login_buttons/lib/assets/2.0x/apple-black-logo.png</key>

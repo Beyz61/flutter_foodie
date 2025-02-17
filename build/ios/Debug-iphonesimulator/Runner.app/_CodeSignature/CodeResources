@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		rir5maOm/qFy++iMfaL96oLlUsc=
+		U1l051hE+1ItMXZKiT2WW9eUvsk=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,15 +54,19 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		t3HamqbcQMhxGOymnHGifFZwAp0=
+		PlL8feasSKRx9wQbU8JKbY8S/mI=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/.env</key>
+		<data>
+		DsSBgDqNoZTECLDtW6xz1InpxO8=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<data>
-		V5i0z33thEWqMl/4KFS9aD3mUU4=
+		j0WpDCd/fLw01gEAyU+sRphkrkc=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
-		4+qy8mOCkkfXIQfsVjLFihriJIk=
+		7fHteghEWPNDYiTv/mmA/MsZ5Qk=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
 		<data>
@@ -70,7 +74,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES.Z</key>
 		<data>
-		7jDSaHk1E85eJocnyixjki26Fu4=
+		X6XKrrc/UpSOMc/+k6fhrjRgplQ=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/fonts/SFPRODISPLAYTHINITALIC.OTF</key>
 		<data>
@@ -382,7 +386,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		YrSFXzxlZnilsn2K5ZTKiwD+KOw=
+		2ZmbzWL+YbdoONvI+1RhiIEzV2U=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/social_login_buttons/lib/assets/2.0x/apple-black-logo.png</key>
 		<data>
@@ -1356,7 +1360,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		nb0J81tHaTxZ/GR1JPbW+2I6Slk=
+		g5xbx2ZiAJHyYQ1EWYfb/nNbj+o=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -1455,7 +1459,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Ocl+OkVahPI+/WFqRe+5OLAeep8o2cZwtKzCE7P0g6I=
+			nOIwxvhSnaO2uLjo7ZWog0tL587qoODRGRul8I2vf+I=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -1469,21 +1473,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			6M9jZhvPiRgZYMP61ImPsNGhFl6c/esMyIELlexI31c=
+			aeQT0zB3HxBFslTaTUqL9N7I7HhI99gl+Wmv6RdUppo=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/.env</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			y645Bhujbb/M+dwbMdIVMi8RQSSiyrfw53L8yIC+UMA=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9lMporjH7RpVCJ74BcbszRdFGYyTZyNsLv+yp6bBeu0=
+			y5RJQFKsF9FzC4afhNmnowB7LEqJisT2Iw+g/8O/TME=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			1u0aBYmvn0APnxu+OOX5LD6McUj4zI7MnF8nlbYyEwg=
+			N9qziBzy/iNqSZ+6f9L/YG4EEtr6YvTMKuGz/XSx1zk=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
@@ -1497,7 +1508,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			IMuvcUoi4vAjL4IQNHrPryiBSSpCXsNfDikbbsFPxuk=
+			e7Ht5FC6QOmPNiAqYIJ/AAEVBYqe8hmoAfkELjM1iq0=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/fonts/SFPRODISPLAYTHINITALIC.OTF</key>
@@ -2043,7 +2054,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			W9p2pDUNnZ4dPz2ID+Tyuqv7HEARJ5jI7S7eLl+MUK4=
+			iQW1LxJldYKHIn6ueLvnVkgWs+aiAcOjn7GNfDCZ2TY=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/social_login_buttons/lib/assets/2.0x/apple-black-logo.png</key>
