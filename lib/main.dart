@@ -10,7 +10,7 @@ import 'package:foodie_screen/data/repository/database_repository.dart';
 import 'package:foodie_screen/data/repository/firebase_auth_repository.dart';
 import 'package:foodie_screen/data/repository/recipe/shared_preferences_recipe_repository.dart';
 import 'package:foodie_screen/data/repository/shared_preferences_database.dart';
-import 'package:foodie_screen/feautures/authentification/screens/main_screen.dart';
+import 'package:foodie_screen/feautures/authentification/screens/login_screen.dart';
 import 'package:foodie_screen/firebase_options.dart';
 import 'package:foodie_screen/shared/widgets/buttom_navigator.dart';
 import 'package:provider/provider.dart';
@@ -54,7 +54,7 @@ class MyApp extends StatelessWidget {
                     User? user = snapshot.data;
                     log("User Logged In: ${user != null}");
                     if (user == null) {
-                      return const MainScreen(); 
+                      return const LoginScreen(); 
                     } else {
                       return const ButtonNavigator(); // angemeldete seite 
                     }

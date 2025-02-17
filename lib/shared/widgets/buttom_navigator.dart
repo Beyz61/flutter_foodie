@@ -2,15 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:foodie_screen/feautures/discover/screens/spot_screen.dart';
 import 'package:foodie_screen/feautures/favorite/screens/favorit_screen.dart';
 import 'package:foodie_screen/feautures/feed/screens/feed_screen.dart';
-import 'package:foodie_screen/feautures/profile/screens/settings_screen.dart'; 
+import 'package:foodie_screen/feautures/profile/screens/settings_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class ButtonNavigator extends StatefulWidget {
-const ButtonNavigator({super.key});
-
+  const ButtonNavigator({super.key});
 
   @override
   _ButtonNavigator createState() => _ButtonNavigator();
 }
+
 class _ButtonNavigator extends State<ButtonNavigator> {
   int _selectedPage = 0;
 
@@ -21,16 +22,30 @@ class _ButtonNavigator extends State<ButtonNavigator> {
     super.initState();
     _screens = [
       const FeedScreen(),
-        const FavoritScreen(),
+      const FavoritScreen(),
       const SpotScreen(),
       const SettingsScreen(),
     ];
+    _loadSelectedPage();
+  }
+
+  Future<void> _loadSelectedPage() async {
+    final prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _selectedPage = prefs.getInt('selectedPage') ?? 0;
+    });
+  }
+
+  Future<void> _saveSelectedPage(int index) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setInt('selectedPage', index); 
   }
 
   void _onItemTapped(int index) {
     setState(() {
       _selectedPage = index;
     });
+    _saveSelectedPage(index);
   }
 
   @override
@@ -39,7 +54,7 @@ class _ButtonNavigator extends State<ButtonNavigator> {
       backgroundColor: const Color.fromARGB(255, 227, 218, 211),
       body: _screens[_selectedPage],
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: const Color.fromARGB(255, 24, 23, 22), 
+        backgroundColor: const Color.fromARGB(255, 24, 23, 22),
         selectedItemColor: const Color.fromARGB(255, 242, 101, 8),
         unselectedItemColor: const Color.fromARGB(255, 225, 175, 131),
         currentIndex: _selectedPage,
