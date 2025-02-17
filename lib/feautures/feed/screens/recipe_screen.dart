@@ -65,7 +65,7 @@ class _RecipeScreenState extends State<RecipeScreen> {
                   textAlign: TextAlign.center,
                   style: const TextStyle(
                     color: Colors.white,
-                    fontSize: 38,
+                    fontSize: 42,
                     fontWeight: FontWeight.bold,
                     fontStyle: FontStyle.italic,
                     fontFamily: "SFProDisplay",
@@ -124,26 +124,9 @@ class _RecipeScreenState extends State<RecipeScreen> {
                   decoration: BoxDecoration(
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.5),
+                        color: Colors.black.withOpacity(0.7),
                         offset: const Offset(0, 1),
                         blurRadius: 2,
-                      ),
-                    ],
-                  ),
-                ),
-                const Text(
-                  "Portion", 
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                    fontStyle: FontStyle.italic,
-                    fontFamily: "SFProDisplay",
-                    shadows: [
-                      Shadow(
-                        offset: Offset(0, 3),
-                        blurRadius: 6,
-                        color: Colors.black54,
                       ),
                     ],
                   ),
@@ -157,12 +140,12 @@ class _RecipeScreenState extends State<RecipeScreen> {
                     width: 250,
                     padding: const EdgeInsets.all(5),
                     decoration: BoxDecoration(
-                      color: Colors.black.withOpacity(0.5), 
+                      color: Colors.black.withOpacity(0.6), 
                       borderRadius: BorderRadius.circular(10),
                       border: Border.all(color: Colors.white, width: 1),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.3),
+                          color: Colors.black.withOpacity(0.4),
                           offset: const Offset(4, 4),
                           blurRadius: 8,
                           spreadRadius: 1,

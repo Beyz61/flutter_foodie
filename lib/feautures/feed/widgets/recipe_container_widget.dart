@@ -34,7 +34,7 @@ class IngredientsContainer extends StatelessWidget {
                     fontSize: 32,
                     fontStyle: FontStyle.italic,
                     fontFamily: "SFProDisplay",
-                    decoration: TextDecoration.underline, 
+                  //  decoration: TextDecoration.underline, 
                     decorationColor: Color.fromARGB(255, 225, 218, 211),
                     shadows: [
                       Shadow(
@@ -45,7 +45,7 @@ class IngredientsContainer extends StatelessWidget {
                     ],
                   ),    
                 ),
-                const SizedBox(height: 16),
+                const SizedBox(height: 5),
                 IntrinsicHeight(
                   child: Row(
                     children: [
@@ -55,7 +55,7 @@ class IngredientsContainer extends StatelessWidget {
                         style: const TextStyle(
                           color: Color.fromARGB(255, 255, 252, 249),
                           fontWeight: FontWeight.w700,
-                          fontSize: 20,
+                          fontSize: 17,
                           fontStyle: FontStyle.italic,
                           fontFamily: "SFProDisplay",
                           shadows: [
@@ -79,7 +79,7 @@ class IngredientsContainer extends StatelessWidget {
                           style: const TextStyle(
                             color: Color.fromARGB(255, 255, 252, 249),
                             fontWeight: FontWeight.w600,
-                            fontSize: 18,
+                            fontSize: 17,
                             fontStyle: FontStyle.italic,
                             fontFamily: "SFProDisplay",
                             shadows: [
