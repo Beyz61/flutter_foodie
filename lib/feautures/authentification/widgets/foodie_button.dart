@@ -28,10 +28,8 @@ class _FoodieButtonState extends State<FoodieButton> {
         emailController.text.trim(),
         passwordController.text.trim(),
       );
-      // ignore: use_build_context_synchronously
       Navigator.pushNamed(context, "/bottomnavigationbarmain");
     } catch (e) {
-      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text("Login fehlgeschlagen: ${e.toString()}")),
       );
@@ -54,27 +52,27 @@ class _FoodieButtonState extends State<FoodieButton> {
           ),
         ],
       ),
-      child: ElevatedButton(
-        onPressed: login,
+      // child: ElevatedButton(
+      //   onPressed: login,
         
-        style: ElevatedButton.styleFrom(
-          padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 15),
-          backgroundColor: Colors.transparent,
-          shadowColor: Colors.transparent,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-          ),
-        ),
-        child: Text(
-          widget.text,style: const TextStyle(
-            color: Color.fromARGB(255, 255, 255, 255),
-            fontWeight: FontWeight.w600,
-            fontSize: 14,
-            fontStyle: FontStyle.italic,
-            fontFamily: "SFProDisplay",
-            ),
-          ),
-      ),
+      //   style: ElevatedButton.styleFrom(
+      //     padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 15),
+      //     backgroundColor: Colors.transparent,
+      //     shadowColor: Colors.transparent,
+      //     shape: RoundedRectangleBorder(
+      //       borderRadius: BorderRadius.circular(12),
+      //     ),
+      //   ),
+      //   child: Text(
+      //     widget.text,style: const TextStyle(
+      //       color: Color.fromARGB(255, 255, 255, 255),
+      //       fontWeight: FontWeight.w600,
+      //       fontSize: 14,
+      //       fontStyle: FontStyle.italic,
+      //       fontFamily: "SFProDisplay",
+      //       ),
+      //     ),
+      // ),
     );
   }
 }
