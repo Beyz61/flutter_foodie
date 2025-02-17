@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodie_screen/data/repository/auth_repository.dart';
-import 'package:foodie_screen/feautures/authentification/screens/main_screen.dart';
+import 'package:foodie_screen/feautures/authentification/screens/login_screen.dart';
 import 'package:foodie_screen/feautures/authentification/widgets/sign_out_button.dart';
 import 'package:foodie_screen/feautures/profile/screens/user_screen.dart';
 import 'package:provider/provider.dart';
@@ -134,7 +134,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 final authRepository = context.read<AuthRepository>();
                 await authRepository.signOut();
                 Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (context) => const MainScreen()),
+                  MaterialPageRoute(builder: (context) => const LoginScreen()),
                 );
               },
             ),

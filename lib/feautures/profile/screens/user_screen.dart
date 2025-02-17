@@ -1,7 +1,7 @@
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
-import 'package:foodie_screen/feautures/authentification/widgets/sign_out_button.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import "package:firebase_auth/firebase_auth.dart";
+import "package:flutter/material.dart";
+import "package:foodie_screen/feautures/authentification/widgets/sign_out_button.dart";
+import "package:shared_preferences/shared_preferences.dart";
 
 class UserScreen extends StatefulWidget {
   const UserScreen({super.key});
@@ -28,20 +28,20 @@ class _UserScreenState extends State<UserScreen> {
   Future<void> _loadUsername() async {
     final prefs = await SharedPreferences.getInstance();
     setState(() {
-      username = prefs.getString('username');
+      username = prefs.getString("username");
     });
   }
 
   Future<void> _saveUsername(String newUsername) async {
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setString('username', newUsername);
+    await prefs.setString("username", newUsername);
     setState(() {
       username = newUsername;
     });
   }
 
   void _showEditUsernameDialog() {
-    _usernameController.text = username ?? '';
+    _usernameController.text = username ?? "";
     showDialog(
       context: context,
       builder: (context) {
@@ -52,7 +52,7 @@ class _UserScreenState extends State<UserScreen> {
             side: const BorderSide(color: Colors.white, width: 1),
           ),
           title: const Text(
-            'Benutzernamen ändern',
+            "Benutzernamen ändern",
             style: TextStyle(
               color: Color.fromARGB(255, 246, 191, 143),
               fontWeight: FontWeight.w600,
@@ -63,7 +63,7 @@ class _UserScreenState extends State<UserScreen> {
           content: TextField(
             controller: _usernameController,
             decoration: const InputDecoration(
-              labelText: 'Neuer Benutzername',
+              labelText: "Neuer Benutzername",
               labelStyle: TextStyle(color: Color.fromARGB(255, 255, 250, 245)),
               enabledBorder: UnderlineInputBorder(
                 borderSide: BorderSide(color: Color.fromARGB(255, 255, 250, 245)),
@@ -85,7 +85,7 @@ class _UserScreenState extends State<UserScreen> {
                 Navigator.of(context).pop();
               },
               child: const Text(
-                'Abbrechen',
+                "Abbrechen",
                 style: TextStyle(
                   color: Color.fromARGB(255, 255, 108, 3),
                   fontWeight: FontWeight.w600,
@@ -100,7 +100,7 @@ class _UserScreenState extends State<UserScreen> {
                 Navigator.of(context).pop();
               },
               child: const Text(
-                'Speichern',
+                "Speichern",
                 style: TextStyle(
                   color: Color.fromARGB(255, 255, 108, 3),
                   fontWeight: FontWeight.w600,
@@ -337,7 +337,7 @@ class _UserScreenState extends State<UserScreen> {
                       if (currentPassword.isNotEmpty && newPassword.isNotEmpty) {
                         try {
                           final credential = EmailAuthProvider.credential(
-                            email: user?.email ?? '',
+                            email: user?.email ?? "",
                             password: currentPassword,
                           );
                           await user?.reauthenticateWithCredential(credential);
