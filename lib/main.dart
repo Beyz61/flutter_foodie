@@ -52,11 +52,11 @@ class MyApp extends StatelessWidget {
           stream: authInstance.authStateChanges(),
           builder: (context, snapshot) {if (snapshot.connectionState == ConnectionState.active) {
                     User? user = snapshot.data;
-                    log("User Logged In: ${user != null}");
+                    log("Benutzer eingeloggt: ${user != null}");
                     if (user == null) {
                       return const LoginScreen(); 
                     } else {
-                      return const ButtonNavigator(); // angemeldete seite 
+                      return const ButtonNavigator(); 
                     }
                   } else {
                     return const Center(child: CircularProgressIndicator());

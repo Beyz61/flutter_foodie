@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodie_screen/feautures/ai/screens/ai_screen.dart'; // Import AI screen
 import 'package:foodie_screen/feautures/discover/screens/spot_screen.dart';
 import 'package:foodie_screen/feautures/favorite/screens/favorit_screen.dart';
 import 'package:foodie_screen/feautures/feed/screens/feed_screen.dart';
@@ -13,8 +14,7 @@ class ButtonNavigator extends StatefulWidget {
 }
 
 class _ButtonNavigator extends State<ButtonNavigator> {
-  int _selectedPage = 0;
-
+  int _selectedPage = 0; 
   late final List<Widget> _screens;
 
   @override
@@ -22,19 +22,13 @@ class _ButtonNavigator extends State<ButtonNavigator> {
     super.initState();
     _screens = [
       const FeedScreen(),
+      const AIScreen(), 
       const FavoritScreen(),
       const SpotScreen(),
       const SettingsScreen(),
     ];
-    _loadSelectedPage();
   }
 
-  Future<void> _loadSelectedPage() async {
-    final prefs = await SharedPreferences.getInstance();
-    setState(() {
-      _selectedPage = prefs.getInt('selectedPage') ?? 0;
-    });
-  }
 
   Future<void> _saveSelectedPage(int index) async {
     final prefs = await SharedPreferences.getInstance();
@@ -62,6 +56,7 @@ class _ButtonNavigator extends State<ButtonNavigator> {
         type: BottomNavigationBarType.fixed,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.restaurant), label: "Heute"),
+          BottomNavigationBarItem(icon: Icon(Icons.fastfood_rounded), label: "AI"), 
           BottomNavigationBarItem(icon: Icon(Icons.favorite), label: "Favoriten"),
           BottomNavigationBarItem(icon: Icon(Icons.public), label: "Entdecken"),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profil"),
