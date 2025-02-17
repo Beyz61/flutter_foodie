@@ -25,6 +25,13 @@ class ProfileButton extends StatelessWidget {
       ),
       child: ElevatedButton(
         onPressed: onPressed,
+        style: ElevatedButton.styleFrom(
+          padding: const EdgeInsets.symmetric(horizontal: 70, vertical: 15),
+          backgroundColor: signInBtnColor,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
+        ),
         child: Text(
           text,
           style:  
@@ -36,13 +43,6 @@ class ProfileButton extends StatelessWidget {
              fontFamily: "SFProDisplay",
              ),
            ),
-        style: ElevatedButton.styleFrom(
-          padding: const EdgeInsets.symmetric(horizontal: 70, vertical: 15),
-          backgroundColor: signInBtnColor,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20),
-          ),
-        ),
       ),
     );
   }
