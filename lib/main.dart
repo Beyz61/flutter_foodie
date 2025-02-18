@@ -11,6 +11,7 @@ import 'package:foodie_screen/data/repository/database_repository.dart';
 import 'package:foodie_screen/data/repository/firebase_auth_repository.dart';
 import 'package:foodie_screen/data/repository/recipe/shared_preferences_recipe_repository.dart';
 import 'package:foodie_screen/data/repository/shared_preferences_database.dart';
+import 'package:foodie_screen/data/repository/user_repository.dart';
 import 'package:foodie_screen/feautures/authentification/screens/login_screen.dart';
 import 'package:foodie_screen/firebase_options.dart';
 import 'package:foodie_screen/shared/widgets/buttom_navigator.dart';
@@ -32,6 +33,7 @@ void main() async {
       Provider<DatabaseRepository>(create: (_) => SharedPreferencesDatabase()),
       ChangeNotifierProvider<SharedPreferencesRecipeRepository>(create: (_) => sharedPreferecesRecipeRepository),
       Provider<AuthRepository>(create: (_) => FirebaseAuthRepository()),
+      Provider<UserRepository>(create: (_) => UserRepository()),
     ],
     child: MyApp(),
   ));
@@ -58,7 +60,16 @@ class MyApp extends StatelessWidget {
                     if (user == null) {
                       return const LoginScreen(); 
                     } else {
-                      return const ButtonNavigator(); 
+                      return FutureBuilder(
+                        future: context.read<UserRepository>().loadUsername(user.uid),
+                        builder: (context, snapshot) {
+                          if (snapshot.connectionState == ConnectionState.done) {
+                            return const ButtonNavigator();
+                          } else {
+                            return const Center(child: CircularProgressIndicator());
+                          }
+                        },
+                      );
                     }
                   } else {
                     return const Center(child: CircularProgressIndicator());

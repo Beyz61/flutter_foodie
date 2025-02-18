@@ -1,8 +1,8 @@
 import "package:firebase_auth/firebase_auth.dart";
 import "package:flutter/material.dart";
 import "package:foodie_screen/config/colors.dart";
+import "package:foodie_screen/data/repository/user_repository.dart";
 import "package:foodie_screen/feautures/authentification/widgets/sign_out_button.dart";
-import "package:shared_preferences/shared_preferences.dart";
 
 class UserScreen extends StatefulWidget {
   const UserScreen({super.key});
@@ -19,6 +19,7 @@ class _UserScreenState extends State<UserScreen> {
   bool _isNewPasswordVisible = false;
   String? username;
   final TextEditingController _usernameController = TextEditingController();
+  final UserRepository _userRepository = UserRepository();
 
   @override
   void initState() {
@@ -27,18 +28,23 @@ class _UserScreenState extends State<UserScreen> {
   }
 
   Future<void> _loadUsername() async {
-    final prefs = await SharedPreferences.getInstance();
-    setState(() {
-      username = prefs.getString("username");
-    });
+    final user = _auth.currentUser;
+    if (user != null) {
+      final username = await _userRepository.loadUsername(user.uid);
+      setState(() {
+        this.username = username;
+      });
+    }
   }
 
   Future<void> _saveUsername(String newUsername) async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setString("username", newUsername);
-    setState(() {
-      username = newUsername;
-    });
+    final user = _auth.currentUser;
+    if (user != null) {
+      await _userRepository.saveUsername(user.uid, newUsername);
+      setState(() {
+        username = newUsername;
+      });
+    }
   }
 
   void _showEditUsernameDialog() {

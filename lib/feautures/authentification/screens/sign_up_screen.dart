@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import "package:foodie_screen/config/colors.dart";
 import "package:foodie_screen/data/repository/auth_repository.dart";
+import "package:foodie_screen/data/repository/user_repository.dart";
 import "package:foodie_screen/feautures/authentification/widgets/login_button.dart";
 import "package:foodie_screen/feautures/authentification/widgets/mail_button.dart";
 import "package:foodie_screen/feautures/authentification/widgets/password_button.dart";
@@ -21,6 +22,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController repeatPasswordController = TextEditingController();
+  final UserRepository _userRepository = UserRepository();
 
   Future<void> _saveUsername(String username) async {
     final prefs = await SharedPreferences.getInstance();
@@ -112,15 +114,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       onPressed: () async {
                         if (passwordController.text == repeatPasswordController.text) {
                           try {
-                            await context.read<AuthRepository>().createWithEmailAndPassword(
+                            final user = await context.read<AuthRepository>().createWithEmailAndPassword(
                               emailController.text,
                               passwordController.text,
                             );
-                            await _saveUsername(usernameController.text);
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => const ButtonNavigator()),
-                            );
+                            if (user != null) {
+                              await _userRepository.saveUsername(user.userId, usernameController.text);
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => const ButtonNavigator()),
+                              );
+                            }
                           } catch (e) {
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(content: Text("Registrierung fehlgeschlagen")),
