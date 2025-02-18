@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodie_screen/config/colors.dart';
 
 class SpotWidget extends StatelessWidget {
   const SpotWidget({
@@ -20,11 +21,11 @@ class SpotWidget extends StatelessWidget {
               image: AssetImage(picture),
               fit: BoxFit.cover,
             ),
-            color: Colors.black.withOpacity(0.5),
+            color: darkblackWithOpacity,
             borderRadius: BorderRadius.circular(12),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.3),
+                color:blackWithOpacity,
                 spreadRadius: 2,
                 blurRadius: 4,
                 offset: const Offset(0, 3),
@@ -38,14 +39,14 @@ class SpotWidget extends StatelessWidget {
                 height: 55,
                 padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 4),
                 decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 9, 9, 9).withOpacity(0.5),
+                  color: blackWithOpacity,
                   borderRadius: const BorderRadius.only(
                     bottomLeft: Radius.circular(12),
                     bottomRight: Radius.circular(12),
                   ),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.3),
+                      color: blackWithOpacity,
                       spreadRadius: 2,
                       blurRadius: 6,
                       offset: const Offset(0, 3), 

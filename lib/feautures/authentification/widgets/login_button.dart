@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodie_screen/config/colors.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;
@@ -22,7 +23,7 @@ class CustomButton extends StatelessWidget {
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.3),
+            color: blackWithOpacity,
             offset: const Offset(0, 4),
             blurRadius: 8,
           ),

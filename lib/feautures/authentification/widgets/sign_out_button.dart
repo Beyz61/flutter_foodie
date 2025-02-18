@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodie_screen/config/colors.dart';
 
 class SignOutButton extends StatefulWidget {
   const SignOutButton({
@@ -25,7 +26,7 @@ class _SignOutButtonState extends State<SignOutButton> {
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.3),
+            color: blackWithOpacity,
             offset: const Offset(0, 4),
             blurRadius: 8,
           ),

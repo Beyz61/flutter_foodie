@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodie_screen/config/colors.dart';
 import 'package:foodie_screen/data/repository/recipe/shared_preferences_recipe_repository.dart';
 import 'package:foodie_screen/feautures/favorite/models/new_collection_dialog.dart';
 import 'package:provider/provider.dart';
@@ -14,7 +15,7 @@ class FavDialog {
       builder: (BuildContext context) {
           final sharedProvider = Provider.of<SharedPreferencesRecipeRepository>(context);
         return AlertDialog(
-          backgroundColor: Colors.black.withOpacity(0.8),
+          backgroundColor: darkblackWithOpacity,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
             side: const BorderSide(color: Colors.white, width: 1),
@@ -95,11 +96,11 @@ class FavDialog {
       builder: (BuildContext context) {
         final sharedProvider = Provider.of<SharedPreferencesRecipeRepository>(context);
         return AlertDialog(
-          backgroundColor: Colors.black.withOpacity(0.8),
+          backgroundColor:darkblackWithOpacity,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
             side:
-                const BorderSide(color: Colors.white, width: 1), // Thin border
+                const BorderSide(color: Colors.white, width: 1), 
           ),
           title: const Text(
             "Aus Kollektion entfernen?",

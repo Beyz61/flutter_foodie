@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodie_screen/config/colors.dart';
 import 'package:foodie_screen/data/repository/recipe/shared_preferences_recipe_repository.dart';
 import 'package:foodie_screen/feautures/feed/models/fav_dialog.dart';
 import 'package:foodie_screen/feautures/feed/models/recipe.dart';
@@ -37,11 +38,11 @@ class _FoodContainerWidgetState extends State<FoodContainerWidget> {
           child: Container(
             height: 94,
             decoration: BoxDecoration(
-              color: Colors.black.withOpacity(0.5),
+              color:blackWithOpacity,
               borderRadius: BorderRadius.circular(10),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.3),
+                  color: blackWithOpacity,
                   offset: const Offset(0, 4),
                   blurRadius: 8,
                 ),
@@ -62,7 +63,7 @@ class _FoodContainerWidgetState extends State<FoodContainerWidget> {
                       ),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.3),
+                          color:blackWithOpacity,
                           offset: const Offset(0, 4),
                           blurRadius: 8,
                         ),

@@ -1,5 +1,6 @@
 import "package:firebase_auth/firebase_auth.dart";
 import "package:flutter/material.dart";
+import "package:foodie_screen/config/colors.dart";
 import "package:foodie_screen/feautures/authentification/widgets/sign_out_button.dart";
 import "package:shared_preferences/shared_preferences.dart";
 
@@ -175,7 +176,7 @@ class _UserScreenState extends State<UserScreen> {
                     margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                     padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
                     decoration: BoxDecoration(
-                      color: const Color.fromARGB(81, 0, 0, 0).withOpacity(0.6),
+                      color:blackWithOpacity,
                       borderRadius: BorderRadius.circular(10.0),
                       border: Border.all(color: const Color.fromARGB(255, 253, 110, 0), width: 1),
                       boxShadow: const [

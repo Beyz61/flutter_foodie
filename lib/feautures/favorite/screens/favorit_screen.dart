@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodie_screen/config/colors.dart';
 import 'package:foodie_screen/data/repository/recipe/shared_preferences_recipe_repository.dart';
 import 'package:foodie_screen/feautures/favorite/models/new_collection_dialog.dart';
 import 'package:foodie_screen/feautures/favorite/widgets/fav_container_widget.dart';
@@ -69,11 +70,11 @@ class _FavoritScreenState extends State<FavoritScreen> {
                   width: 370,
                   padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
-                    color: const Color.fromARGB(15, 0, 0, 0).withOpacity(0.6),
+                    color: darkblackWithOpacity,
                     borderRadius: BorderRadius.circular(20),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.2),
+                        color: blackWithOpacity,
                         spreadRadius: 2,
                         blurRadius: 5,
                         offset: const Offset(0, 3),

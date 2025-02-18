@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodie_screen/config/colors.dart';
 import 'package:foodie_screen/data/repository/recipe/shared_preferences_recipe_repository.dart';
 import 'package:provider/provider.dart';
 
@@ -34,7 +35,7 @@ class _DisplayFavContainerState extends State<DisplayFavContainer> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          backgroundColor: Colors.black.withOpacity(0.8),
+          backgroundColor: darkblackWithOpacity,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
             side: const BorderSide(color: Colors.white, width: 1), 
@@ -76,10 +77,10 @@ class _DisplayFavContainerState extends State<DisplayFavContainer> {
       builder: (BuildContext context) {
         final sharedProvider = Provider.of<SharedPreferencesRecipeRepository>(context);
         return AlertDialog(
-          backgroundColor: Colors.black.withOpacity(0.8),
+          backgroundColor: darkblackWithOpacity,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
-            side: const BorderSide(color: Colors.white, width: 1), // Thin border
+            side: const BorderSide(color: Colors.white, width: 1), 
           ),
           title: const Text(
             "Kollektion bearbeiten",
@@ -133,11 +134,11 @@ class _DisplayFavContainerState extends State<DisplayFavContainer> {
               fit: BoxFit.cover,
               scale: 4.0, 
             ),
-            color: const Color.fromARGB(46, 63, 61, 61).withOpacity(0.5),
+            color: lightdarkblackWithOpacity,
             borderRadius: BorderRadius.circular(12),
             boxShadow: [
               BoxShadow(
-                color: const Color.fromARGB(255, 9, 9, 9).withOpacity(0.3),
+                color: blackWithOpacity,
                 spreadRadius: 2,
                 blurRadius: 4,
                 offset: const Offset(0, 3),
@@ -153,7 +154,7 @@ class _DisplayFavContainerState extends State<DisplayFavContainer> {
                   width: 30, 
                   height: 30,
                   decoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.5),
+                    color:darkblackWithOpacity,
                     shape: BoxShape.circle,
                     border: Border.all(
                       color: Colors.white,
@@ -182,7 +183,7 @@ class _DisplayFavContainerState extends State<DisplayFavContainer> {
                   width: 30, 
                   height: 30,
                   decoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.5),
+                    color: darkblackWithOpacity,
                     shape: BoxShape.circle,
                     border: Border.all(
                       color: Colors.orange,
@@ -211,7 +212,7 @@ class _DisplayFavContainerState extends State<DisplayFavContainer> {
                     height: 55, 
                     padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 4),
                     decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 9, 9, 9).withOpacity(0.5),
+                      color:darkblackWithOpacity,
                       borderRadius: const BorderRadius.only(
                         bottomLeft: Radius.circular(12), 
                         bottomRight: Radius.circular(12)),

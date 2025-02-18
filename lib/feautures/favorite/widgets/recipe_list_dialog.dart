@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodie_screen/config/colors.dart';
 import 'package:foodie_screen/data/repository/recipe/shared_preferences_recipe_repository.dart';
 import 'package:foodie_screen/feautures/favorite/models/fav_collection_item.dart';
 import 'package:foodie_screen/feautures/feed/models/food_data.dart';
@@ -11,7 +12,7 @@ void showRecipeListDialog(BuildContext context, FavCollection collection) {
     builder: (BuildContext context) {
       final sharedProvider = Provider.of<SharedPreferencesRecipeRepository>(context);
       return AlertDialog(
-        backgroundColor: const Color.fromARGB(255, 14, 13, 13).withOpacity(0.8),
+        backgroundColor:darkblackWithOpacity,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
           side: const BorderSide(color: Colors.white, width: 1), 

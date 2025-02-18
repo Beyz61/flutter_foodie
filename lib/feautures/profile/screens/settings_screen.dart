@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodie_screen/config/colors.dart';
 import 'package:foodie_screen/data/repository/auth_repository.dart';
 import 'package:foodie_screen/feautures/authentification/screens/login_screen.dart';
 import 'package:foodie_screen/feautures/authentification/widgets/sign_out_button.dart';
@@ -77,7 +78,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
               padding: const EdgeInsets.all(16.0),
               decoration: BoxDecoration(
-                color: Colors.black.withOpacity(0.8),
+                color: darkblackWithOpacity,
                 borderRadius: BorderRadius.circular(10.0),
                 border: Border.all(color: Colors.white, width: 1),
                 boxShadow: const [

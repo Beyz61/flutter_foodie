@@ -76,7 +76,7 @@ List<FoodItem> foodRecipe = [
   ),
   FoodItem(
     imagePath: "assets/images/fishanchips.png",
-    imageTitle: "Fisch und Chips",
+    imageTitle: "Fisch & Chips",
     imageSubTime: "30 Min",
     imagePrice: "2 Pers./ 16,98 €",
     // imageFav: " ",
@@ -133,28 +133,28 @@ List<Recipe> recipes = [
       ],
       preparations: [
         Preparation(title: "1. Step", preparationTexts: [
-          "Mehl, Backpulver, Zucker und Salz in einer Schüssel vermengen.",
+          "Mehl, Backpulver, Zucker & Salz in einer Schüssel vermengen.",
   
         ]),
           Preparation(title: "2. Step", preparationTexts: [
        
-          "Ei, Milch, Vanillezucker und geschmolzene Butter hinzufügen und zu einem glatten Teig verrühren.",
+          "Ei, Milch, Vanillezucker & geschmolzene Butter hinzufügen & zu einem glatten Teig verrühren.",
       
         ]),
           Preparation(title: "3. Step", preparationTexts: [
         
-          "Eine Pfanne erhitzen und mit etwas Öl oder Butter einfetten.",
+          "Eine Pfanne erhitzen & mit etwas Öl oder Butter einfetten.",
    
         ]),
           Preparation(title: "4. Step", preparationTexts: [
         
        
-          "Mit einer Kelle kleine Portionen des Teigs in die Pfanne geben und auf beiden Seiten goldbraun backen.",
+          "Mit einer Kelle kleine Portionen des Teigs in die Pfanne geben & auf beiden Seiten goldbraun backen.",
          
         ]),
           Preparation(title: "5. Step", preparationTexts: [
         
-          "Die Pancakes auf einen Teller stapeln und mit Apfelsirup servieren.",
+          "Die Pancakes auf einen Teller stapeln & mit Apfelsirup servieren.",
         ]),
       ],
       portion: 1,
@@ -176,24 +176,24 @@ List<Recipe> recipes = [
         Ingredients(amount: 1, unit: "TL", text: "Paprikapulver"),
         Ingredients(amount: 2, unit: "EL", text: "Mehl"),
         Ingredients(amount: 1, unit: "TL", text: "Backpulver"),
-        Ingredients(amount: 0, unit: "", text: "Salz und Pfeffer"),
+        Ingredients(amount: 0, unit: "", text: "Salz & Pfeffer"),
         Ingredients(amount: 0, unit: "", text: "Öl zum Frittieren"),
         Ingredients(amount: 200, unit: "g", text: "Kichererbsen (gekocht)"),
         Ingredients(amount: 2, unit: "EL", text: "Tahini"),
         Ingredients(amount: 1, unit: "", text: "Knoblauchzehe"),
         Ingredients(amount: 2, unit: "EL", text: "Zitronensaft"),
         Ingredients(amount: 3, unit: "EL", text: "Olivenöl"),
-        Ingredients(amount: 0, unit: "", text: "Salz und Pfeffer"),
+        Ingredients(amount: 0, unit: "", text: "Salz & Pfeffer"),
       ],
       preparations: [
           Preparation(title: "1. Step", preparationTexts: [
-           "Die Kichererbsen über Nacht einweichen und dann abtropfen lassen."  
+           "Die Kichererbsen über Nacht einweichen & dann abtropfen lassen."  
         ]),
           Preparation(title: "2. Step", preparationTexts: [
-          "Zwiebel und Knoblauch fein hacken, die Kichererbsen mit den Gewürzen, Mehl und Backpulver pürieren.",
+          "Zwiebel & Knoblauch fein hacken, die Kichererbsen mit den Gewürzen, Mehl & Backpulver pürieren.",
           ]),
           Preparation(title: "3. Step", preparationTexts: [
-          "Aus der Masse kleine Bällchen formen und in heißem Öl goldbraun frittieren.",
+          "Aus der Masse kleine Bällchen formen & in heißem Öl goldbraun frittieren.",
           ]),
           Preparation(title: "4. Step", preparationTexts: [
           "Für den Humus alle Zutaten in einem Mixer zu einer cremigen Masse verarbeiten.",
@@ -219,26 +219,26 @@ List<Recipe> recipes = [
         Ingredients(amount: 2, unit: "EL", text: "Olivenöl"),
         Ingredients(amount: 1, unit: "TL", text: "Balsamico-Essig"),
         Ingredients(amount: 0, unit: "", text: "Frisches Basilikum"),
-        Ingredients(amount: 0, unit: "", text: "Salz und Pfeffer"),
+        Ingredients(amount: 0, unit: "", text: "Salz & Pfeffer"),
       ],
       preparations: [
         Preparation(title: "1. Step", preparationTexts: [
-          "Den Pizzateig ausrollen und auf einem Blech ausbreiten.",
+          "Den Pizzateig ausrollen & auf einem Blech ausbreiten.",
           ]),
           Preparation(title: "2. Step", preparationTexts: [
-          "Die Tomaten in Scheiben schneiden und auf dem Teig verteilen.",
+          "Die Tomaten in Scheiben schneiden & auf dem Teig verteilen.",
           ]),
           Preparation(title: "3. Step", preparationTexts: [
-          "Mozzarella in Scheiben schneiden und auf die Tomaten legen.",
+          "Mozzarella in Scheiben schneiden & auf die Tomaten legen.",
           ]),
           Preparation(title: "4. Step", preparationTexts: [
-          "Mit Olivenöl und Balsamico beträufeln, mit Salz und Pfeffer würzen.",
+          "Mit Olivenöl & Balsamico beträufeln, mit Salz & Pfeffer würzen.",
           ]),
           Preparation(title: "5. Step", preparationTexts: [
           "Im vorgeheizten Ofen bei 220°C ca. 15 Minuten backen.",
           ]),
           Preparation(title: "6. Step", preparationTexts: [
-          "Mit frischem Basilikum garnieren und servieren.",
+          "Mit frischem Basilikum garnieren & servieren.",
         ]),
       ],
       portion: 1,
@@ -253,24 +253,24 @@ List<Recipe> recipes = [
       imagePath: "assets/images/taco.png",
       ingredients: [
         Ingredients(amount: 8, unit: "", text: "kleine Tortillas"),
-        Ingredients(amount: 200, unit: "g", text: "schwarze Bohnen (aus der Dose)"),
+        Ingredients(amount: 200, unit: "g", text: "schwarze Bohnen (Dose)"),
         Ingredients(amount: 1, unit: "", text: "Avocado"),
         Ingredients(amount: 1, unit: "", text: "Tomate"),
         Ingredients(amount: 1, unit: "", text: "Zwiebel"),
         Ingredients(amount: 1, unit: "Handvoll", text: "Koriander"),
         Ingredients(amount: 2, unit: "EL", text: "Olivenöl"),
         Ingredients(amount: 1, unit: "", text: "Saft einer Limette"),
-        Ingredients(amount: 0, unit: "", text: "Salz und Pfeffer"),
+        Ingredients(amount: 0, unit: "", text: "Salz & Pfeffer"),
       ],
       preparations: [
           Preparation(title: "1. Step", preparationTexts: [         
-           "Die Zwiebel und Tomate würfeln, die Avocado in Scheiben schneiden.",]),
+           "Die Zwiebel & Tomate würfeln, die Avocado in Scheiben schneiden.",]),
             Preparation(title: "2. Step", preparationTexts: [
-          "Die Bohnen in einer Pfanne mit Olivenöl erhitzen, mit Salz, Pfeffer und Limettensaft würzen.",]),
+          "Die Bohnen in einer Pfanne mit Olivenöl erhitzen, mit Salz, Pfeffer & Limettensaft würzen.",]),
           Preparation(title: "3. Step", preparationTexts: [
-          "Die Tortillas erwärmen und mit den Bohnen, Tomaten, Zwiebeln, Avocado und Koriander füllen.",]),
+          "Die Tortillas erwärmen & mit den Bohnen, Tomaten, Zwiebeln, Avocado & Koriander füllen.",]),
           Preparation(title: "4. Step", preparationTexts: [
-          "Mit weiteren Gewürzen nach Belieben abschmecken und servieren.",
+          "Mit weiteren Gewürzen nach Belieben abschmecken & servieren.",
         ]),
       ],
       portion: 1,
@@ -295,16 +295,16 @@ List<Recipe> recipes = [
       ],
       preparations: [
         Preparation(title: "1. Step", preparationTexts: [          
-         "Die Kartoffeln schälen und in Würfel schneiden. In einer Pfanne mit Olivenöl anbraten, bis sie goldbraun sind.",
+         "Die Kartoffeln schälen & in Würfel schneiden. In einer Pfanne mit Olivenöl anbraten, bis sie goldbraun sind.",
           ]),
           Preparation(title: "2. Step", preparationTexts: [
-          "Die Steaks in einer heißen Pfanne mit etwas Öl braten, mit Salz, Pfeffer und Rosmarin würzen.",
+          "Die Steaks in einer heißen Pfanne mit etwas Öl braten, mit Salz, Pfeffer & Rosmarin würzen.",
           ]),
           Preparation(title: "3. Step", preparationTexts: [
           "Die Steaks je nach gewünschter Garstufe braten.",
           ]),
           Preparation(title: "4. Step", preparationTexts: [
-          "Die Kartoffeln und Steaks anrichten und optional mit etwas Butter servieren.",
+          "Die Kartoffeln & Steaks anrichten & optional mit etwas Butter servieren.",
         ]),
       ],
       portion: 1,
@@ -327,26 +327,26 @@ List<Recipe> recipes = [
         Ingredients(amount: 1, unit: "Handvoll", text: "Salat"),
         Ingredients(amount: 0, unit: "", text: "Ketchup (optional)"),
         Ingredients(amount: 0, unit: "", text: "Senf (optional)"),
-        Ingredients(amount: 0, unit: "", text: "Salz und Pfeffer"),
+        Ingredients(amount: 0, unit: "", text: "Salz & Pfeffer"),
       ],
       preparations: [
         Preparation(title: "1. Step", preparationTexts: [          
-          "Die Burgerbrötchen aufschneiden und leicht anrösten.",
+          "Die Burgerbrötchen aufschneiden & leicht anrösten.",
           ]),
           Preparation(title: "2. Step", preparationTexts: [
-          "Tomaten und Zwiebel in Scheiben schneiden.",
+          "Tomaten & Zwiebel in Scheiben schneiden.",
           ]),
           Preparation(title: "3. Step", preparationTexts: [
           "Die Rinderpattys in einer heißen Pfanne oder auf dem Grill braten.",
           ]),
           Preparation(title: "4. Step", preparationTexts: [
-          "Die Patties nach Belieben mit Käse belegen und schmelzen lassen.",
+          "Die Patties nach Belieben mit Käse belegen & schmelzen lassen.",
           ]),
           Preparation(title: "5. Step", preparationTexts: [
-          "Die Burgerbrötchen mit Ketchup und Senf bestreichen.",
+          "Die Burgerbrötchen mit Ketchup & Senf bestreichen.",
           ]),
           Preparation(title: "6. Step", preparationTexts: [
-          "Burgerbrötchen mit Salat, Tomaten, Zwiebel und den Patties belegen und servieren.",
+          "Burgerbrötchen mit Salat, Tomaten, Zwiebel & den Patties belegen & servieren.",
         ]),
       ],
       portion: 1,
@@ -362,7 +362,7 @@ List<Recipe> recipes = [
     ingredients: [
       Ingredients(amount: 200, unit: "g", text: "Sushi-Reis"),
       Ingredients(amount: 1, unit: "", text: "Nori-Blatt"),
-      Ingredients(amount: 100, unit: "g", text: "Lachs (oder Gemüse für vegane Variante)"),
+      Ingredients(amount: 100, unit: "g", text: "Lachs (alternativ Gemüse)"),
       Ingredients(amount: 1, unit: "", text: "Avocado"),
       Ingredients(amount: 1, unit: "", text: "Karotte"),
       Ingredients(amount: 2, unit: "EL", text: "Reisessig"),
@@ -372,16 +372,16 @@ List<Recipe> recipes = [
     ],
     preparations: [
       Preparation(title: "1. Step", preparationTexts: [
-        "Sushi-Reis waschen und nach Packungsanleitung kochen. Reisessig mit Zucker und Salz vermischen und unter den Reis heben.",
+        "Sushi-Reis waschen & nach Packungsanleitung kochen. Reisessig mit Zucker & Salz vermischen & unter den Reis heben.",
       ]),
       Preparation(title: "2. Step", preparationTexts: [
-        "Die Avocado und Karotte in feine Streifen schneiden, Lachs ebenfalls in dünne Streifen schneiden.",
+        "Die Avocado & Karotte in feine Streifen schneiden, Lachs ebenfalls in dünne Streifen schneiden.",
       ]),
       Preparation(title: "3. Step", preparationTexts: [
-        "Nori-Blatt auf eine Bambusmatte legen, mit einer dünnen Schicht Reis bedecken und mit Gemüse oder Lachs füllen.",
+        "Nori-Blatt auf eine Bambusmatte legen, mit einer dünnen Schicht Reis bedecken & mit Gemüse oder Lachs füllen.",
       ]),
       Preparation(title: "4. Step", preparationTexts: [
-        "Das Sushi vorsichtig aufrollen und in mundgerechte Stücke schneiden.",
+        "Das Sushi vorsichtig aufrollen & in m&gerechte Stücke schneiden.",
       ]),
       Preparation(title: "5. Step", preparationTexts: [
         "Mit Sojasauce servieren.",
@@ -410,26 +410,26 @@ List<Recipe> recipes = [
     ],
     preparations: [
       Preparation(title: "1. Step", preparationTexts: [
-        "Spinat waschen und grob hacken. Zwiebel und Knoblauch in Olivenöl anbraten, Spinat dazugeben und zusammenfallen lassen.",
+        "Spinat waschen & grob hacken. Zwiebel & Knoblauch in Olivenöl anbraten, Spinat dazugeben & zusammenfallen lassen.",
       ]),
       Preparation(title: "2. Step", preparationTexts: [
-        "Feta-Käse zerbröseln und unter die Spinatmischung heben.",
+        "Feta-Käse zerbröseln & unter die Spinatmischung heben.",
       ]),
       Preparation(title: "3. Step", preparationTexts: [
-        "Yufka-Blätter auf einem Blech ausbreiten, die Füllung darauf verteilen und einrollen. Mit Ei bestreichen.",
+        "Yufka-Blätter auf einem Blech ausbreiten, die Füllung darauf verteilen & einrollen. Mit Ei bestreichen.",
       ]),
       Preparation(title: "4. Step", preparationTexts: [
         "Im vorgeheizten Ofen bei 180°C ca. 25-30 Minuten goldbraun backen.",
       ]),
       Preparation(title: "5. Step", preparationTexts: [
-        "In Stücke schneiden und servieren.",
+        "In Stücke schneiden & servieren.",
       ]),
     ],
     portion: 1,
     tipp: null,
   ),
   Recipe(
-    recipeName: "Fisch und Chips",
+    recipeName: "Fisch & Chips",
     imagePath: "assets/images/fishanchips.png",
     preparationTime: "30 Min",
     portionAmount: "2 Pers.",
@@ -449,16 +449,16 @@ List<Recipe> recipes = [
     ],
     preparations: [
       Preparation(title: "1. Step", preparationTexts: [
-        "Die Kartoffeln schälen und in Stifte schneiden. In heißem Öl frittieren, bis sie goldbraun sind.",
+        "Die Kartoffeln schälen & in Stifte schneiden. In heißem Öl frittieren, bis sie goldbraun sind.",
       ]),
       Preparation(title: "2. Step", preparationTexts: [
-        "Mehl, Backpulver, Bier, Ei, Salz und Pfeffer zu einem glatten Teig verrühren.",
+        "Mehl, Backpulver, Bier, Ei, Salz & Pfeffer zu einem glatten Teig verrühren.",
       ]),
       Preparation(title: "3. Step", preparationTexts: [
-        "Die Kabeljaufilets durch den Teig ziehen und in heißem Öl frittieren, bis sie knusprig und goldbraun sind.",
+        "Die Kabeljaufilets durch den Teig ziehen & in heißem Öl frittieren, bis sie knusprig & goldbraun sind.",
       ]),
       Preparation(title: "4. Step", preparationTexts: [
-        "Die Fischfilets und Pommes auf einem Teller anrichten und mit Zitronenspalten servieren.",
+        "Die Fischfilets & Pommes auf einem Teller anrichten & mit Zitronenspalten servieren.",
       ]),
     ],
     portion: 1,
@@ -488,13 +488,13 @@ List<Recipe> recipes = [
     ],
     preparations: [
       Preparation(title: "1. Step", preparationTexts: [
-        "Zwiebel und Knoblauch fein hacken und in Olivenöl anbraten. Hackfleisch dazugeben und krümelig braten.",
+        "Zwiebel & Knoblauch fein hacken & in Olivenöl anbraten. Hackfleisch dazugeben & krümelig braten.",
       ]),
       Preparation(title: "2. Step", preparationTexts: [
-        "Tomaten, Tomatenmark, Oregano, Basilikum, Salz und Pfeffer hinzufügen und köcheln lassen.",
+        "Tomaten, Tomatenmark, Oregano, Basilikum, Salz & Pfeffer hinzufügen & köcheln lassen.",
       ]),
       Preparation(title: "3. Step", preparationTexts: [
-        "Eine Auflaufform mit Lasagneblättern auslegen, eine Schicht Hackfleischsauce und Bechamelsauce darauf verteilen. Mit Mozzarella bestreuen.",
+        "Eine Auflaufform mit Lasagneblättern auslegen, eine Schicht Hackfleischsauce & Bechamelsauce darauf verteilen. Mit Mozzarella bestreuen.",
       ]),
       Preparation(title: "4. Step", preparationTexts: [
         "Schichten wiederholen, bis alle Zutaten aufgebraucht sind. Mit einer Schicht Mozzarella abschließen.",
@@ -524,22 +524,22 @@ List<Recipe> recipes = [
     ],
     preparations: [
       Preparation(title: "1. Step", preparationTexts: [
-        "Schokolade und Butter im Wasserbad schmelzen.",
+        "Schokolade & Butter im Wasserbad schmelzen.",
       ]),
       Preparation(title: "2. Step", preparationTexts: [
         "Eier trennen, Eigelb mit Zucker schaumig schlagen. Geschmolzene Schokolade unterrühren.",
       ]),
       Preparation(title: "3. Step", preparationTexts: [
-        "Eiweiß mit einer Prise Salz steif schlagen und unter die Schokoladenmasse heben.",
+        "Eiweiß mit einer Prise Salz steif schlagen & unter die Schokoladenmasse heben.",
       ]),
       Preparation(title: "4. Step", preparationTexts: [
-        "Förmchen mit Butter einfetten und mit Mehl bestäuben. Teig einfüllen.",
+        "Förmchen mit Butter einfetten & mit Mehl bestäuben. Teig einfüllen.",
       ]),
       Preparation(title: "5. Step", preparationTexts: [
         "Im vorgeheizten Ofen bei 180°C ca. 12-15 Minuten backen, bis das Soufflé aufgegangen ist.",
       ]),
       Preparation(title: "6. Step", preparationTexts: [
-        "Mit Puderzucker bestäuben und sofort servieren.",
+        "Mit Puderzucker bestäuben & sofort servieren.",
       ]),
     ],
     portion: 1,
@@ -564,16 +564,16 @@ List<Recipe> recipes = [
     ],
     preparations: [
       Preparation(title: "1. Step", preparationTexts: [
-        "Die Kartoffeln schälen und in dünne Scheiben schneiden.",
+        "Die Kartoffeln schälen & in dünne Scheiben schneiden.",
       ]),
       Preparation(title: "2. Step", preparationTexts: [
-        "Knoblauch fein hacken und mit Sahne, Salz, Pfeffer und Muskatnuss vermischen.",
+        "Knoblauch fein hacken & mit Sahne, Salz, Pfeffer & Muskatnuss vermischen.",
       ]),
       Preparation(title: "3. Step", preparationTexts: [
-        "Eine Auflaufform mit Butter einfetten, die Kartoffelscheiben schichtweise einlegen und mit der Sahnemischung übergießen.",
+        "Eine Auflaufform mit Butter einfetten, die Kartoffelscheiben schichtweise einlegen & mit der Sahnemischung übergießen.",
       ]),
       Preparation(title: "4. Step", preparationTexts: [
-        "Mit geriebenem Käse bestreuen und im vorgeheizten Ofen bei 180°C ca. 40-45 Minuten backen, bis das Gratin goldbraun ist.",
+        "Mit geriebenem Käse bestreuen & im vorgeheizten Ofen bei 180°C ca. 40-45 Minuten backen, bis das Gratin goldbraun ist.",
       ]),
     ],
     portion: 1,
@@ -599,16 +599,16 @@ List<Recipe> recipes = [
     ],
     preparations: [
       Preparation(title: "1. Step", preparationTexts: [
-        "Hähnchenbrust in Streifen schneiden und in einer Pfanne mit Olivenöl anbraten.",
+        "Hähnchenbrust in Streifen schneiden & in einer Pfanne mit Olivenöl anbraten.",
       ]),
       Preparation(title: "2. Step", preparationTexts: [
-        "Salatmix, Avocado, Tomate und Feta-Käse in einer Schüssel vermengen.",
+        "Salatmix, Avocado, Tomate & Feta-Käse in einer Schüssel vermengen.",
       ]),
       Preparation(title: "3. Step", preparationTexts: [
-        "Hähnchenstreifen hinzufügen und mit Olivenöl, Zitronensaft, Salz und Pfeffer abschmecken.",
+        "Hähnchenstreifen hinzufügen & mit Olivenöl, Zitronensaft, Salz & Pfeffer abschmecken.",
       ]),
       Preparation(title: "4. Step", preparationTexts: [
-        "Gut vermengen und servieren.",
+        "Gut vermengen & servieren.",
       ]),
     ],
     portion: 1,
@@ -633,13 +633,13 @@ List<Recipe> recipes = [
     ],
     preparations: [
       Preparation(title: "1. Step", preparationTexts: [
-        "Hähnchenflügel mit Olivenöl, Paprikapulver, Knoblauchpulver, Zwiebelpulver, Salz und Pfeffer marinieren.",
+        "Hähnchenflügel mit Olivenöl, Paprikapulver, Knoblauchpulver, Zwiebelpulver, Salz & Pfeffer marinieren.",
       ]),
       Preparation(title: "2. Step", preparationTexts: [
         "Im vorgeheizten Ofen bei 200°C ca. 25 Minuten backen.",
       ]),
       Preparation(title: "3. Step", preparationTexts: [
-        "Mit BBQ-Sauce bestreichen und weitere 5 Minuten backen.",
+        "Mit BBQ-Sauce bestreichen & weitere 5 Minuten backen.",
       ]),
       Preparation(title: "4. Step", preparationTexts: [
         "Heiß servieren.",
@@ -668,23 +668,23 @@ List<Recipe> recipes = [
     ],
     preparations: [
       Preparation(title: "1. Step", preparationTexts: [
-        "Kürbis schälen und würfeln. Zwiebel und Knoblauch hacken.",
+        "Kürbis schälen & würfeln. Zwiebel & Knoblauch hacken.",
       ]),
       Preparation(title: "2. Step", preparationTexts: [
-        "Zwiebel und Knoblauch in Olivenöl anbraten. Kürbis hinzufügen und kurz mitbraten.",
+        "Zwiebel & Knoblauch in Olivenöl anbraten. Kürbis hinzufügen & kurz mitbraten.",
       ]),
       Preparation(title: "3. Step", preparationTexts: [
-        "Mit Gemüsebrühe ablöschen und ca. 20 Minuten köcheln lassen.",
+        "Mit Gemüsebrühe ablöschen & ca. 20 Minuten köcheln lassen.",
       ]),
       Preparation(title: "4. Step", preparationTexts: [
-        "Kokosmilch und Ingwer hinzufügen und pürieren. Mit Salz und Pfeffer abschmecken.",
+        "Kokosmilch & Ingwer hinzufügen & pürieren. Mit Salz & Pfeffer abschmecken.",
       ]),
       Preparation(title: "5. Step", preparationTexts: [
         "Heiß servieren.",
       ]),
     ],
     portion: 1,
-    tipp: "Mit Kürbiskernen und frischen Kräutern garnieren.",
+    tipp: "Mit Kürbiskernen & frischen Kräutern garnieren.",
   ),
   Recipe(
     recipeName: "Schokoladenkuchen",
@@ -704,20 +704,20 @@ List<Recipe> recipes = [
     ],
     preparations: [
       Preparation(title: "1. Step", preparationTexts: [
-        "Schokolade und Butter im Wasserbad schmelzen.",
+        "Schokolade & Butter im Wasserbad schmelzen.",
       ]),
       Preparation(title: "2. Step", preparationTexts: [
-        "Eier und Zucker schaumig schlagen, geschmolzene Schokolade unterrühren.",
+        "Eier & Zucker schaumig schlagen, geschmolzene Schokolade unterrühren.",
       ]),
       Preparation(title: "3. Step", preparationTexts: [
-        "Mehl, Backpulver und Salz unterheben.",
+        "Mehl, Backpulver & Salz unterheben.",
       ]),
       Preparation(title: "4. Step", preparationTexts: [
-        "Teig in eine gefettete Form füllen und bei 180°C ca. 25-30 Minuten backen.",
+        "Teig in eine gefettete Form füllen & bei 180°C ca. 25-30 Minuten backen.",
       ]),
     ],
     portion: 1,
-    tipp: "Mit Puderzucker bestäuben und servieren.",
+    tipp: "Mit Puderzucker bestäuben & servieren.",
   ),
   Recipe(
     recipeName: "Erdbeer-Tiramisu",
@@ -736,20 +736,20 @@ List<Recipe> recipes = [
     ],
     preparations: [
       Preparation(title: "1. Step", preparationTexts: [
-        "Erdbeeren waschen und in Scheiben schneiden.",
+        "Erdbeeren waschen & in Scheiben schneiden.",
       ]),
       Preparation(title: "2. Step", preparationTexts: [
-        "Mascarpone, Sahne und Zucker verrühren.",
+        "Mascarpone, Sahne & Zucker verrühren.",
       ]),
       Preparation(title: "3. Step", preparationTexts: [
-        "Löffelbiskuits in Orangensaft tauchen und in eine Form schichten.",
+        "Löffelbiskuits in Orangensaft tauchen & in eine Form schichten.",
       ]),
       Preparation(title: "4. Step", preparationTexts: [
-        "Mascarponecreme und Erdbeeren darauf verteilen, Schichten wiederholen.",
+        "Mascarponecreme & Erdbeeren darauf verteilen, Schichten wiederholen.",
       ]),
     ],
     portion: 1,
-    tipp: "Mit Kakaopulver bestäuben und kalt servieren.",
+    tipp: "Mit Kakaopulver bestäuben & kalt servieren.",
   ),
   Recipe(
     recipeName: "Panna Cotta",
@@ -767,13 +767,13 @@ List<Recipe> recipes = [
     ],
     preparations: [
       Preparation(title: "1. Step", preparationTexts: [
-        "Sahne, Zucker und Vanille in einem Topf erhitzen.",
+        "Sahne, Zucker & Vanille in einem Topf erhitzen.",
       ]),
       Preparation(title: "2. Step", preparationTexts: [
-        "Gelatine in kaltem Wasser einweichen, ausdrücken und in der heißen Sahne auflösen.",
+        "Gelatine in kaltem Wasser einweichen, ausdrücken & in der heißen Sahne auflösen.",
       ]),
       Preparation(title: "3. Step", preparationTexts: [
-        "In Förmchen füllen und im Kühlschrank fest werden lassen.",
+        "In Förmchen füllen & im Kühlschrank fest werden lassen.",
       ]),
       Preparation(title: "4. Step", preparationTexts: [
         "Mit Beeren servieren.",
@@ -801,13 +801,13 @@ List<Recipe> recipes = [
     ],
     preparations: [
       Preparation(title: "1. Step", preparationTexts: [
-        "Gemüse waschen und in Streifen schneiden.",
+        "Gemüse waschen & in Streifen schneiden.",
       ]),
       Preparation(title: "2. Step", preparationTexts: [
         "Olivenöl in einer Pfanne erhitzen, Gemüse darin anbraten.",
       ]),
       Preparation(title: "3. Step", preparationTexts: [
-        "Mit Sojasauce ablöschen und mit Salz und Pfeffer abschmecken.",
+        "Mit Sojasauce ablöschen & mit Salz & Pfeffer abschmecken.",
       ]),
       Preparation(title: "4. Step", preparationTexts: [
         "Heiß servieren.",
@@ -836,19 +836,19 @@ List<Recipe> recipes = [
     ],
     preparations: [
       Preparation(title: "1. Step", preparationTexts: [
-        "Auberginen in Scheiben schneiden und salzen, 10 Minuten ziehen lassen.",
+        "Auberginen in Scheiben schneiden & salzen, 10 Minuten ziehen lassen.",
       ]),
       Preparation(title: "2. Step", preparationTexts: [
-        "Zwiebel und Knoblauch hacken und in Olivenöl anbraten.",
+        "Zwiebel & Knoblauch hacken & in Olivenöl anbraten.",
       ]),
       Preparation(title: "3. Step", preparationTexts: [
-        "Tomaten hinzufügen und köcheln lassen, mit Oregano, Salz und Pfeffer abschmecken.",
+        "Tomaten hinzufügen & köcheln lassen, mit Oregano, Salz & Pfeffer abschmecken.",
       ]),
       Preparation(title: "4. Step", preparationTexts: [
-        "Auberginenscheiben abtupfen und in einer Pfanne anbraten.",
+        "Auberginenscheiben abtupfen & in einer Pfanne anbraten.",
       ]),
       Preparation(title: "5. Step", preparationTexts: [
-        "Auberginen und Tomatensauce in eine Auflaufform schichten, mit Mozzarella belegen.",
+        "Auberginen & Tomatensauce in eine Auflaufform schichten, mit Mozzarella belegen.",
       ]),
       Preparation(title: "6. Step", preparationTexts: [
         "Im vorgeheizten Ofen bei 180°C ca. 25-30 Minuten backen.",
@@ -877,19 +877,19 @@ List<Recipe> recipes = [
     ],
     preparations: [
       Preparation(title: "1. Step", preparationTexts: [
-        "Quinoa nach Packungsanleitung kochen und abkühlen lassen.",
+        "Quinoa nach Packungsanleitung kochen & abkühlen lassen.",
       ]),
       Preparation(title: "2. Step", preparationTexts: [
-        "Gurke, Paprika und Avocado würfeln, Petersilie hacken.",
+        "Gurke, Paprika & Avocado würfeln, Petersilie hacken.",
       ]),
       Preparation(title: "3. Step", preparationTexts: [
-        "Quinoa und Gemüse in einer Schüssel vermengen.",
+        "Quinoa & Gemüse in einer Schüssel vermengen.",
       ]),
       Preparation(title: "4. Step", preparationTexts: [
-        "Mit Olivenöl, Zitronensaft, Salz und Pfeffer abschmecken.",
+        "Mit Olivenöl, Zitronensaft, Salz & Pfeffer abschmecken.",
       ]),
       Preparation(title: "5. Step", preparationTexts: [
-        "Gut vermengen und servieren.",
+        "Gut vermengen & servieren.",
       ]),
     ],
     portion: 1,
@@ -917,13 +917,13 @@ List<Recipe> recipes = [
         "Zucchini mit einem Spiralschneider in Zoodles schneiden.",
       ]),
       Preparation(title: "2. Step", preparationTexts: [
-        "Basilikum, Parmesan, Pinienkerne, Knoblauch und Olivenöl in einem Mixer zu Pesto verarbeiten.",
+        "Basilikum, Parmesan, Pinienkerne, Knoblauch & Olivenöl in einem Mixer zu Pesto verarbeiten.",
       ]),
       Preparation(title: "3. Step", preparationTexts: [
         "Zoodles in einer Pfanne kurz anbraten.",
       ]),
       Preparation(title: "4. Step", preparationTexts: [
-        "Mit Pesto vermengen und mit Salz und Pfeffer abschmecken.",
+        "Mit Pesto vermengen & mit Salz & Pfeffer abschmecken.",
       ]),
       Preparation(title: "5. Step", preparationTexts: [
         "Heiß servieren.",
@@ -949,16 +949,16 @@ List<Recipe> recipes = [
     ],
     preparations: [
       Preparation(title: "1. Step", preparationTexts: [
-        "Blumenkohl in Röschen teilen und in einer Küchenmaschine zu Reis verarbeiten.",
+        "Blumenkohl in Röschen teilen & in einer Küchenmaschine zu Reis verarbeiten.",
       ]),
       Preparation(title: "2. Step", preparationTexts: [
-        "Zwiebel hacken und in Olivenöl anbraten.",
+        "Zwiebel hacken & in Olivenöl anbraten.",
       ]),
       Preparation(title: "3. Step", preparationTexts: [
-        "Blumenkohlreis hinzufügen und kurz mitbraten.",
+        "Blumenkohlreis hinzufügen & kurz mitbraten.",
       ]),
       Preparation(title: "4. Step", preparationTexts: [
-        "Mit Salz, Pfeffer und Kurkuma abschmecken.",
+        "Mit Salz, Pfeffer & Kurkuma abschmecken.",
       ]),
       Preparation(title: "5. Step", preparationTexts: [
         "Heiß servieren.",
@@ -987,19 +987,19 @@ List<Recipe> recipes = [
     ],
     preparations: [
       Preparation(title: "1. Step", preparationTexts: [
-        "Paprika halbieren und entkernen.",
+        "Paprika halbieren & entkernen.",
       ]),
       Preparation(title: "2. Step", preparationTexts: [
-        "Zwiebel und Knoblauch hacken und in Olivenöl anbraten.",
+        "Zwiebel & Knoblauch hacken & in Olivenöl anbraten.",
       ]),
       Preparation(title: "3. Step", preparationTexts: [
-        "Hackfleisch hinzufügen und krümelig braten.",
+        "Hackfleisch hinzufügen & krümelig braten.",
       ]),
       Preparation(title: "4. Step", preparationTexts: [
-        "Tomaten und Gewürze hinzufügen und köcheln lassen.",
+        "Tomaten & Gewürze hinzufügen & köcheln lassen.",
       ]),
       Preparation(title: "5. Step", preparationTexts: [
-        "Paprikahälften mit der Hackfleischmischung füllen und im vorgeheizten Ofen bei 180°C ca. 20 Minuten backen.",
+        "Paprikahälften mit der Hackfleischmischung füllen & im vorgeheizten Ofen bei 180°C ca. 20 Minuten backen.",
       ]),
     ],
     portion: 1,
@@ -1027,16 +1027,16 @@ List<Recipe> recipes = [
         "Würstchen in heißem Wasser erhitzen.",
       ]),
       Preparation(title: "2. Step", preparationTexts: [
-        "Zwiebel und Gurke in Scheiben schneiden.",
+        "Zwiebel & Gurke in Scheiben schneiden.",
       ]),
       Preparation(title: "3. Step", preparationTexts: [
-        "Hot Dog Brötchen aufschneiden und mit Senf und Ketchup bestreichen.",
+        "Hot Dog Brötchen aufschneiden & mit Senf & Ketchup bestreichen.",
       ]),
       Preparation(title: "4. Step", preparationTexts: [
-        "Würstchen in die Brötchen legen und mit Zwiebel und Gurke belegen.",
+        "Würstchen in die Brötchen legen & mit Zwiebel & Gurke belegen.",
       ]),
       Preparation(title: "5. Step", preparationTexts: [
-        "Mit Salz und Pfeffer abschmecken.",
+        "Mit Salz & Pfeffer abschmecken.",
       ]),
     ],
     portion: 1,
@@ -1058,13 +1058,13 @@ List<Recipe> recipes = [
     ],
     preparations: [
       Preparation(title: "1. Step", preparationTexts: [
-        "Kartoffeln schälen und in Stifte schneiden.",
+        "Kartoffeln schälen & in Stifte schneiden.",
       ]),
       Preparation(title: "2. Step", preparationTexts: [
-        "Kartoffelstifte in einer Schüssel mit Olivenöl, Salz, Pfeffer und Paprikapulver vermengen.",
+        "Kartoffelstifte in einer Schüssel mit Olivenöl, Salz, Pfeffer & Paprikapulver vermengen.",
       ]),
       Preparation(title: "3. Step", preparationTexts: [
-        "Auf einem Backblech verteilen und im vorgeheizten Ofen bei 200°C ca. 25-30 Minuten backen.",
+        "Auf einem Backblech verteilen & im vorgeheizten Ofen bei 200°C ca. 25-30 Minuten backen.",
       ]),
       Preparation(title: "4. Step", preparationTexts: [
         "Heiß servieren.",
@@ -1091,13 +1091,13 @@ List<Recipe> recipes = [
     ],
     preparations: [
       Preparation(title: "1. Step", preparationTexts: [
-        "Hähnchenbrust in mundgerechte Stücke schneiden.",
+        "Hähnchenbrust in m&gerechte Stücke schneiden.",
       ]),
       Preparation(title: "2. Step", preparationTexts: [
-        "Mehl, Eier und Paniermehl jeweils in separate Schalen geben.",
+        "Mehl, Eier & Paniermehl jeweils in separate Schalen geben.",
       ]),
       Preparation(title: "3. Step", preparationTexts: [
-        "Hähnchenstücke zuerst in Mehl, dann in Ei und schließlich in Paniermehl wenden.",
+        "Hähnchenstücke zuerst in Mehl, dann in Ei & schließlich in Paniermehl wenden.",
       ]),
       Preparation(title: "4. Step", preparationTexts: [
         "In heißem Öl frittieren, bis sie goldbraun sind.",

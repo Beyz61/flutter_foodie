@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import "package:flutter_dotenv/flutter_dotenv.dart";
+import "package:foodie_screen/config/colors.dart";
 import "package:google_generative_ai/google_generative_ai.dart";
 
 class AIScreen extends StatefulWidget {
@@ -32,7 +33,7 @@ class AIScreenState extends State<AIScreen> {
     });
     _controller.clear();
 
-    final content = [Content.text(userMessage)];
+    final content = [Content.text("Antworte auf den folgenden Text mit einem Rezept:$userMessage")];
     final response = await _model.generateContent(content);
 
     setState(() {
@@ -111,7 +112,7 @@ class AIScreenState extends State<AIScreen> {
                             decoration: BoxDecoration(
                               color: message.containsKey("user")
                                   ? const Color.fromARGB(255, 255, 102, 0).withOpacity(0.7)
-                                  : const Color.fromARGB(255, 7, 7, 7).withOpacity(0.7),
+                                  : darkblackWithOpacity,
                               borderRadius: BorderRadius.circular(10),
                               border: Border.all(
                                 color: message.containsKey("user")

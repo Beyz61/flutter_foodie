@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodie_screen/config/colors.dart';
 
 class MailButton extends StatefulWidget {
   const MailButton({
@@ -23,10 +24,10 @@ class _MailButtonState extends State<MailButton> {
         decoration: BoxDecoration(
           color: const Color.fromARGB(255, 232, 196, 164),
           borderRadius: BorderRadius.circular(13),
-          border: Border.all(color: const Color.fromARGB(255, 45, 39, 39), width: 1), // Outline border
+          border: Border.all(color: const Color.fromARGB(255, 45, 39, 39), width: 1), 
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.3),
+              color: blackWithOpacity,
               offset: const Offset(0, 4), 
               blurRadius: 6, 
             ),

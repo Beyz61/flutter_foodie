@@ -147,15 +147,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     color: Colors.white,
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.3),
+                        color: blackWithOpacity,
                         offset: const Offset(0, 4),
                         blurRadius: 6,
                       ),
                     ],
                   ),
                   child: TextButton(
-                    onPressed: () {
-                      context.read<AuthRepository>().signInWithGoogle();
+                    onPressed: () async{
+                      await context.read<AuthRepository>().signInWithGoogle();
+                    //  if(context.read<AuthRepository>.currentUser != null) {Navigator.push}
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=> const ButtonNavigator())); 
                     },
                     child: Image.asset(
                       "assets/icon/google.png",

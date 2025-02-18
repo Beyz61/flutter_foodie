@@ -156,7 +156,7 @@ class LoginScreen extends StatelessWidget {
                     color: Colors.white,
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.3),
+                        color:blackWithOpacity,
                         offset: const Offset(0, 4),
                         blurRadius: 6,
                       ),

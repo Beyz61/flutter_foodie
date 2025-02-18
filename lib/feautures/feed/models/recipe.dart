@@ -23,21 +23,6 @@ class Recipe {
     required this.tipp,
   });
 
-  // Gibt uns folgende Struktur aus:
-  /*
-    "        400 g\n"
-                     "        200 g\n"
-                     "         2 EL\n"
-                     " 1x ca. 100 g\n"
-                     "   2 ca. 10 g\n"
-                     "  1x ca. 10 g\n"
-                     "        200 g\n"
-                     "         1 TL\n"
-                     "         1 TL\n"
-                     "         1 TL\n"
-                     "         1/5 \n"
-                     "         2 EL\n",
-  */
   String getIngredientsUnitText() {
     List<String> ingredientsUnitText = [];
     for (Ingredients ingredient in ingredients) {

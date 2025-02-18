@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodie_screen/config/colors.dart';
 import 'package:foodie_screen/feautures/feed/models/recipe.dart';
 
 class PortionCounter extends StatefulWidget {
@@ -46,18 +47,18 @@ class _PortionCounterState extends State<PortionCounter> {
       padding: const EdgeInsets.all(7)
 ,
       decoration: BoxDecoration(
-        color: Colors.black.withOpacity(0.5), 
+        color: lightdarkblackWithOpacity, 
         borderRadius: BorderRadius.circular(10),
         border: Border.all(color: Colors.white, width: 1),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.6),
+            color:lightdarkblackWithOpacity,
             offset: const Offset(4, 4),
             blurRadius: 8,
             spreadRadius: 1,
           ),
           BoxShadow(
-            color: Colors.white.withOpacity(0.1),
+            color: witheWithOpacity,
             offset: const Offset(-4, -4),
             blurRadius: 8,
             spreadRadius: 1,

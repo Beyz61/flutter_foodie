@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodie_screen/config/colors.dart';
 
 class CategoryWidget extends StatelessWidget {
   final Function(String) onCategorySelected;
@@ -26,13 +27,13 @@ class CategoryWidget extends StatelessWidget {
                   border: Border.all(color: const Color.fromARGB(255, 255, 255, 255), width: 2),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.3),
+                      color: blackWithOpacity,
                       spreadRadius: 2,
                       blurRadius: 6,
                       offset: const Offset(0, 4),
                     ),
                     BoxShadow(
-                      color: Colors.white.withOpacity(0.5),
+                      color: witheWithOpacity,
                       spreadRadius: 2,
                       blurRadius: 6,
                       offset: const Offset(0, 0), 
@@ -46,7 +47,7 @@ class CategoryWidget extends StatelessWidget {
                     border: Border.all(color: Colors.white, width: 2),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.white.withOpacity(0.5),
+                        color: withedarkWithOpacity,
                         spreadRadius: 2,
                         blurRadius: 6,
                         offset: const Offset(0, 0), 
@@ -79,13 +80,13 @@ class CategoryWidget extends StatelessWidget {
                   border: Border.all(color: Colors.white, width: 2),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.3),
+                      color: blackWithOpacity,
                       spreadRadius: 2,
                       blurRadius: 6,
                       offset: const Offset(0, 4), 
                     ),
                     BoxShadow(
-                      color: const Color.fromARGB(255, 255, 248, 248).withOpacity(0.5),
+                      color: witheWithOpacity,
                       spreadRadius: 2,
                       blurRadius: 6,
                       offset: const Offset(0, 0), 
@@ -99,7 +100,7 @@ class CategoryWidget extends StatelessWidget {
                     border: Border.all(color: Colors.white, width: 2),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.white.withOpacity(0.5),
+                        color: withedarkWithOpacity,
                         spreadRadius: 2,
                         blurRadius: 6,
                         offset: const Offset(0, 0),
@@ -130,13 +131,13 @@ class CategoryWidget extends StatelessWidget {
                   border: Border.all(color: Colors.white, width: 2),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.3),
+                      color: blackWithOpacity,
                       spreadRadius: 2,
                       blurRadius: 6,
                       offset: const Offset(0, 4), 
                     ),
                     BoxShadow(
-                      color: Colors.white.withOpacity(0.5),
+                      color: witheWithOpacity,
                       spreadRadius: 2,
                       blurRadius: 6,
                       offset: const Offset(0, 0),
@@ -150,7 +151,7 @@ class CategoryWidget extends StatelessWidget {
                     border: Border.all(color: Colors.white, width: 2),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.white.withOpacity(0.5),
+                        color: withedarkWithOpacity,
                         spreadRadius: 2,
                         blurRadius: 6,
                         offset: const Offset(0, 0), 
@@ -183,13 +184,13 @@ class CategoryWidget extends StatelessWidget {
                   border: Border.all(color: Colors.white, width: 2),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.3),
+                      color: blackWithOpacity,
                       spreadRadius: 2,
                       blurRadius: 6,
                       offset: const Offset(0, 4), 
                     ),
                     BoxShadow(
-                      color: Colors.white.withOpacity(0.5),
+                      color:witheWithOpacity,
                       spreadRadius: 2,
                       blurRadius: 6,
                       offset: const Offset(0, 0), 
@@ -203,7 +204,7 @@ class CategoryWidget extends StatelessWidget {
                     border: Border.all(color: Colors.white, width: 2),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.white.withOpacity(0.5),
+                        color: withedarkWithOpacity,
                         spreadRadius: 2,
                         blurRadius: 6,
                         offset: const Offset(0, 0), 

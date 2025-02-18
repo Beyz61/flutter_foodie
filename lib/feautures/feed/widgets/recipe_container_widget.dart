@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:foodie_screen/config/colors.dart';
 import 'package:foodie_screen/feautures/feed/models/recipe.dart';
 
 class IngredientsContainer extends StatelessWidget {
@@ -18,12 +19,12 @@ class IngredientsContainer extends StatelessWidget {
         child: Container(
          width: 390, 
           decoration: BoxDecoration(
-            color: Colors.black.withOpacity(0.5), // Schwarzer, leicht durchsichtiger Hintergrund
+            color: lightdarkblackWithOpacity,
             border: Border.all(color: Colors.white, width: 1), 
             borderRadius: BorderRadius.circular(16),   
           ),
           child: Padding(
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 16),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -56,7 +57,7 @@ class IngredientsContainer extends StatelessWidget {
                         style: const TextStyle(
                           color: Color.fromARGB(255, 255, 252, 249),
                           fontWeight: FontWeight.w600,
-                          fontSize: 13.5,
+                          fontSize: 16.5,
                           fontStyle: FontStyle.italic,
                           fontFamily: "SFProDisplay",
                           shadows: [
@@ -80,7 +81,7 @@ class IngredientsContainer extends StatelessWidget {
                           style: const TextStyle(
                             color: Color.fromARGB(255, 255, 252, 249),
                             fontWeight: FontWeight.w600,
-                            fontSize: 13.5,
+                            fontSize: 16,
                             fontStyle: FontStyle.italic,
                             fontFamily: "SFProDisplay",
                             shadows: [

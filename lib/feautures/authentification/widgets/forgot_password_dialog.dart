@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodie_screen/config/colors.dart';
 import 'package:foodie_screen/data/repository/auth_repository.dart';
 import 'package:provider/provider.dart';
 
@@ -9,7 +10,7 @@ void showForgotPasswordDialog(BuildContext context) {
     context: context,
     builder: (context) {
       return AlertDialog(
-        backgroundColor: Colors.black.withOpacity(0.8),
+        backgroundColor: darkblackWithOpacity,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.0),
           side: const BorderSide(color: Colors.white, width: 1),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodie_screen/config/colors.dart';
 
 class RichtlinienWidget extends StatelessWidget {
   const RichtlinienWidget({super.key});
@@ -8,7 +9,7 @@ class RichtlinienWidget extends StatelessWidget {
       context: context,
       builder: (context) {
         return AlertDialog(
-          backgroundColor: Colors.black.withOpacity(0.8),
+          backgroundColor: darkblackWithOpacity,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10.0),
             side: const BorderSide(color: Colors.white, width: 1),

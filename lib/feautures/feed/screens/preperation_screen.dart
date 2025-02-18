@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodie_screen/config/colors.dart';
 import 'package:foodie_screen/feautures/feed/models/recipe.dart';
 import 'package:foodie_screen/feautures/feed/widgets/preparation_container_widget.dart';
 
@@ -63,7 +64,7 @@ class PreparationScreen extends StatelessWidget {
                     child: Container(
                       width: double.infinity,
                       decoration: BoxDecoration(
-                        color: const Color.fromARGB(255, 255, 255, 255).withOpacity(0.8),
+                        color: withedarkWithOpacity,
                         borderRadius: BorderRadius.circular(16),
                       ),
                       padding: const EdgeInsets.all(16),

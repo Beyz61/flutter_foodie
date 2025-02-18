@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodie_screen/config/colors.dart';
 import 'package:foodie_screen/data/repository/recipe/shared_preferences_recipe_repository.dart';
 import 'package:foodie_screen/feautures/feed/models/fav_dialog.dart';
 import 'package:foodie_screen/feautures/feed/models/portion_counter.dart';
@@ -65,7 +66,7 @@ class _RecipeScreenState extends State<RecipeScreen> {
                   textAlign: TextAlign.center,
                   style: const TextStyle(
                     color: Colors.white,
-                    fontSize: 42,
+                    fontSize: 40,
                     fontWeight: FontWeight.bold,
                     fontStyle: FontStyle.italic,
                     fontFamily: "SFProDisplay",
@@ -89,7 +90,7 @@ class _RecipeScreenState extends State<RecipeScreen> {
                   ),
                   boxShadow: [
                     BoxShadow(
-                    color: Colors.black.withOpacity(0.5),
+                    color: lightdarkblackWithOpacity,
                     offset: const Offset(0, 1),
                     blurRadius: 3,
                     ),
@@ -124,7 +125,7 @@ class _RecipeScreenState extends State<RecipeScreen> {
                   decoration: BoxDecoration(
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.7),
+                        color: darkblackWithOpacity,
                         offset: const Offset(0, 1),
                         blurRadius: 2,
                       ),
@@ -140,18 +141,18 @@ class _RecipeScreenState extends State<RecipeScreen> {
                     width: 250,
                     padding: const EdgeInsets.all(5),
                     decoration: BoxDecoration(
-                      color: Colors.black.withOpacity(0.6), 
+                      color: darkblackWithOpacity, 
                       borderRadius: BorderRadius.circular(10),
                       border: Border.all(color: Colors.white, width: 1),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.4),
+                          color: blackWithOpacity,
                           offset: const Offset(4, 4),
                           blurRadius: 8,
                           spreadRadius: 1,
                         ),
                         BoxShadow(
-                          color: Colors.white.withOpacity(0.1),
+                          color: witheWithOpacity,
                           offset: const Offset(-4, -4),
                           blurRadius: 8,
                           spreadRadius: 1,
@@ -192,6 +193,7 @@ class _RecipeScreenState extends State<RecipeScreen> {
                     ),
                   ),
                 ),
+                const SizedBox(height: 60,)
               ],
             ),
           ),
