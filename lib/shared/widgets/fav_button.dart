@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodie_screen/config/colors.dart';
 
 class FavButton extends StatelessWidget {
   const FavButton({
@@ -16,7 +17,7 @@ class FavButton extends StatelessWidget {
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.3),
+            color: blackWithOpacity,
             offset: const Offset(0, 4),
             blurRadius: 8,
             spreadRadius: 2,
@@ -24,7 +25,7 @@ class FavButton extends StatelessWidget {
         ],
         borderRadius: BorderRadius.circular(18),
         border: Border.all(
-          color: Colors.white.withOpacity(0.5),
+          color: withedarkWithOpacity,
           width: 1,
         ),
       ),
@@ -37,7 +38,7 @@ class FavButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(18),
           ),
           elevation: 5,
-          shadowColor: Colors.black.withOpacity(0.3),
+          shadowColor: blackWithOpacity,
         ),
         child: Text(
           text,
