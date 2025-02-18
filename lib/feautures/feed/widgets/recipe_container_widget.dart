@@ -16,6 +16,7 @@ class IngredientsContainer extends StatelessWidget {
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8), // Verschwommenheit
         child: Container(
+         width: 390, 
           decoration: BoxDecoration(
             color: Colors.black.withOpacity(0.5), // Schwarzer, leicht durchsichtiger Hintergrund
             border: Border.all(color: Colors.white, width: 1), 
@@ -54,8 +55,8 @@ class IngredientsContainer extends StatelessWidget {
                         textAlign: TextAlign.end,
                         style: const TextStyle(
                           color: Color.fromARGB(255, 255, 252, 249),
-                          fontWeight: FontWeight.w700,
-                          fontSize: 17,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 13.5,
                           fontStyle: FontStyle.italic,
                           fontFamily: "SFProDisplay",
                           shadows: [
@@ -79,7 +80,7 @@ class IngredientsContainer extends StatelessWidget {
                           style: const TextStyle(
                             color: Color.fromARGB(255, 255, 252, 249),
                             fontWeight: FontWeight.w600,
-                            fontSize: 17,
+                            fontSize: 13.5,
                             fontStyle: FontStyle.italic,
                             fontFamily: "SFProDisplay",
                             shadows: [

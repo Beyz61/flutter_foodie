@@ -60,6 +60,7 @@ class _ButtonNavigator extends State<ButtonNavigator> {
           BottomNavigationBarItem(icon: Icon(Icons.auto_awesome_outlined), label: "AI"), 
           BottomNavigationBarItem(icon: Icon(Icons.public), label: "Entdecken"),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profil"),
+
         ],
       ),
     );

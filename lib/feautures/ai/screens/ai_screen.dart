@@ -127,8 +127,8 @@ class AIScreenState extends State<AIScreen> {
                                 ),
                               ],
                             ),
-                            child: RichText(
-                              text: TextSpan(
+                            child: Text.rich(
+                              TextSpan(
                                 children: [
                                   TextSpan(
                                     text: message.containsKey("user")
@@ -166,7 +166,7 @@ class AIScreenState extends State<AIScreen> {
                     child: Row(
                       children: [
                         Expanded(
-                          child: TextField(
+                          child: TextFormField(
                             controller: _controller,
                             decoration: const InputDecoration(
                                 hintText: "Finde dein Rezept...",

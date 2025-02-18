@@ -41,8 +41,10 @@ class _PortionCounterState extends State<PortionCounter> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 150, 
-      padding: const EdgeInsets.all(5),
+      width: 185,
+      height: 105,
+      padding: const EdgeInsets.all(7)
+,
       decoration: BoxDecoration(
         color: Colors.black.withOpacity(0.5), 
         borderRadius: BorderRadius.circular(10),
@@ -88,7 +90,7 @@ class _PortionCounterState extends State<PortionCounter> {
               IconButton(
                 icon: const Icon(
                   Icons.remove,
-                  size: 39,
+                  size: 34,
                   color: Color.fromARGB(221, 57, 215, 255),
                   shadows: [
                     Shadow(
@@ -99,7 +101,7 @@ class _PortionCounterState extends State<PortionCounter> {
                   ],
                 ),
                 onPressed: _decrement,
-                iconSize: 34,
+                iconSize: 30,
                 padding: EdgeInsets.zero,
                 constraints: const BoxConstraints(),
                 splashRadius: 24,
@@ -107,7 +109,7 @@ class _PortionCounterState extends State<PortionCounter> {
               ),
               Text(
                 "$_portionCount", 
-                style: const TextStyle(fontSize: 39, fontWeight: FontWeight.w600, color: Colors.white, shadows: [
+                style: const TextStyle(fontSize: 34, fontWeight: FontWeight.w500, color: Colors.white, shadows: [
                   Shadow(
                     offset: Offset(2, 2),
                     blurRadius: 3,
@@ -118,7 +120,7 @@ class _PortionCounterState extends State<PortionCounter> {
               IconButton(
                 icon: const Icon(
                   Icons.add,
-                  size: 38,
+                  size: 32,
                   
                   color: Colors.red,
                 ),
