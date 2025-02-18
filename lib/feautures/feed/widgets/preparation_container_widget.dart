@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:foodie_screen/config/colors.dart';
 
 class PreparationContainer extends StatelessWidget {
   final String title;
@@ -22,7 +23,7 @@ class PreparationContainer extends StatelessWidget {
            margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 4),
           padding: const EdgeInsets.all(12),
           decoration: BoxDecoration(
-            color: Colors.transparent.withOpacity(0.6),
+            color: lightdarkblackWithOpacity,
             borderRadius: BorderRadius.circular(26),
           ),
           child: Column(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodie_screen/config/colors.dart';
 
 void showNewCollection(BuildContext context, Function(String) onCollectionAdded) {
   final TextEditingController controller = TextEditingController();
@@ -7,7 +8,7 @@ void showNewCollection(BuildContext context, Function(String) onCollectionAdded)
     context: context,
     builder: (BuildContext context) {
       return AlertDialog(
-        backgroundColor: Colors.black.withOpacity(0.8),
+        backgroundColor: darkblackWithOpacity,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
           side: const BorderSide(color: Colors.white, width: 1),

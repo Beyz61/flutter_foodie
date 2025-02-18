@@ -17,7 +17,7 @@ class ProfileButton extends StatelessWidget {
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.3),
+            color: blackWithOpacity,
             offset: const Offset(0, 4),
             blurRadius: 14,
           ),

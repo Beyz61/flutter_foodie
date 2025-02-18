@@ -134,7 +134,7 @@ class _DisplayFavContainerState extends State<DisplayFavContainer> {
               fit: BoxFit.cover,
               scale: 4.0, 
             ),
-            color: lightdarkblackWithOpacity,
+            color: blackWithOpacityCollection,
             borderRadius: BorderRadius.circular(12),
             boxShadow: [
               BoxShadow(
@@ -154,7 +154,7 @@ class _DisplayFavContainerState extends State<DisplayFavContainer> {
                   width: 30, 
                   height: 30,
                   decoration: BoxDecoration(
-                    color:darkblackWithOpacity,
+                    color:blackWithOpacity,
                     shape: BoxShape.circle,
                     border: Border.all(
                       color: Colors.white,
@@ -212,7 +212,7 @@ class _DisplayFavContainerState extends State<DisplayFavContainer> {
                     height: 55, 
                     padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 4),
                     decoration: BoxDecoration(
-                      color:darkblackWithOpacity,
+                      color:lightdarkblackWithOpacity,
                       borderRadius: const BorderRadius.only(
                         bottomLeft: Radius.circular(12), 
                         bottomRight: Radius.circular(12)),

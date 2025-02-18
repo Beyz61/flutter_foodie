@@ -1,6 +1,8 @@
 import "package:flutter/material.dart";
 import "package:flutter_dotenv/flutter_dotenv.dart";
-import "package:foodie_screen/config/colors.dart";
+import 'package:foodie_screen/feautures/ai/widgets/header.dart';
+import 'package:foodie_screen/feautures/ai/widgets/ingredient_container.dart';
+import 'package:foodie_screen/feautures/ai/widgets/message_bubble.dart';
 import "package:google_generative_ai/google_generative_ai.dart";
 
 class AIScreen extends StatefulWidget {
@@ -12,9 +14,20 @@ class AIScreen extends StatefulWidget {
 
 class AIScreenState extends State<AIScreen> {
   final TextEditingController _controller = TextEditingController();
+  final ScrollController _scrollController = ScrollController();
   final List<Map<String, String>> _messages = [];
   late GenerativeModel _model;
   final String? apiKey = dotenv.env["API_KEY"];
+  final List<String> _ingredients = [
+    "Tomate", "Käse", "Basilikum", "Knoblauch", "Zwiebel", "Paprika",
+    "Hähnchen", "Rindfleisch", "Schweinefleisch", "Fisch", "Reis", "Nudeln",
+    "Kartoffeln", "Karotten", "Brokkoli", "Spinat", "Pilze", "Zucchini",
+    "Aubergine", "Mais", "Erbsen", "Bohnen", "Linsen", "Kichererbsen",
+    "Joghurt", "Milch", "Butter", "Sahne", "Eier", "Honig", "Zucker",
+    "Mehl", "Olivenöl", "Essig", "Salz", "Pfeffer", "Chili", "Ingwer",
+    "Zimt", "Kurkuma", "Koriander", "Petersilie", "Dill", "Rosmarin",
+    "Thymian", "Oregano", "Lorbeerblatt", "Senf", "Sojasauce", "Tomatenmark"
+  ];
 
   @override
   void initState() {
@@ -38,6 +51,26 @@ class AIScreenState extends State<AIScreen> {
 
     setState(() {
       _messages.add({"gemini": response.text ?? "No response"});
+    });
+
+    _scrollToBottom();
+  }
+
+  void _addIngredientToTextField(String ingredient) {
+    setState(() {
+      _controller.text = "${_controller.text} $ingredient".trim();
+    });
+  }
+
+  void _scrollToBottom() {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (_scrollController.hasClients) {
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeOut,
+        );
+      }
     });
   }
 
@@ -77,120 +110,63 @@ class AIScreenState extends State<AIScreen> {
               padding: const EdgeInsets.only(top: 70),
               child: Column(
                 children: [
-                  const Center(
-                    child: Text(
-                      "Chat mit Foodie",
-                      style: TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.w700,
-                        fontStyle: FontStyle.italic,
-                        fontFamily: "SFProDisplay",
-                        color: Color.fromARGB(255, 242, 101, 8),
-                        shadows: [
-                          Shadow(
-                            blurRadius: 5,
-                            color: Colors.black,
-                            offset: Offset(1, 2),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                  const Header(),
                   Expanded(
                     flex: 4,
                     child: ListView.builder(
+                      controller: _scrollController,
                       itemCount: _messages.length,
                       itemBuilder: (context, index) {
                         final message = _messages[index];
-                        return Align(
-                          alignment: message.containsKey("user")
-                              ? Alignment.centerRight
-                              : Alignment.centerLeft,
-                          child: Container(
-                            padding: const EdgeInsets.all(10),
-                            margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                            decoration: BoxDecoration(
-                              color: message.containsKey("user")
-                                  ? const Color.fromARGB(255, 255, 102, 0).withOpacity(0.7)
-                                  : darkblackWithOpacity,
-                              borderRadius: BorderRadius.circular(10),
-                              border: Border.all(
-                                color: message.containsKey("user")
-                                    ? Colors.white
-                                    : Colors.white,
-                                width: 1,
-                              ),
-                              boxShadow: const [
-                                BoxShadow(
-                                  color: Colors.black26,
-                                  blurRadius: 5,
-                                  offset: Offset(0, 2),
-                                ),
-                              ],
-                            ),
-                            child: Text.rich(
-                              TextSpan(
-                                children: [
-                                  TextSpan(
-                                    text: message.containsKey("user")
-                                        ? "Ich: \n"
-                                        : "Foodie: \n",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w800,
-                                      fontSize: 17,
-                                      color: message.containsKey("user")
-                                          ? const Color.fromARGB(255, 0, 0, 0)
-                                          : const Color.fromARGB(255, 255, 102, 0),
-                                    ),
-                                  ),
-                                  TextSpan(
-                                    text: message.containsKey("user")
-                                        ? message["user"]
-                                        : message["gemini"],
-                                    style: TextStyle(
-                                      fontSize: 15,
-                                      color: message.containsKey("user")
-                                          ? const Color.fromARGB(255, 244, 243, 242)
-                                          : Colors.white,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        );
+                        return MessageBubble(message: message);
                       },
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(12.0),
-                    child: Row(
+                    child: Column(
                       children: [
-                        Expanded(
-                          child: TextFormField(
-                            controller: _controller,
-                            decoration: const InputDecoration(
-                                hintText: "Finde dein Rezept...",
-                                hintStyle: TextStyle(
-                                  color: Color.fromARGB(255, 255, 250, 245)),
-                                enabledBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(color: Color.fromARGB(255, 255, 255, 255)),
-                                ),
-                                focusedBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(color: Color.fromARGB(255, 255, 250, 245)),
-                                ),
-                            ),
-                            style: const TextStyle(
-                              color: Color.fromARGB(255, 255, 254, 254),
-                              fontWeight: FontWeight.w500,
-                              fontStyle: FontStyle.italic,
-                              fontFamily: "SFProDisplay",
-                            ),
+                        SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Row(
+                            children: _ingredients.map((ingredient) {
+                              return IngredientContainer(
+                                ingredient: ingredient,
+                                onTap: () => _addIngredientToTextField(ingredient),
+                              );
+                            }).toList(),
                           ),
                         ),
-                        IconButton(
-                          icon: const Icon(Icons.send, color: Color.fromARGB(255, 255, 108, 3)),
-                          onPressed: _sendMessage,
+                        const SizedBox(height: 10),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: TextFormField(
+                                controller: _controller,
+                                decoration: const InputDecoration(
+                                    hintText: "Finde dein Rezept...",
+                                    hintStyle: TextStyle(
+                                      color: Color.fromARGB(255, 255, 250, 245)),
+                                    enabledBorder: UnderlineInputBorder(
+                                      borderSide: BorderSide(color: Color.fromARGB(255, 255, 255, 255)),
+                                    ),
+                                    focusedBorder: UnderlineInputBorder(
+                                      borderSide: BorderSide(color: Color.fromARGB(255, 255, 250, 245)),
+                                    ),
+                                ),
+                                style: const TextStyle(
+                                  color: Color.fromARGB(255, 255, 254, 254),
+                                  fontWeight: FontWeight.w500,
+                                  fontStyle: FontStyle.italic,
+                                  fontFamily: "SFProDisplay",
+                                ),
+                              ),
+                            ),
+                            IconButton(
+                              icon: const Icon(Icons.send, color: Color.fromARGB(255, 255, 108, 3)),
+                              onPressed: _sendMessage,
+                            ),
+                          ],
                         ),
                       ],
                     ),

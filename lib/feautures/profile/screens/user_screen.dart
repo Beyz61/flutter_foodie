@@ -47,7 +47,7 @@ class _UserScreenState extends State<UserScreen> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          backgroundColor: Colors.black.withOpacity(0.8),
+          backgroundColor: darkblackWithOpacity,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10.0),
             side: const BorderSide(color: Colors.white, width: 1),
@@ -219,7 +219,7 @@ class _UserScreenState extends State<UserScreen> {
                     margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                     padding: const EdgeInsets.all(16.0),
                     decoration: BoxDecoration(
-                      color: const Color.fromARGB(81, 0, 0, 0).withOpacity(0.6),
+                      color: darkblackWithOpacity,
                       borderRadius: BorderRadius.circular(10.0),
                       border: Border.all(color: Colors.white, width: 1),
                       boxShadow: const [
