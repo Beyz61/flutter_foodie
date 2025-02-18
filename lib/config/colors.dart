@@ -15,13 +15,20 @@ const Color bttnlogColor = Color.fromARGB(255, 232, 196, 164);
 const Color bttnColor1 = Color.fromARGB(255, 255, 187, 127);
 const Color foodietitle = Color.fromARGB(255, 103, 71, 31);
 const Color signInBtnColor =  Color.fromARGB(255, 232, 196, 164);
+
+const Color orangeWithoutOpacity = Color.fromARGB(194, 242, 102, 8);
 Color blackWithOpacity = const Color.fromARGB(77, 0, 0, 0);
 Color lightdarkblackWithOpacity = const Color.fromARGB(135, 0, 0, 0);
+
+Color transparenWithOpacity = const Color.fromARGB(16, 0, 0, 0);
+
+Color blackWithOpacityCollection = const Color.fromARGB(78, 73, 71, 71);
 
 Color darkblackWithOpacity = const Color.fromARGB(198, 0, 0, 0);
 Color withedarkWithOpacity = const Color.fromARGB(222, 255, 255, 255);
 
 Color witheWithOpacity = const Color.fromARGB(77, 255, 255, 255);
+Color orangeWithOpacity = const Color.fromARGB(198, 255, 98, 0);
 
 
 
