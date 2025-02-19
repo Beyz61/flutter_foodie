@@ -113,4 +113,12 @@ final GoogleSignIn googleSignIn = GoogleSignIn();
       throw Exception("Failed to send password reset email: $e");
     }
   }
+
+  @override
+  Future<void> deleteAccount(String userId) async {
+    final user = firebaseAuth.currentUser;
+    if (user != null && user.uid == userId) {
+      await user.delete();
+    }
+  }
 }

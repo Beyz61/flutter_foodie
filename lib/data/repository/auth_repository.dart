@@ -12,4 +12,5 @@ abstract class AuthRepository {
   Stream<AppUser?> get authStateChanges;
   AppUser? get currentUser;
   Future<void> updateEmail(String email);
+  Future<void> deleteAccount(String userId);
 }

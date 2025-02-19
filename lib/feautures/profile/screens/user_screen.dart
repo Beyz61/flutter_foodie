@@ -1,8 +1,9 @@
 import "package:firebase_auth/firebase_auth.dart";
 import "package:flutter/material.dart";
 import "package:foodie_screen/config/colors.dart";
-import "package:foodie_screen/data/repository/user_repository.dart";
+import 'package:foodie_screen/data/repository/user_notifier.dart';
 import "package:foodie_screen/feautures/authentification/widgets/sign_out_button.dart";
+import "package:provider/provider.dart";
 
 class UserScreen extends StatefulWidget {
   const UserScreen({super.key});
@@ -17,9 +18,7 @@ class _UserScreenState extends State<UserScreen> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   bool _isCurrentPasswordVisible = false;
   bool _isNewPasswordVisible = false;
-  String? username;
   final TextEditingController _usernameController = TextEditingController();
-  final UserRepository _userRepository = UserRepository();
 
   @override
   void initState() {
@@ -30,24 +29,19 @@ class _UserScreenState extends State<UserScreen> {
   Future<void> _loadUsername() async {
     final user = _auth.currentUser;
     if (user != null) {
-      final username = await _userRepository.loadUsername(user.uid);
-      setState(() {
-        this.username = username;
-      });
+      await context.read<UserNotifier>().loadUsername(user.uid);
     }
   }
 
   Future<void> _saveUsername(String newUsername) async {
     final user = _auth.currentUser;
     if (user != null) {
-      await _userRepository.saveUsername(user.uid, newUsername);
-      setState(() {
-        username = newUsername;
-      });
+      await context.read<UserNotifier>().saveUsername(user.uid, newUsername);
     }
   }
 
   void _showEditUsernameDialog() {
+    final username = context.read<UserNotifier>().username;
     _usernameController.text = username ?? "";
     showDialog(
       context: context,
@@ -125,6 +119,7 @@ class _UserScreenState extends State<UserScreen> {
   @override
   Widget build(BuildContext context) {
     final user = _auth.currentUser;
+    final username = context.watch<UserNotifier>().username;
 
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 24, 23, 22),
