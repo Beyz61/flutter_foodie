@@ -83,9 +83,9 @@ class LoginScreen extends StatelessWidget {
             ),
           ),
           Image.asset(
-            "assets/images/iconfoodie1.png",
-            height: 200,
-            width: 600,
+            "assets/images/newfoodieicon.png",
+            height: 230,
+            width: 650,
           ),
           const SizedBox(height: 15),
           const Divider(

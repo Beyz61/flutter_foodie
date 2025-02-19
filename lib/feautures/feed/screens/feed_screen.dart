@@ -42,7 +42,7 @@ class _FeedScreenState extends State<FeedScreen> {
                 child: Opacity(
                   opacity: 0.2,
                   child: Image.asset(
-                    "assets/icon/icon.png",
+                    "assets/images/newfoodieicon.png",
                     width: 300,
                     height: 300,
                   ),

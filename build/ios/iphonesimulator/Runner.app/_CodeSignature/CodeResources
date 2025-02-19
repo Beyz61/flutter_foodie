@@ -10,15 +10,15 @@
 		</data>
 		<key>AppIcon60x60@2x.png</key>
 		<data>
-		Qh4xar2ZLT+PZTaydM2BKFI6jyk=
+		7DwQpG/r7JlQlXVx7JljcAw2vqE=
 		</data>
 		<key>AppIcon76x76@2x~ipad.png</key>
 		<data>
-		4aHOEveiG7QDyov3DSYrCoHC/zE=
+		8si3XA0i67Uh2uNZCo7+ZO46IzA=
 		</data>
 		<key>Assets.car</key>
 		<data>
-		tZ3ukbD1Wc+bbMfd0y42f/XyImY=
+		Zc4sLT6DVFLVgijhSELzfPSyWFM=
 		</data>
 		<key>Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		w+QK6pAXofuBLQZ06i9nemwmv2k=
+		XAxlPHUjRQ89iFnClPHYa6jMwYU=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		beytRN9n1ULQHQCP25Ysss/f6p8=
+		eyCLW117z1EecZ/y8MhHPPQWc9g=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/.env</key>
 		<data>
@@ -62,11 +62,11 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<data>
-		j0WpDCd/fLw01gEAyU+sRphkrkc=
+		NeW1f27r5Rcuz/sQ5xYvZ8WY07o=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
-		7fHteghEWPNDYiTv/mmA/MsZ5Qk=
+		gRAG8RGwElKsuGZ3EscYpZoxsZQ=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
 		<data>
@@ -132,9 +132,9 @@
 		<data>
 		AmSbHxjMoyXDVqengn+un17D2rU=
 		</data>
-		<key>Frameworks/App.framework/flutter_assets/assets/icon/icon.png</key>
+		<key>Frameworks/App.framework/flutter_assets/assets/icon/iconfoodie.png</key>
 		<data>
-		K+JOWnULg8kD/umYfmuhFoSp/P8=
+		1SyqVNOzR+V2oiqtKN9M1jRks5k=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/icon/image.png</key>
 		<data>
@@ -284,10 +284,6 @@
 		<data>
 		HHtQFe/MYbb0YFVb+Npbif9KFcQ=
 		</data>
-		<key>Frameworks/App.framework/flutter_assets/assets/images/image%20copy.png</key>
-		<data>
-		zV1K+1ZnEMCuu2Le1vTi3d0tVug=
-		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/images/image.png</key>
 		<data>
 		M1zODKHc9ynbAMDH+bCiWfDYrRI=
@@ -311,6 +307,10 @@
 		<key>Frameworks/App.framework/flutter_assets/assets/images/lustig.png</key>
 		<data>
 		Y4k3x/CexsYr4ZMFfuq8My3Xp64=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/newfoodieicon.png</key>
+		<data>
+		+eKKQt754q2RE9MnI/hqXpZPwPY=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/images/nugetts.png</key>
 		<data>
@@ -386,7 +386,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		FxYweK/QgoeFcDw0QpHbkVb+5/s=
+		F8ma5AQAcFFGHSTmqX/ny6qUN38=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/social_login_buttons/lib/assets/2.0x/apple-black-logo.png</key>
 		<data>
@@ -1372,7 +1372,7 @@
 		</data>
 		<key>__preview.dylib</key>
 		<data>
-		cpJUxZTTppOYGIWdFAqwdj/OKiA=
+		GWzz958TKrImbRQt4IjmphEfs7Q=
 		</data>
 		<key>google_sign_in_ios_privacy.bundle/Info.plist</key>
 		<data>
@@ -1396,21 +1396,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			CNZONFY0I8t8SpF9yhc9bGmOJSo3fz40+6HbrThL5KY=
+			USDiSKRYy4x5GNr1+BCVaj58pS4AAqF9KpWeDQXofyU=
 			</data>
 		</dict>
 		<key>AppIcon76x76@2x~ipad.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			sjPhIwCAiGmTAZ9PMMZpKN6SKaX1jWArG9I9c3+H8kA=
+			yD/JpliJWlltcFft3eF4oR2oF4qvrePx8S6RzXebslc=
 			</data>
 		</dict>
 		<key>Assets.car</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			AkXVRNpSBTzt+mzqWe/KqIBkvPBtGGO0SiYGrRFlcBc=
+			Ts9f5TT3wLNIM6/FN+OxiXX4EeOq/w6eoENJYE//g+w=
 			</data>
 		</dict>
 		<key>Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
@@ -1459,7 +1459,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			vM5/RndJ0F+azjLZi/x4CAGhyNxURtA911IXLEmErq8=
+			/lv/n5oPGTPvdd8o0HWpxGYP3xTAxFlpzkORmcPOSeE=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -1473,7 +1473,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ER3NEtoq0QvP9Qnvkf+Bp1vJJCDTtYziKduOLMPzumA=
+			PFT1axrmq4FIreHzvCh4kWqvm0JKYDmXNXUpdk0IOgA=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/.env</key>
@@ -1487,14 +1487,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			y5RJQFKsF9FzC4afhNmnowB7LEqJisT2Iw+g/8O/TME=
+			blxwG+GV5O1dbRqccTrsMlcoz1uIQMSejqcFAIKvFiI=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			N9qziBzy/iNqSZ+6f9L/YG4EEtr6YvTMKuGz/XSx1zk=
+			FNP1JmodYO7xozT5W9PmcEdYIykAjce2wP0AEvuh2ns=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
@@ -1609,11 +1609,11 @@
 			1kG1AyuJ10urJeMJ0MYuvuYhU3+nAzPKJtUR3R7Jb5A=
 			</data>
 		</dict>
-		<key>Frameworks/App.framework/flutter_assets/assets/icon/icon.png</key>
+		<key>Frameworks/App.framework/flutter_assets/assets/icon/iconfoodie.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			tAmrJDxszezGQnmMAiQryj3ZIkOGCo6wLzPBooEmt5A=
+			5YEEy2oh9DFsLj8KtMlybMib4HzCdMrEbI2bvStCo9U=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/icon/image.png</key>
@@ -1875,13 +1875,6 @@
 			/EjGiRblyOGLbFZhEaCj+uYIFkTdKDALYyMsE2DxrZU=
 			</data>
 		</dict>
-		<key>Frameworks/App.framework/flutter_assets/assets/images/image%20copy.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			jQJpBZFjZcFbWlHeWjLtNP54fQtTLUSD1lWcFsrzCxI=
-			</data>
-		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/images/image.png</key>
 		<dict>
 			<key>hash2</key>
@@ -1922,6 +1915,13 @@
 			<key>hash2</key>
 			<data>
 			isGMuzy+IRPjUcWSpm6jr+DsaT5SRd7qJXtxj9jX6Fc=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/newfoodieicon.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			qAtCe8oleVPVm8eJ4ssCAgrDliYRpVUDyocnICAaNlY=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/images/nugetts.png</key>
@@ -2054,7 +2054,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			fSQd5cRZBYDT5/gkpuMnC+OWg9EBCWm0daLqL8tIKUQ=
+			1rqGkg5nKzJAeVJFJIv6nmuWnAJf0StisPNZ+0C3qOI=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/social_login_buttons/lib/assets/2.0x/apple-black-logo.png</key>
@@ -3509,7 +3509,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			KGwDzoE1ol7xxBB0RnNlGXVwDPeW6dff5Lz1pMcgMZE=
+			GuVy+F2PJmOWfYp6XluD7SHZYpygOtvrhUWbU0UJzHA=
 			</data>
 		</dict>
 		<key>google_sign_in_ios_privacy.bundle/Info.plist</key>

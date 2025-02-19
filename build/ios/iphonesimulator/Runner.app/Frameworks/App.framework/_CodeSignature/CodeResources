@@ -14,11 +14,11 @@
 		</data>
 		<key>flutter_assets/AssetManifest.bin</key>
 		<data>
-		j0WpDCd/fLw01gEAyU+sRphkrkc=
+		NeW1f27r5Rcuz/sQ5xYvZ8WY07o=
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		7fHteghEWPNDYiTv/mmA/MsZ5Qk=
+		gRAG8RGwElKsuGZ3EscYpZoxsZQ=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -64,6 +64,10 @@
 		<data>
 		4+P3r4cqag+i0A1Qmae/C9SkZHM=
 		</data>
+		<key>flutter_assets/assets/icon/.DS_Store</key>
+		<data>
+		wTaojLQ4m89+L/TeGdkT4lsNe68=
+		</data>
 		<key>flutter_assets/assets/icon/Apple_logo_white.svg.png</key>
 		<data>
 		pg7YQbGbYUZ9PFJ5TQo5SBrfzRQ=
@@ -84,9 +88,9 @@
 		<data>
 		AmSbHxjMoyXDVqengn+un17D2rU=
 		</data>
-		<key>flutter_assets/assets/icon/icon.png</key>
+		<key>flutter_assets/assets/icon/iconfoodie.png</key>
 		<data>
-		K+JOWnULg8kD/umYfmuhFoSp/P8=
+		1SyqVNOzR+V2oiqtKN9M1jRks5k=
 		</data>
 		<key>flutter_assets/assets/icon/image.png</key>
 		<data>
@@ -236,10 +240,6 @@
 		<data>
 		HHtQFe/MYbb0YFVb+Npbif9KFcQ=
 		</data>
-		<key>flutter_assets/assets/images/image%20copy.png</key>
-		<data>
-		zV1K+1ZnEMCuu2Le1vTi3d0tVug=
-		</data>
 		<key>flutter_assets/assets/images/image.png</key>
 		<data>
 		M1zODKHc9ynbAMDH+bCiWfDYrRI=
@@ -263,6 +263,10 @@
 		<key>flutter_assets/assets/images/lustig.png</key>
 		<data>
 		Y4k3x/CexsYr4ZMFfuq8My3Xp64=
+		</data>
+		<key>flutter_assets/assets/images/newfoodieicon.png</key>
+		<data>
+		+eKKQt754q2RE9MnI/hqXpZPwPY=
 		</data>
 		<key>flutter_assets/assets/images/nugetts.png</key>
 		<data>
@@ -338,7 +342,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		FxYweK/QgoeFcDw0QpHbkVb+5/s=
+		F8ma5AQAcFFGHSTmqX/ny6qUN38=
 		</data>
 		<key>flutter_assets/packages/social_login_buttons/lib/assets/2.0x/apple-black-logo.png</key>
 		<data>
@@ -446,14 +450,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			y5RJQFKsF9FzC4afhNmnowB7LEqJisT2Iw+g/8O/TME=
+			blxwG+GV5O1dbRqccTrsMlcoz1uIQMSejqcFAIKvFiI=
 			</data>
 		</dict>
 		<key>flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			N9qziBzy/iNqSZ+6f9L/YG4EEtr6YvTMKuGz/XSx1zk=
+			FNP1JmodYO7xozT5W9PmcEdYIykAjce2wP0AEvuh2ns=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -568,11 +572,11 @@
 			1kG1AyuJ10urJeMJ0MYuvuYhU3+nAzPKJtUR3R7Jb5A=
 			</data>
 		</dict>
-		<key>flutter_assets/assets/icon/icon.png</key>
+		<key>flutter_assets/assets/icon/iconfoodie.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			tAmrJDxszezGQnmMAiQryj3ZIkOGCo6wLzPBooEmt5A=
+			5YEEy2oh9DFsLj8KtMlybMib4HzCdMrEbI2bvStCo9U=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/icon/image.png</key>
@@ -834,13 +838,6 @@
 			/EjGiRblyOGLbFZhEaCj+uYIFkTdKDALYyMsE2DxrZU=
 			</data>
 		</dict>
-		<key>flutter_assets/assets/images/image%20copy.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			jQJpBZFjZcFbWlHeWjLtNP54fQtTLUSD1lWcFsrzCxI=
-			</data>
-		</dict>
 		<key>flutter_assets/assets/images/image.png</key>
 		<dict>
 			<key>hash2</key>
@@ -881,6 +878,13 @@
 			<key>hash2</key>
 			<data>
 			isGMuzy+IRPjUcWSpm6jr+DsaT5SRd7qJXtxj9jX6Fc=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/images/newfoodieicon.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			qAtCe8oleVPVm8eJ4ssCAgrDliYRpVUDyocnICAaNlY=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/images/nugetts.png</key>
@@ -1013,7 +1017,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			fSQd5cRZBYDT5/gkpuMnC+OWg9EBCWm0daLqL8tIKUQ=
+			1rqGkg5nKzJAeVJFJIv6nmuWnAJf0StisPNZ+0C3qOI=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/social_login_buttons/lib/assets/2.0x/apple-black-logo.png</key>

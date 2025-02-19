@@ -87,7 +87,7 @@ class _FavoritScreenState extends State<FavoritScreen> {
                         child: Opacity(
                           opacity: 0.5,
                           child: Image.asset(
-                            "assets/icon/icon.png",
+                            "assets/images/newfoodieicon.png",
                             width: 250,
                             height: 250,
                           ),

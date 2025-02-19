@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import "package:flutter_dotenv/flutter_dotenv.dart";
+import 'package:foodie_screen/config/logo.dart';
 import 'package:foodie_screen/feautures/ai/widgets/header.dart';
 import 'package:foodie_screen/feautures/ai/widgets/ingredient_container.dart';
 import 'package:foodie_screen/feautures/ai/widgets/message_bubble.dart';
@@ -92,18 +93,11 @@ class AIScreenState extends State<AIScreen> {
         child: Stack(
           children: [
             Positioned(
-              top: 290,
+              top: 250,
               left: 0,
               right: 0,
               child: Center(
-                child: Opacity(
-                  opacity: 0.6,
-                  child: Image.asset(
-                    "assets/icon/icon.png",
-                    width: 300,
-                    height: 300,
-                  ),
-                ),
+                child: foodieLogo(),
               ),
             ),
             Padding(
