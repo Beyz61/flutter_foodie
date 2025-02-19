@@ -148,23 +148,6 @@ class _SpotScreenState extends State<SpotScreen> {
                       );
                     } else {
                       final recipeList =List.from(snapshot.data ?? [])..shuffle(Random());
-                      // final displayList = List<Recipe>.from(recipeList);
-                      // var random= Random();
-                      // while (displayList.length < 4) {
-                        
-                      //   displayList.add(Recipe(
-                      //     recipeName: "",
-                      //     imagePath: "",
-                      //     preparationTime: "",
-                      //     portionAmount: "",
-                      //     price: 0.0,
-                      //     category: "",
-                      //     ingredients: [],
-                      //     preparations: [],
-                      //     portion: 0,
-                      //     tipp: null,
-                      //   ));
-                      // }
                       var random= Random();
                       return RefreshIndicator(
                         onRefresh: () async {

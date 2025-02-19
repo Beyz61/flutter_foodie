@@ -64,32 +64,72 @@ class MyApp extends StatelessWidget {
       title: "Foodie",
       theme: myTheme,
       home: Scaffold(
-        body: StreamBuilder(
-          stream: authInstance.authStateChanges(),
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.active) {
-              User? user = snapshot.data;
-              log("Benutzer eingeloggt: ${user != null}");
-              if (user == null) {
-                return const LoginScreen(); 
-              } else {
-                return FutureBuilder(
-                  future: context.read<UserRepository>().loadUsername(user.uid),
-                  builder: (context, snapshot) {
-                    if (snapshot.connectionState == ConnectionState.done) {
-                      return const ButtonNavigator();
-                    } else {
-                      return const Center(child: CircularProgressIndicator());
-                    }
-                  },
-                );
-              }
+        body: LayoutBuilder(
+          builder: (context, constraints) {
+            if (constraints.maxWidth > 600) {
+              return _buildWideLayout(context);
             } else {
-              return const Center(child: CircularProgressIndicator());
+              return _buildNarrowLayout(context);
             }
           },
         ),
       )
+    );
+  }
+
+  Widget _buildWideLayout(BuildContext context) {
+    return StreamBuilder(
+      stream: authInstance.authStateChanges(),
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.active) {
+          User? user = snapshot.data;
+          log("Benutzer eingeloggt: ${user != null}");
+          if (user == null) {
+            return const LoginScreen(); 
+          } else {
+            return FutureBuilder(
+              future: context.read<UserRepository>().loadUsername(user.uid),
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.done) {
+                  return const ButtonNavigator();
+                } else {
+                  return const Center(child: CircularProgressIndicator());
+                }
+              },
+            );
+          }
+        } else {
+          return const Center(child: CircularProgressIndicator());
+        }
+      },
+    );
+  }
+
+  Widget _buildNarrowLayout(BuildContext context) {
+    return StreamBuilder(
+      stream: authInstance.authStateChanges(),
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.active) {
+          User? user = snapshot.data;
+          log("Benutzer eingeloggt: ${user != null}");
+          if (user == null) {
+            return const LoginScreen(); 
+          } else {
+            return FutureBuilder(
+              future: context.read<UserRepository>().loadUsername(user.uid),
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.done) {
+                  return const ButtonNavigator();
+                } else {
+                  return const Center(child: CircularProgressIndicator());
+                }
+              },
+            );
+          }
+        } else {
+          return const Center(child: CircularProgressIndicator());
+        }
+      },
     );
   }
 }
