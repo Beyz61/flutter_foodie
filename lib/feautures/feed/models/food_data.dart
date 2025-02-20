@@ -506,45 +506,45 @@ List<Recipe> recipes = [
     portion: 1,
     tipp: null,
   ),
-  Recipe(
-    recipeName: "Soufflé",
-    imagePath: "assets/images/image copy.png",
-    preparationTime: "30 Min",
-    portionAmount: "2 Pers.",
-    price: 12.00,
-    category: "Dessert",
-    ingredients: [
-      Ingredients(amount: 100, unit: "g", text: "Zartbitterschokolade"),
-      Ingredients(amount: 50, unit: "g", text: "Butter"),
-      Ingredients(amount: 2, unit: "", text: "Eier"),
-      Ingredients(amount: 50, unit: "g", text: "Zucker"),
-      Ingredients(amount: 1, unit: "EL", text: "Mehl"),
-      Ingredients(amount: 1, unit: "Prise", text: "Salz"),
-      Ingredients(amount: 0, unit: "", text: "Puderzucker (zum Bestäuben)"),
-    ],
-    preparations: [
-      Preparation(title: "1. Step", preparationTexts: [
-        "Schokolade & Butter im Wasserbad schmelzen.",
-      ]),
-      Preparation(title: "2. Step", preparationTexts: [
-        "Eier trennen, Eigelb mit Zucker schaumig schlagen. Geschmolzene Schokolade unterrühren.",
-      ]),
-      Preparation(title: "3. Step", preparationTexts: [
-        "Eiweiß mit einer Prise Salz steif schlagen & unter die Schokoladenmasse heben.",
-      ]),
-      Preparation(title: "4. Step", preparationTexts: [
-        "Förmchen mit Butter einfetten & mit Mehl bestäuben. Teig einfüllen.",
-      ]),
-      Preparation(title: "5. Step", preparationTexts: [
-        "Im vorgeheizten Ofen bei 180°C ca. 12-15 Minuten backen, bis das Soufflé aufgegangen ist.",
-      ]),
-      Preparation(title: "6. Step", preparationTexts: [
-        "Mit Puderzucker bestäuben & sofort servieren.",
-      ]),
-    ],
-    portion: 1,
-    tipp: null,
-  ),
+  // Recipe(
+  //   recipeName: "Souffle",
+  //   imagePath: "assets/images/lecker1111.png",
+  //   preparationTime: "30 Min",
+  //   portionAmount: "2 Pers.",
+  //   price: 12.00,
+  //   category: "Dessert",
+  //   ingredients: [
+  //     Ingredients(amount: 100, unit: "g", text: "Zartbitterschokolade"),
+  //     Ingredients(amount: 50, unit: "g", text: "Butter"),
+  //     Ingredients(amount: 2, unit: "", text: "Eier"),
+  //     Ingredients(amount: 50, unit: "g", text: "Zucker"),
+  //     Ingredients(amount: 1, unit: "EL", text: "Mehl"),
+  //     Ingredients(amount: 1, unit: "Prise", text: "Salz"),
+  //     Ingredients(amount: 0, unit: "", text: "Puderzucker (zum Bestäuben)"),
+  //   ],
+  //   preparations: [
+  //     Preparation(title: "1. Step", preparationTexts: [
+  //       "Schokolade & Butter im Wasserbad schmelzen.",
+  //     ]),
+  //     Preparation(title: "2. Step", preparationTexts: [
+  //       "Eier trennen, Eigelb mit Zucker schaumig schlagen. Geschmolzene Schokolade unterrühren.",
+  //     ]),
+  //     Preparation(title: "3. Step", preparationTexts: [
+  //       "Eiweiß mit einer Prise Salz steif schlagen & unter die Schokoladenmasse heben.",
+  //     ]),
+  //     Preparation(title: "4. Step", preparationTexts: [
+  //       "Förmchen mit Butter einfetten & mit Mehl bestäuben. Teig einfüllen.",
+  //     ]),
+  //     Preparation(title: "5. Step", preparationTexts: [
+  //       "Im vorgeheizten Ofen bei 180°C ca. 12-15 Minuten backen, bis das Soufflé aufgegangen ist.",
+  //     ]),
+  //     Preparation(title: "6. Step", preparationTexts: [
+  //       "Mit Puderzucker bestäuben & sofort servieren.",
+  //     ]),
+  //   ],
+  //   portion: 1,
+  //   tipp: null,
+  // ),
   Recipe(
     recipeName: "Kartoffelgratin",
     imagePath: "assets/images/gratin.png",

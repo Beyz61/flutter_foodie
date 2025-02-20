@@ -36,6 +36,7 @@ class _SpotScreenState extends State<SpotScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 227, 218, 211),
       body: Container(
@@ -50,7 +51,7 @@ class _SpotScreenState extends State<SpotScreen> {
           ),
         ),
         child: Padding(
-          padding: const EdgeInsets.only(top: 80),
+          padding: EdgeInsets.only(top: size.height * 0.1),
           child: Column(
             children: [
               const Row(
@@ -63,13 +64,13 @@ class _SpotScreenState extends State<SpotScreen> {
               ),
               Column(
                 children: [
-                  const SizedBox(height: 0),
+                  //izedBox(height: size.height * 0.01),
                   const Text(
                     "Top Kategorien",
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
+                      fontSize: 40,
+                      fontWeight: FontWeight.w800,
                       fontStyle: FontStyle.italic,
                       fontFamily: "SFProDisplay",
                       shadows: [
@@ -82,7 +83,7 @@ class _SpotScreenState extends State<SpotScreen> {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  const SizedBox(height: 8),
+                  SizedBox(height: size.height * 0.01),
                   const Divider(
                     thickness: 2,
                     height: 20,
@@ -90,7 +91,7 @@ class _SpotScreenState extends State<SpotScreen> {
                     endIndent: 20,
                     color: Color.fromARGB(255, 246, 100, 3,),
                   ),
-                  const SizedBox(height: 10),
+                  SizedBox(height: size.height * 0.01),
                   CategoryWidget(
                     onCategorySelected: (category) {
                       setState(() {
@@ -100,7 +101,7 @@ class _SpotScreenState extends State<SpotScreen> {
                     },
                     selectedCategory: selectedCategory,
                   ),
-                  const SizedBox(height: 10),
+                  SizedBox(height: size.height * 0.01),
                   const Divider(
                     thickness: 2,
                     height: 20,
@@ -108,12 +109,12 @@ class _SpotScreenState extends State<SpotScreen> {
                     endIndent: 20,
                     color: Color.fromARGB(255, 246, 100, 3,),
                   ),
-                  const SizedBox(height: 05),
+                  SizedBox(height: size.height * 0.01),
                   Text(
                     selectedCategory ?? "Aktuell beliebte Rezepte",
                     style: const TextStyle(
                       color: Colors.white,
-                      fontSize: 24,
+                      fontSize: 26,
                       fontWeight: FontWeight.bold,
                       fontStyle: FontStyle.italic,
                       fontFamily: "SFProDisplay",
@@ -127,64 +128,74 @@ class _SpotScreenState extends State<SpotScreen> {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  const SizedBox(height: 05),
+                  SizedBox(height: size.height * 0.02),
                 ],
               ),
               Expanded(
-                child: FutureBuilder<List<Recipe>>(
-                  future: _recipesFuture,
-                  builder: (context, snapshot) {
-                    if (snapshot.connectionState == ConnectionState.waiting) {
-                      return Center(
-                        child: SizedBox(
-                          width: 100,
-                          height: 100,
-                          child: Image.asset("assets/icon/pizzagif.gif"),
-                        ),
-                      );
-                    } else if (snapshot.hasError) {
-                      return Center(
-                        child: Text("Error: ${snapshot.error}"),
-                      );
-                    } else {
-                      final recipeList =List.from(snapshot.data ?? [])..shuffle(Random());
-                      var random= Random();
-                      return RefreshIndicator(
-                        onRefresh: () async {
-                          _loadRecipes();
+                child: SingleChildScrollView(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: SizedBox(
+                      height: size.height * 0.48,
+                      child: FutureBuilder<List<Recipe>>(
+                        future: _recipesFuture,
+                        builder: (context, snapshot) {
+                          if (snapshot.connectionState == ConnectionState.waiting) {
+                            return Center(
+                              child: SizedBox(
+                                width: size.width * 0.25,
+                                height: size.width * 0.25,
+                                child: Image.asset("assets/icon/pizzagif.gif"),
+                              ),
+                            );
+                          } else if (snapshot.hasError) {
+                            return Center(
+                              child: Text("Error: ${snapshot.error}"),
+                            );
+                          } else {
+                            final recipeList = List.from(snapshot.data ?? [])..shuffle(Random());
+                            final displayedRecipes = recipeList.take(4).toList();
+                            return RefreshIndicator(
+                              onRefresh: () async {
+                                _loadRecipes();
+                              },
+                              child: GridView.builder(
+                                padding: EdgeInsets.zero,
+                                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: size.width > 600 ? 3 : 2,
+                                  crossAxisSpacing: 10,
+                                  mainAxisSpacing: 10,
+                                  childAspectRatio: 1.0,
+                                ),
+                                itemCount: displayedRecipes.length,
+                                itemBuilder: (context, index) {
+                                  final recipe = displayedRecipes[index];
+                                  return recipe.recipeName.isEmpty
+                                      ? Container()
+                                      : GestureDetector(
+                                          onTap: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) => RecipeScreen(recipe: recipe),
+                                              ),
+                                            );
+                                          },
+                                          child: SpotWidget(
+                                            text: recipe.recipeName,
+                                            picture: recipe.imagePath,
+                                            // width: size.width * 0.4,
+                                           // height: size.height * 0.2,
+                                          ),
+                                        );
+                                },
+                              ),
+                            );
+                          }
                         },
-                        child: GridView.builder(
-                          padding: EdgeInsets.zero,
-                          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,
-                            crossAxisSpacing: 10,
-                            mainAxisSpacing: 10,
-                            childAspectRatio: 1.0,
-                          ),
-                          itemCount: 4,
-                          itemBuilder: (context, index) {
-                            final recipe = recipeList[index];
-                            return recipe.recipeName.isEmpty
-                                ? Container()
-                                : GestureDetector(
-                                    onTap: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) => RecipeScreen(recipe: recipe),
-                                        ),
-                                      );
-                                    },
-                                    child: SpotWidget(
-                                      text: recipe.recipeName,
-                                      picture: recipe.imagePath,
-                                    ),
-                                  );
-                          },
-                        ),
-                      );
-                    }
-                  },
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ],

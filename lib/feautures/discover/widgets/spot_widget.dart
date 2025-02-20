@@ -14,8 +14,8 @@ class SpotWidget extends StatelessWidget {
     return GestureDetector(
       child: Center(
         child: Container(
-          height: 180,
-          width: 180,
+          height: 200, // Increase height
+          width: 200, // Increase width
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage(picture),
