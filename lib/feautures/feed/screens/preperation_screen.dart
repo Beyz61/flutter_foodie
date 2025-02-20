@@ -23,7 +23,16 @@ class PreparationScreen extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                // const SizedBox(height: 70),
+                Row(
+                  children: [
+                    IconButton(
+                      icon: const Icon(Icons.arrow_back, color: Colors.white),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                    ),
+                  ],
+                ),
                 const Text(
                   "Zubereitung:",
                   style: TextStyle(

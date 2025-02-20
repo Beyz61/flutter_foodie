@@ -61,6 +61,16 @@ class _RecipeScreenState extends State<RecipeScreen> {
           child: SingleChildScrollView(
             child: Column(
               children: [
+                Row(
+                  children: [
+                    IconButton(
+                      icon: const Icon(Icons.arrow_back, color: Colors.white),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                    ),
+                  ],
+                ),
                 Text(
                   widget.recipe.recipeName, 
                   textAlign: TextAlign.center,
