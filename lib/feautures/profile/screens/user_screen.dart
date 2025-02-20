@@ -120,6 +120,7 @@ class _UserScreenState extends State<UserScreen> {
   Widget build(BuildContext context) {
     final user = _auth.currentUser;
     final username = context.watch<UserNotifier>().username;
+    final screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 24, 23, 22),
@@ -135,31 +136,36 @@ class _UserScreenState extends State<UserScreen> {
           ),
         ),
         child: Stack(
-          children: [
+            children: [
             Positioned(
-              top: 290,
+              top: screenWidth * 0.67,
               left: 0,
               right: 0,
               child: Center(
-                child: Opacity(
-                  opacity: 0.8,
-                  child: Image.asset(
-                    "assets/images/iconfoodie1.png",
-                    width: 300,
-                    height: 300,
-                  ),
+              child: Opacity(
+                opacity: 0.8,
+                child: LayoutBuilder(
+                builder: (context, constraints) {
+                  final imageSize = constraints.maxWidth * 0.88;
+                  return Image.asset(
+                  "assets/images/newfoodieicon.png",
+                  width: imageSize,
+                  height: imageSize,
+                  );
+                },
                 ),
+              ),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 80.0),
+              padding: EdgeInsets.only(top: screenWidth * 0.1),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   const Text(
                     "Foodie",
                     style: TextStyle(
-                      fontSize: 90,
+                      fontSize: 108,
                       fontWeight: FontWeight.w700,
                       fontStyle: FontStyle.italic,
                       fontFamily: "SFProDisplay",
@@ -173,11 +179,12 @@ class _UserScreenState extends State<UserScreen> {
                       ],
                     ),
                   ),
+                  SizedBox(height: screenWidth * 0.00),
                   Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-                    padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+                    margin: EdgeInsets.symmetric(horizontal: screenWidth * 0.06, vertical: 14.0),
+                    padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.04, vertical: 10.0),
                     decoration: BoxDecoration(
-                      color:blackWithOpacity,
+                      color: blackWithOpacity,
                       borderRadius: BorderRadius.circular(10.0),
                       border: Border.all(color: const Color.fromARGB(255, 253, 110, 0), width: 1),
                       boxShadow: const [
@@ -194,7 +201,7 @@ class _UserScreenState extends State<UserScreen> {
                         Text(
                           username ?? "Kein Benutzername",
                           style: const TextStyle(
-                            fontSize: 18,
+                            fontSize: 20,
                             fontWeight: FontWeight.bold,
                             fontStyle: FontStyle.italic,
                             fontFamily: "SFProDisplay",
@@ -215,10 +222,10 @@ class _UserScreenState extends State<UserScreen> {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 39),
+                  SizedBox(height: screenWidth * 0.07),
                   Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-                    padding: const EdgeInsets.all(16.0),
+                    margin: EdgeInsets.symmetric(horizontal: screenWidth * 0.05, vertical: 14.0),
+                    padding: EdgeInsets.all(screenWidth * 0.07),
                     decoration: BoxDecoration(
                       color: darkblackWithOpacity,
                       borderRadius: BorderRadius.circular(10.0),
@@ -232,105 +239,108 @@ class _UserScreenState extends State<UserScreen> {
                       ],
                     ),
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const Icon(
-                              Icons.email,
-                              color: Color.fromARGB(255, 255, 108, 3),
-                              shadows: [
-                                Shadow(
-                                  blurRadius: 5,
-                                  color: Colors.black,
-                                  offset: Offset(1, 2),
-                                ),
-                              ],
-                            ),
-                            const SizedBox(width: 8),
-                            Text(
-                              user?.email ?? "Keine E-Mail",
-                              style: const TextStyle(
-                                color: Color.fromARGB(255, 255, 108, 3),
-                                fontWeight: FontWeight.w600,
-                                fontStyle: FontStyle.italic,
-                                fontFamily: "SFProDisplay",
-                                shadows: [
-                                  Shadow(
-                                    blurRadius: 5,
-                                    color: Colors.black,
-                                    offset: Offset(1, 2),
-                                  ),
-                                ],
-                              ),
-                            ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                        const Icon(
+                          Icons.email,
+                          color: Color.fromARGB(255, 255, 108, 3),
+                          shadows: [
+                          Shadow(
+                            blurRadius: 5,
+                            color: Colors.black,
+                            offset: Offset(1, 2),
+                          ),
                           ],
                         ),
-                        const Divider(
+                        const SizedBox(width: 8),
+                        Text(
+                          user?.email ?? "Keine E-Mail",
+                          style: const TextStyle(
                           color: Color.fromARGB(255, 255, 108, 3),
-                          indent: 52,
-                          endIndent: 30,
-                          thickness: 2,
-                          height: 20,
-                        ),
-                        TextField(
-                          controller: _currentPasswordController,
-                          obscureText: !_isCurrentPasswordVisible,
-                          decoration: InputDecoration(
-                            labelText: "Aktuelles Passwort",
-                            labelStyle: const TextStyle(color: Color.fromARGB(255, 255, 250, 245)),
-                            enabledBorder: InputBorder.none,
-                            focusedBorder: InputBorder.none,
-                            suffixIcon: IconButton(
-                              icon: Icon(
-                                _isCurrentPasswordVisible ? Icons.visibility : Icons.visibility_off,
-                                color: const Color.fromARGB(255, 255, 255, 255),
-                              ),
-                              onPressed: () {
-                                setState(() {
-                                  _isCurrentPasswordVisible = !_isCurrentPasswordVisible;
-                                });
-                              },
+                          fontWeight: FontWeight.w600,
+                          fontSize: 18,
+                          fontStyle: FontStyle.italic,
+                          fontFamily: "SFProDisplay",
+                          shadows: [
+                            Shadow(
+                            blurRadius: 5,
+                            color: Colors.black,
+                            offset: Offset(1, 2),
                             ),
-                          ),
-                          style: const TextStyle(
-                            color: Color.fromARGB(255, 255, 254, 254),
-                            fontWeight: FontWeight.w600,
-                            fontStyle: FontStyle.italic,
-                            fontFamily: "SFProDisplay",
+                          ],
                           ),
                         ),
-                        TextField(
-                          controller: _newPasswordController,
-                          obscureText: !_isNewPasswordVisible,
-                          decoration: InputDecoration(
-                            labelText: "Neues Passwort",
-                            labelStyle: const TextStyle(color: Color.fromARGB(255, 255, 252, 250)),
-                            enabledBorder: InputBorder.none,
-                            focusedBorder: InputBorder.none,
-                            suffixIcon: IconButton(
-                              icon: Icon(
-                                _isNewPasswordVisible ? Icons.visibility : Icons.visibility_off,
-                                color: const Color.fromARGB(255, 255, 255, 255),
-                              ),
-                              onPressed: () {
-                                setState(() {
-                                  _isNewPasswordVisible = !_isNewPasswordVisible;
-                                });
-                              },
-                            ),
+                        ],
+                      ),
+                      const Divider(
+                        color: Color.fromARGB(255, 255, 108, 3),
+                        indent: 4,
+                        endIndent: 24,
+                        thickness: 2,
+                        height: 20,
+                      ),
+                      TextField(
+                        controller: _currentPasswordController,
+                        obscureText: !_isCurrentPasswordVisible,
+                        decoration: InputDecoration(
+                        labelText: "Aktuelles Passwort",
+                        labelStyle: const TextStyle(color: Color.fromARGB(255, 255, 250, 245)),
+                        enabledBorder: InputBorder.none,
+                        focusedBorder: InputBorder.none,
+                        suffixIcon: IconButton(
+                          icon: Icon(
+                          _isCurrentPasswordVisible ? Icons.visibility : Icons.visibility_off,
+                          color: const Color.fromARGB(255, 255, 255, 255),
                           ),
-                          style: const TextStyle(
-                            color: Color.fromARGB(255, 255, 255, 254),
-                            fontWeight: FontWeight.w600,
-                            fontStyle: FontStyle.italic,
-                            fontFamily: "SFProDisplay",
-                          ),
+                          onPressed: () {
+                          setState(() {
+                            _isCurrentPasswordVisible = !_isCurrentPasswordVisible;
+                          });
+                          },
                         ),
+                        ),
+                        style: const TextStyle(
+                        color: Color.fromARGB(255, 255, 254, 254),
+                        fontWeight: FontWeight.w600,
+                        fontStyle: FontStyle.italic,
+                        fontFamily: "SFProDisplay",
+                        ),
+                      ),
+                      const SizedBox(height: 10),
+                      TextField(
+                        controller: _newPasswordController,
+                        obscureText: !_isNewPasswordVisible,
+                        decoration: InputDecoration(
+                        labelText: "Neues Passwort",
+                        labelStyle: const TextStyle(color: Color.fromARGB(255, 255, 252, 250)),
+                        enabledBorder: InputBorder.none,
+                        focusedBorder: InputBorder.none,
+                        suffixIcon: IconButton(
+                          icon: Icon(
+                          _isNewPasswordVisible ? Icons.visibility : Icons.visibility_off,
+                          color: const Color.fromARGB(255, 255, 255, 255),
+                          ),
+                          onPressed: () {
+                          setState(() {
+                            _isNewPasswordVisible = !_isNewPasswordVisible;
+                          });
+                          },
+                        ),
+                        ),
+                        style: const TextStyle(
+                        color: Color.fromARGB(255, 255, 255, 254),
+                        fontWeight: FontWeight.w600,
+                        fontStyle: FontStyle.italic,
+                        fontFamily: "SFProDisplay",
+                        ),
+                      ),
                       ],
                     ),
-                  ),
-                  const SizedBox(height: 75),
+                    ),
+                  SizedBox(height: screenWidth * 0.2),
                   SignOutButton(
                     text: "Speichern",
                     onPressed: () async {
