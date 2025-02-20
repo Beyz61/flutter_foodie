@@ -41,6 +41,9 @@ class _SignUpScreenState extends State<signUpButton> {
   }
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return Container(
       decoration: BoxDecoration(
         boxShadow: [
@@ -55,7 +58,10 @@ class _SignUpScreenState extends State<signUpButton> {
         onPressed: widget.onPressed,
         
         style: ElevatedButton.styleFrom(
-          padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 15),
+          padding: EdgeInsets.symmetric(
+            horizontal: screenWidth * 0.25,
+            vertical: screenHeight * 0.02,
+          ),
           backgroundColor: signInBtnColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
@@ -63,10 +69,10 @@ class _SignUpScreenState extends State<signUpButton> {
           ),
         ),
         child: Text(
-          widget.text,style: const TextStyle(
-            color: Color.fromARGB(255, 45, 25, 7),
+          widget.text,style: TextStyle(
+            color: const Color.fromARGB(255, 45, 25, 7),
             fontWeight: FontWeight.w600,
-            fontSize: 14,
+            fontSize: screenWidth * 0.035,
             fontStyle: FontStyle.italic,
             fontFamily: "SFProDisplay",
             ),

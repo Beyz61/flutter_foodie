@@ -20,8 +20,13 @@ class _PasswordButtonState extends State<PasswordButton> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+      padding: EdgeInsets.symmetric(
+        horizontal: screenWidth * 0.06,
+        vertical: 10,
+      ),
       child: Container(
         decoration: BoxDecoration(
           color: const Color.fromARGB(255, 232, 196, 164),
@@ -43,15 +48,16 @@ class _PasswordButtonState extends State<PasswordButton> {
               textAlign: TextAlign.center,
               style: const TextStyle(
                 color: Color.fromARGB(255, 45, 39, 39),
-                fontWeight: FontWeight.w600,
-                fontSize: 14,
+                fontWeight: FontWeight.w500,
+                fontSize: 15.5,
                 fontStyle: FontStyle.italic,
                 fontFamily: "SFProDisplay",
               ),
               decoration: InputDecoration(
                 hintText: widget.text,
                 hintStyle: const TextStyle(
-                  fontSize: 12,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
                   fontFamily: "SFProDisplay",
                 ),
                 filled: true,

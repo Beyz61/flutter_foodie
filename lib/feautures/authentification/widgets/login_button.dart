@@ -19,6 +19,9 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return Container(
       decoration: BoxDecoration(
         boxShadow: [
@@ -32,7 +35,10 @@ class CustomButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 15),
+          padding: EdgeInsets.symmetric(
+            horizontal: screenWidth * 0.25,
+            vertical: screenHeight * 0.02,
+          ),
           backgroundColor: backgroundColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
@@ -44,7 +50,7 @@ class CustomButton extends StatelessWidget {
           style: TextStyle(
             color: textColor,
             fontWeight: FontWeight.w600,
-            fontSize: 14,
+            fontSize: screenWidth * 0.04,
             fontStyle: FontStyle.italic,
             fontFamily: "SFProDisplay",
           ),

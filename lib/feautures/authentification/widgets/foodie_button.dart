@@ -40,6 +40,9 @@ class _FoodieButtonState extends State<FoodieButton> {
   }
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return Container(
       decoration: BoxDecoration(
         color: darkblackWithOpacity,
@@ -53,30 +56,32 @@ class _FoodieButtonState extends State<FoodieButton> {
           ),
         ],
       ),
-      // child: ElevatedButton(
-      //   onPressed: login,
-        
-      //   style: ElevatedButton.styleFrom(
-      //     padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 15),
-      //     backgroundColor: Colors.transparent,
-      //     shadowColor: Colors.transparent,
-      //     shape: RoundedRectangleBorder(
-      //       borderRadius: BorderRadius.circular(12),
-      //     ),
-      //   ),
-      //   child: Text(
-      //     widget.text,style: const TextStyle(
-      //       color: Color.fromARGB(255, 255, 255, 255),
-      //       fontWeight: FontWeight.w600,
-      //       fontSize: 14,
-      //       fontStyle: FontStyle.italic,
-      //       fontFamily: "SFProDisplay",
-      //       ),
-      //     ),
-      // ),
+      child: ElevatedButton(
+        onPressed: login,
+        style: ElevatedButton.styleFrom(
+          padding: EdgeInsets.symmetric(
+            horizontal: screenWidth * 0.25,
+            vertical: screenHeight * 0.02,
+          ),
+          backgroundColor: Colors.transparent,
+          shadowColor: Colors.transparent,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+        ),
+        child: Text(
+          widget.text,
+          style: TextStyle(
+            color: const Color.fromARGB(255, 255, 255, 255),
+            fontWeight: FontWeight.w600,
+            fontSize: screenWidth * 0.035,
+            fontStyle: FontStyle.italic,
+            fontFamily: "SFProDisplay",
+          ),
+        ),
+      ),
     );
   }
 }
-  
 
-                
+

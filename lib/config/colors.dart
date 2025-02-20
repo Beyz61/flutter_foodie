@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const Color backroundColor1 = Color.fromARGB(255, 246, 121, 6);
+const Color backroundColor1 = Color.fromARGB(198, 255, 98, 0);
 const Color backroundColor2 = Color.fromARGB(255,238,178, 123);
 const Color fontColor = Color.fromARGB(255, 103, 72, 43);
 const Color fontColor1 = Color.fromARGB(255, 234, 220, 208);

@@ -16,6 +16,9 @@ class SignOutButton extends StatefulWidget {
 class _SignOutButtonState extends State<SignOutButton> {
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return Container(
       decoration: BoxDecoration(
         gradient: const LinearGradient(
@@ -35,7 +38,10 @@ class _SignOutButtonState extends State<SignOutButton> {
       child: ElevatedButton(
         onPressed: widget.onPressed,
         style: ElevatedButton.styleFrom(
-          padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 15),
+          padding: EdgeInsets.symmetric(
+            horizontal: screenWidth * 0.25,
+            vertical: screenHeight * 0.02,
+          ),
           backgroundColor: Colors.transparent,
           shadowColor: Colors.transparent,
           shape: RoundedRectangleBorder(
@@ -44,14 +50,15 @@ class _SignOutButtonState extends State<SignOutButton> {
           ),
         ),
         child: Text(
-          widget.text,style: const TextStyle(
-            color: Color.fromARGB(255, 242, 101, 8),
+          widget.text,
+          style: TextStyle(
+            color: const Color.fromARGB(255, 242, 101, 8),
             fontWeight: FontWeight.w600,
-            fontSize: 14,
+            fontSize: screenWidth * 0.05,
             fontStyle: FontStyle.italic,
             fontFamily: "SFProDisplay",
-            ),
           ),
+        ),
       ),
     );
   }
