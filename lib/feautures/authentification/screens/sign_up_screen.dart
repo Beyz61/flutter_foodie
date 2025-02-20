@@ -31,6 +31,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -53,7 +56,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 child: Opacity(
                   opacity: 0.3,
                   child: Image.asset(
-                    "assets/icon/icon.png",
+                    "assets/images/newfoodieicon.png",
                     width: 320,
                     height: 320,
                   ),
@@ -61,7 +64,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: EdgeInsets.all(screenWidth * 0.04),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -108,7 +111,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     color: Color.fromARGB(255, 103, 71, 31),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: EdgeInsets.all(screenWidth * 0.02),
                     child: CustomButton.LoginButton(
                       text: "Registrieren",
                       onPressed: () async {
