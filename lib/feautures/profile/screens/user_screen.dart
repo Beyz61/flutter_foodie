@@ -138,7 +138,7 @@ class _UserScreenState extends State<UserScreen> {
         child: Stack(
             children: [
             Positioned(
-              top: screenWidth * 0.67,
+              top: screenWidth * 0.68,
               left: 0,
               right: 0,
               child: Center(
@@ -146,7 +146,7 @@ class _UserScreenState extends State<UserScreen> {
                 opacity: 0.8,
                 child: LayoutBuilder(
                 builder: (context, constraints) {
-                  final imageSize = constraints.maxWidth * 0.88;
+                  final imageSize = constraints.maxWidth * 0.87;
                   return Image.asset(
                   "assets/images/newfoodieicon.png",
                   width: imageSize,
@@ -196,7 +196,7 @@ class _UserScreenState extends State<UserScreen> {
                       ],
                     ),
                     child: Row(
-                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Text(
                           username ?? "Kein Benutzername",
@@ -224,7 +224,7 @@ class _UserScreenState extends State<UserScreen> {
                   ),
                   SizedBox(height: screenWidth * 0.07),
                   Container(
-                    margin: EdgeInsets.symmetric(horizontal: screenWidth * 0.05, vertical: 14.0),
+                    margin: EdgeInsets.symmetric(horizontal: screenWidth * 0.04, vertical: 16.0),
                     padding: EdgeInsets.all(screenWidth * 0.07),
                     decoration: BoxDecoration(
                       color: darkblackWithOpacity,
